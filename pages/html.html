@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="it">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -77,7 +77,7 @@
             <li><a href="#struttura-html">Struttura del HTML</a></li>
             <li class="sub-list">
               <a>
-                Elementi e tag in HTML
+                Elementi e tag HTML
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
                 <span class="minus"><i class="fas fa-minus"></i></span>
               </a>
@@ -88,7 +88,25 @@
                 <li><a href="#attributi-data">Gli Attributi data-</a></li>
               </ul>
             </li>
-            <li><a href="#">link</a></li>
+            <li class="sub-list">
+              <a>
+                Lista tag
+                <span class="plus visible"><i class="fas fa-plus"></i></span>
+                <span class="minus"><i class="fas fa-minus"></i></span>
+              </a>
+              <ul>
+                <li><a href="#lista-tag">Inizio</a></li>
+                <li><a href="#tag-strutturali">Structural tags</a></li>
+                <li><a href="#metadata-tag">Metadata tags</a></li>
+                <li><a href="#form-tags">Form Tags</a></li>
+                <li><a href="#formatting-tags">Formatting Tags</a></li>
+                <li><a href="#list-tags">List Tags</a></li>
+                <li><a href="#table-tags">Table Tags</a></li>
+                <li><a href="#scripting-tags">Scripting Tags</a></li>
+                <li><a href="#embedded-tags">Embedded Content Tags</a></li>
+              </ul>
+            </li>
+            <li><a href="#conclusioni">Conclusioni</a></li>
           </ul>
         </aside>
 
@@ -168,49 +186,603 @@
 
           <!-- Elementi e tag in HTML -->
           <section id="elementi-e-tag" class="anchor">
-            <h2><span class="color-html"><i class="fas fa-hashtag"></i></span> Elementi e tag in HTML</h2>
-            <p>
-              In una pagina HTML tutti gli elementi sono connotati da <b>tag</b> (letteralmente “etichette”). Si tratta di marcatori che evidenziano non tanto l’aspetto, quanto il <b>senso</b>, il <b>ruolo</b>, o l’organizzazione che vogliamo assegnare ai contenuti.
-            </p>
-            <p>
-              Questa visione “semantica” degli elementi è fondamentale, ci aiuta a non perdere di vista il fatto che una pagina deve essere un luogo ordinato di informazioni, soprattutto sul Web.
-              Un tag è una keyword del linguaggio racchiusa tra parentesi angolari <code> &lt; tag &gt; </code>
-            </p>
+            <div class="sub-section">
+              <h2><span class="color-html"><i class="fas fa-hashtag"></i></span> Elementi e tag in HTML</h2>
+              <p>
+                In una pagina HTML tutti gli elementi sono connotati da <b>tag</b> (letteralmente “etichette”). Si tratta di marcatori che evidenziano non tanto l’aspetto, quanto il <b>senso</b>, il <b>ruolo</b>, o l’organizzazione che vogliamo assegnare ai contenuti.
+              </p>
+              <p>
+                Questa visione “semantica” degli elementi è fondamentale, ci aiuta a non perdere di vista il fatto che una pagina deve essere un luogo ordinato di informazioni, soprattutto sul Web.
+                Un tag è una keyword del linguaggio racchiusa tra parentesi angolari <code> &lt; tag &gt; </code>
+              </p>
+            </div>
+
             <!-- Elementi inline e block -->
-            <h3 id="inline-e-block" class="anchor"><span class="color-html"><i class="fas fa-hashtag"></i></span> Elementi inline e block</h3>
-            <p>
-              I tag HTML possono rappresentare oggetti (come ad esempio le immagini) o servire a suddividere la pagina in aree (come i &lt;div&gt; o le &lt;section&gt;). Ci sono diverse tipologie di tag e conoscerle diventa determinante per usare il tag giusto al posto giusto e per applicare in seguito le regole CSS.
-            </p>
-            <p>
-              Le principali tipologie di visualizzazione in cui si dividono gli elementi sono:
-            </p>
-            <ul class="normal-list html-list">
-              <li><b>Block</b> - Elementi che costituiscono un blocco attorno a sé. Non fanno parte di un testo e di conseguenza mandano a capo, come i paragrafi i div o le section. </li>
-              <li><b>Inline</b> - Elementi che non vanno a capo e possono essere integrati nel testo, come i link, le immagini, oppure gli span </li>
-              <li><b>Liste</b> - Liste numerate o non numerate. Sono simili agli elementi blocco con una struttura particolare, ideali per definire elenchi o menu</li>
-            </ul>
+            <div id="inline-e-block" class="sub-section">
+              <h3 class="anchor"><span class="color-html"><i class="fas fa-hashtag"></i></span> Elementi inline e block</h3>
+              <p>
+                I tag HTML possono rappresentare oggetti (come ad esempio le immagini) o servire a suddividere la pagina in aree (come i &lt;div&gt; o le &lt;section&gt;). Ci sono diverse tipologie di tag e conoscerle diventa determinante per usare il tag giusto al posto giusto e per applicare in seguito le regole CSS.
+              </p>
+              <p>
+                Le principali tipologie di visualizzazione in cui si dividono gli elementi sono:
+              </p>
+              <ul class="normal-list html-list">
+                <li><b>Block</b> - Elementi che costituiscono un blocco attorno a sé. Non fanno parte di un testo e di conseguenza mandano a capo, come i paragrafi i div o le section. </li>
+                <li><b>Inline</b> - Elementi che non vanno a capo e possono essere integrati nel testo, come i link, le immagini, oppure gli span </li>
+                <li><b>Liste</b> - Liste numerate o non numerate. Sono simili agli elementi blocco con una struttura particolare, ideali per definire elenchi o menu</li>
+              </ul>
+            </div>
+
             <!-- gli attributi -->
-            <h3 id="attributi" class="anchor"><span class="color-html"><i class="fas fa-hashtag"></i></span> Gli Attributi</h3>
-            <p>
-              I tag HTML possono essere corredati di uno o più attributi, che servono per meglio specificare la funzione o la tipologia dell’elemento, per memorizzare dati o per arricchire di significato il contenuto.
-            </p>
-            <p>
-              Un tag con attributi si scrive in questo modo:
-            </p>
-            <div class="code">
-              &lt;tag attributo1="valore1" attributo2="valore2">
+            <div id="attributi" class="sub-section">
+              <h3 class="anchor"><span class="color-html"><i class="fas fa-hashtag"></i></span> Gli Attributi</h3>
+              <p>
+                I tag HTML possono essere corredati di uno o più attributi, che servono per meglio specificare la funzione o la tipologia dell’elemento, per memorizzare dati o per arricchire di significato il contenuto.
+              </p>
+              <p>
+                Un tag con attributi si scrive in questo modo:
+              </p>
+              <div class="code">
+                &lt;tag attributo1="valore1" attributo2="valore2">
+              </div>
+              <p>
+                Ecco un esempio pratico:
+              </p>
+              <div class="code">
+                &lt;input type="email" name="email" placeholder="Scrivi il tuo indirizzo email...">
+              </div>
+              <p>
+                Quindi sono coppie chiave-valore separate dal carattere = (uguale), i valori sono tipicamente racchiusi tra virgolette "", ma è possibile anche utilizzare gli apici ''. Si scrivono lasciando almeno uno spazio dopo il nome dell’elemento nel tag di apertura (o nell’unico tag nel caso di elementi non contenitori).
+              </p>
             </div>
-            <p>
-              Ecco un esempio pratico:
-            </p>
-            <div class="code">
-              &lt;input type="email" name="email" placeholder="Scrivi il tuo indirizzo email...">
-            </div>
-            <p>
-              Quindi sono coppie chiave-valore separate dal carattere = (uguale), i valori sono tipicamente racchiusi tra virgolette "", ma è possibile anche utilizzare gli apici ''. Si scrivono lasciando almeno uno spazio dopo il nome dell’elemento nel tag di apertura (o nell’unico tag nel caso di elementi non contenitori).
-            </p>
+
             <!-- Gli attributi data- -->
-            <h3 id="attributi-data" class="anchor"><span class="color-html"><i class="fas fa-hashtag"></i></span> Gli attributi <b>data-</b></h3>
+            <div id="attributi-data" class="sub-section">
+              <h3 class="anchor"><span class="color-html"><i class="fas fa-hashtag"></i></span> Gli attributi data-</h3>
+              <p>
+                Lo standard HTML5 ha introdotto i cosiddetti <b>"data-attributes"</b>, ovvero degli attributi inseriti nei tag allo scopo di ritenere alcune informazioni utili alla gestione del layout o a supporto dell’interfaccia utente.
+              </p>
+              <p>
+                In pratica possiamo definire un attributo con il prefisso <code>data-</code>, seguito dal nome (es. <code>data-cognome</code>) e assegnare ad esso un valore proprio come facciamo con gli altri attributi.
+              </p>
+              <p>
+                Mettiamo ad esempio di avere un’agenda e di voler mostrare l’indirizzo e il numero di telefono quando passiamo vicino ai nomi in un elenco. Possiamo associare tutte le informazioni che ci servono ad ogni elemento lista (&lt;li&gt;) grazie agli attributi “data-” e raggiungerli poi facilmente via <b>JavaScript</b>.
+              </p>
+              <div class="code">
+                &lt;ul id="elenco">
+                  &nbsp;&nbsp;&lt;li data-indirizzo="Piazza la lenza" data-telefono="3863535555">Luca&lt;/li>
+                &lt;/ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- lista tags -->
+          <section id="lista-tag">
+            <!-- Inizio -->
+            <div class="sub-section">
+              <h2><span class="color-html"><i class="fas fa-hashtag"></i></span> Lista dei tag</h2>
+              <p>
+                Questa sezione contine la lista completa dei tag in HTML5
+              </p>
+            </div>
+
+            <!-- Tag strutturali -->
+            <div id="tag-strutturali" class="sub-section">
+              <h3 class="anchor"><span class="color-html"><i class="fas fa-hashtag"></i></span> Structural Tags</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <td><b>Tag</b></td>
+                    <td><b>Descrizione</b></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>&lt;a></code></td>
+                    <td>Collegamento ipertestuale</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;article></code></td>
+                    <td>Testo di un articolo</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;aside></code></td>
+                    <td>Testo all'interno della spalla</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;body></code></td>
+                    <td>Rappresenta il corpo del documento</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;br></code></td>
+                    <td>Inserisce una singola andata a capo</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;details> </code></td>
+                    <td>Raggruppa dettagli aggiuntivi che l'utente può vedere o  nascondere tramite freccia</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;div></code></td>
+                    <td>Contenitore generico</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;h1> .. &lt;h6></code></td>
+                    <td>Intestazioni</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;head></code></td>
+                    <td>Contenitore del titolo di un documento</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;header></code></td>
+                    <td>Rappresenta header del documento o sezione</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;hr></code></td>
+                    <td>Inserisce linea orizontale</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;html></code></td>
+                    <td>Root del documento html</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;footer></code></td>
+                    <td>Pie di pagina/documento html</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;nav></code></td>
+                    <td>Sezione per i link di navigazione</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;p></code></td>
+                    <td>Paragrafo</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;section> </code></td>
+                    <td>Sezione generica del documentop (es: header, footer ecc)</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;span></code></td>
+                    <td>Contenitore inline</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;summary></code></td>
+                    <td>Intestazione per &lt;details></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Metadata tags -->
+            <div id="metadata-tag" class="sub-section">
+              <h3 class="anchor"><span class="color-html"><i class="fas fa-hashtag"></i></span> Metadata Tags</h3>
+              <p>
+                I tag di metadata non hanno la chiusura, il contenuto và inserito direttamente al suo interno.
+              </p>
+              <div class="code">
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <td><b>Tag</b></td>
+                    <td><b>Descrizione</b></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>&lt;base></code></td>
+                    <td>Specifica la base URL per tutti gli URL relativi in un  documento</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;link></code></td>
+                    <td>Richiama risorse esterne</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;meta></code></td>
+                    <td>Metadati</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;style></code></td>
+                    <td>Inserimento dei fogli di stile nel head del documento</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;title></code></td>
+                    <td>Definisce il titolo del documento html</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Form tags -->
+            <div id="form-tags" class="sub-section">
+              <h3 class="anchor"><span class="color-html"><i class="fas fa-hashtag"></i></span> Form Tags</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <td><b>Tag</b></td>
+                    <td><b>Descrizione</b></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>&lt;button></code></td>
+                    <td>Bottone cliccabile</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;datalist></code></td>
+                    <td>Raggruppa opzioni</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;fieldset></code></td>
+                    <td>Raggruppa elementi in un modulo</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;form></code></td>
+                    <td>Definisce un form/modulo</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;input></code></td>
+                    <td>Controllo per emmissione dati</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;keygen></code></td>
+                    <td>Genera chiavi doppie</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;label></code></td>
+                    <td>Etichetta per &lt;input></td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;legend></code></td>
+                    <td>Didascalia per &lt;fieldset></td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;optgroup></code></td>
+                    <td>Raggruppa opzioni in un elenco a discesa. <b>Appare in grassetto</b></td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;option></code></td>
+                    <td>Opzione in un elenco a discesa ( &lt;select> )</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;select></code></td>
+                    <td>Elenco a discesa con opzioni</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;textarea></code></td>
+                    <td>Area di testo a righe multiple</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Formatting Tags -->
+            <div id="formatting-tags" class="sub-section">
+              <h3 class="anchor"><span class="color-html"><i class="fas fa-hashtag"></i></span> Formatting Tags</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <td><b>Tag</b></td>
+                    <td><b>Descrizione</b></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>&lt;abbr></code></td>
+                    <td>Defines an abbreviated form of a longer word or phrase.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;acronym></code></td>
+                    <td>Defines an acronym.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;address></code></td>
+                    <td>Specifies the author's contact information.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;b></code></td>
+                    <td>Displays text in a bold style.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;bdo></code></td>
+                    <td>Overrides the current text direction.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;big></code></td>
+                    <td>Displays text in a large size.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;blockquote></code></td>
+                    <td>Defines a long quotation.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;cite></code></td>
+                    <td>Indicates a citation or reference to another source.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;code></code></td>
+                    <td>Specifies text as computer code.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;del></code></td>
+                    <td>Specifies a block of deleted text.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;dfn></code></td>
+                    <td>Specifies a definition.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;em></code></td>
+                    <td>Specifies emphasized text. (italic style for SEO)</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;i></code></td>
+                    <td>Displays text in an italic style.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;ins></code></td>
+                    <td>Defines a block of text that has been inserted into a document.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;kbd></code></td>
+                    <td>Specifies text as keyboard input.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;mark></code></td>
+                    <td> Represents text highlighted for reference purposes. <mark>hello world</mark> </td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;output></code></td>
+                    <td>Represents the result of a calculation.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;pre></code></td>
+                    <td>Defines a block of preformatted text.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;progress></code></td>
+                    <td>Represents the completion progress of a task.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;small></code></td>
+                    <td>Displays text in a smaller size.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;strong></code></td>
+                    <td>Indicate strongly emphasized text. (SEO)</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;sub></code></td>
+                    <td>Defines subscripted text.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;sup></code></td>
+                    <td>Defines superscripted text.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;tt></code></td>
+                    <td>Displays text in a teletype style.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;var></code></td>
+                    <td>Defines a variable.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;wbr></code></td>
+                    <td>Represents a line break opportunity.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- List Tags -->
+            <div id="list-tags" class="sub-section">
+              <h3 class="anchor"><span class="color-html"><i class="fas fa-hashtag"></i></span> List Tags</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <td><b>Tag</b></td>
+                    <td><b>Descrizione</b></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>&lt;dd></code></td>
+                    <td>Specifies a definition for a term in a definition list.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;dl></code></td>
+                    <td>Defines a definition list.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;dt></code></td>
+                    <td>Defines a term (an item) in a definition list.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;li>></code></td>
+                    <td>Defines a list item.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;ol></code></td>
+                    <td>Defines an ordered list.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;menu></code></td>
+                    <td>	Represents a list of commands.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;ul></code></td>
+                    <td>Defines an unordered list.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Table Tags -->
+            <div id="table-tags" class="sub-section">
+              <h3 class="anchor"><span class="color-html"><i class="fas fa-hashtag"></i></span> Table Tags</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <td><b>Tag</b></td>
+                    <td><b>Descrizione</b></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>&lt;caption></code></td>
+                    <td>Defines the title of a table.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;col></code></td>
+                    <td>Defines attribute values for one or more columns in a table.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;colgroup></code></td>
+                    <td>Specifies attributes for multiple columns in a table.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;table></code></td>
+                    <td>Defines a data table.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;tbody></code></td>
+                    <td>Groups a set of rows defining the main body of the table data.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;td></code></td>
+                    <td>Defines a cell in a table.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;tfoot></code></td>
+                    <td>Groups a set of rows summarizing the columns of the table.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;thead></code></td>
+                    <td>Groups a set of rows that describes the column labels of a table.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;th></code></td>
+                    <td>Defines a header cell in a table.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;tr></code></td>
+                    <td>Defines a row of cells in a table.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Scripting Tags -->
+            <div id="scripting-tags" class="sub-section">
+              <h3 class="anchor"><span class="color-html"><i class="fas fa-hashtag"></i></span> Scripting Tags</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <td><b>Tag</b></td>
+                    <td><b>Descrizione</b></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>&lt;noscript></code></td>
+                    <td>Defines alternative content to display when the browser doesn't support scripting.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;script></code></td>
+                    <td>Places script in the document for client-side processing.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Embedded Content Tags -->
+            <div id="embedded-tags" class="sub-section">
+              <h3 class="anchor"><span class="color-html"><i class="fas fa-hashtag"></i></span> Embedded Content Tags</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <td><b>Tag</b></td>
+                    <td><b>Descrizione</b></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>&lt;area></code></td>
+                    <td>Defines a specific area within an image map.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;audio></code></td>
+                    <td>Embeds a sound, or an audio stream in an HTML document.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;canvas></code></td>
+                    <td>Defines a region in the document, which can be used to draw graphics on the fly via scripting (usually JavaScript).</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;embed></code></td>
+                    <td>Embeds external application, typically multimedia content like audio or video into an HTML document.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;figcaption></code></td>
+                    <td>Defines a caption or legend for a figure.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;figure></code></td>
+                    <td>Represents a figure illustrated as part of the document.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;frame></code></td>
+                    <td>Defines a single frame within a frameset.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;frameset></code></td>
+                    <td>Defines a collection of frames or other frameset.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;iframe></code></td>
+                    <td>Displays a URL in an inline frame.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;img></code></td>
+                    <td>Displays an inline image.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;map></code></td>
+                    <td>Defines a client-side image-map.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;noframes></code></td>
+                    <td>Defines an alternate content that displays in browsers that do not support frames.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;object></code></td>
+                    <td>Defines an embedded object.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;source></code></td>
+                    <td>Defines alternative media resources for the media elements like &lt;audio> or &lt;video>.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;time></code></td>
+                    <td>Represents a time and/or date.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;video> </code></td>
+                    <td>Embeds video content in an HTML document.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- Conclusioni -->
+          <section id="conclusioni" class="anchor">
+            <h2><span class="color-html"><i class="fas fa-hashtag"></i></span> Conclusioni</h2>
+            <p>
+              È una buona abitudine quella di validare il vostro codice HTML, per vedere se fate degli errori. Per farlo potete utilizzare lo stesso <a href="https://validator.w3.org/#validate_by_input" class="color-html" target="_blank" alt="W3C html validator">validatore del W3C</a> (che è il più noto)
+            </p>
           </section>
 
         </div>
@@ -225,7 +797,8 @@
         <div class="credits">
           <div>
             <p>
-              <a href="https://github.com/alessandro-orlov" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/alessandro-orlov" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/alexander-orlov-7678621a3/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
               <a href="https://www.facebook.com/profile.php?id=100013707540890" target="_blank"><i class="fab fa-facebook-f"></i></a>
               <a href="https://www.instagram.com/alfaandomega/" target="_blank"><i class="fab fa-instagram"></i></a>
             </p>

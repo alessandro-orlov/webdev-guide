@@ -45,6 +45,16 @@ section {
   margin-bottom: -30px;
 }
 
+section .sub-section {
+  padding-top: 40px;
+  margin-bottom: -20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: -30px;
+}
+
 h1,
 h2,
 h3,
@@ -204,7 +214,7 @@ header nav .desktop-navigation ul li {
 
 header nav .desktop-navigation ul li a {
   display: inline-block;
-  margin-left: 25px;
+  margin-left: 15px;
   position: relative;
   line-height: 70px;
   padding: 0 10px;
@@ -430,7 +440,7 @@ main .flex-page .content {
 
 main .flex-page .content code {
   padding: 5px;
-  background-color: #fafafd;
+  background-color: #f5f5fa;
 }
 
 main .flex-page .content .code {
@@ -444,10 +454,28 @@ main .flex-page .content .code {
   line-height: 26px;
 }
 
+main .flex-page .content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+main .flex-page .content table thead {
+  background-color: #f5f5fa;
+}
+
+main .flex-page .content table tr td:first-child {
+  width: 20%;
+}
+
+main .flex-page .content table td {
+  padding: 10px;
+  border: 1px solid #dedede;
+}
+
 footer {
   background-color: #f5f5fa;
   border-top: 1px solid #fff;
-  padding: 40px 0;
+  padding: 40px 10%;
   text-align: center;
   color: #5d5d5d;
 }
@@ -484,27 +512,6 @@ footer p a:hover {
 }
 
 @media all and (min-width: 769px) {
-  header nav .desktop-navigation {
-    display: block;
-  }
-
-  header nav .mobile-navigation {
-    display: none;
-  }
-
-  main .flex-page aside {
-    flex-basis: 20%;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 71px;
-    width: 25%;
-    height: 80vh;
-  }
-
-  main .flex-page .content {
-    flex-basis: 69%;
-  }
-
   main .tech-stack .stack-selection {
     justify-content: flex-start;
   }
@@ -518,13 +525,42 @@ footer p a:hover {
   }
 }
 
-@media all and (min-width: 960px) {
+@media all and (min-width: 1025px) {
+  header {
+    padding: 0 10%;
+  }
+
+  header nav .desktop-navigation {
+    display: block;
+  }
+
+  header nav .mobile-navigation {
+    display: none;
+  }
+
+  main .flex-page aside {
+    flex-basis: 25%;
+    padding: 0 30px 0 10%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 71px;
+    height: 80vh;
+  }
+
   main .flex-page .content {
-    flex-basis: 75%;
+    flex-basis: 73%;
+    padding: 0 10% 0 30px;
   }
 
   main .tech-stack .stack-selection .tech-container {
     flex-basis: calc(100% / 4);
+  }
+}
+
+@media all and (min-width: 1170px) {
+  main .flex-page .content {
+    flex-basis: 75%;
+    padding: 0 10% 0 30px;
   }
 }
 
