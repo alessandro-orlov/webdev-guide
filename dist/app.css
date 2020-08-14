@@ -42,17 +42,22 @@ body .color-laravel {
 }
 
 section {
-  margin-bottom: -30px;
+  padding: 40px 0 0;
+  margin-bottom: -10px;
 }
 
 section .sub-section {
   padding-top: 40px;
-  margin-bottom: -20px;
+  margin-top: -50px;
 }
 
 h1 {
   font-size: 2.5em;
   margin-bottom: -30px;
+}
+
+h2 {
+  font-size: 1.8emM;
 }
 
 h1,
@@ -72,10 +77,6 @@ p {
 a {
   text-decoration: none;
   color: #333;
-}
-
-.anchor {
-  padding-top: 30px;
 }
 
 ul {
@@ -125,6 +126,16 @@ ul.normal-list.php-list li::before {
 
 ul.normal-list.laravel-list li::before {
   color: #e74632;
+}
+
+.img-max-400 {
+  margin: 20px 0;
+  max-width: 400px;
+}
+
+.img-70 {
+  width: 70%;
+  padding: 10px;
 }
 
 img {
@@ -544,7 +555,8 @@ footer p a:hover {
     position: -webkit-sticky;
     position: sticky;
     top: 71px;
-    height: 80vh;
+    height: calc(100vh - 70px);
+    overflow: auto;
   }
 
   main .flex-page .content {

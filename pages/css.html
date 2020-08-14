@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>html - guide by Alexander Orlov</title>
+    <title>CSS - guide by Alexander Orlov</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Source+Code+Pro:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <!-- Fontawsome -->
@@ -69,70 +69,144 @@
       <div class="flex-page">
 
         <aside class="sidebar">
-          <h2>Page navigation</h2>
+          <h2>Navigazione Pagina</h2>
           <ul class="page-navigation">
+            <li><a href="#introduzione">Introduzione</a></li>
+            <li><a href="#css-syntax">CSS: regole, proprietà</a></li>
             <li class="sub-list">
-              <a href="#">
-                link
+              <a>
+                CSS: i selettori
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
                 <span class="minus"><i class="fas fa-minus"></i></span>
               </a>
               <ul>
-                <li><a href="#">sub link</a></li>
-                <li><a href="#">sub link</a></li>
-                <li><a href="#">sub link</a></li>
+                <li><a href="#selectors">Inizio</a></li>
+                <li><a href="#jolly">Selettore universale</a></li>
+                <li><a href="#type">di tipo</a></li>
+                <li><a href="#class">di classe</a></li>
+                <li><a href="#id">di id</a></li>
               </ul>
             </li>
-            <li><a href="#">link</a></li>
-            <li><a href="#">link</a></li>
-            <li><a href="#">link</a></li>
-            <li class="sub-list">
-              <a href="#">
-                link
-                <span class="plus visible"><i class="fas fa-plus"></i></span>
-                <span class="minus"><i class="fas fa-minus"></i></span>
-              </a>
-              <ul>
-                <li><a href="#">sub link</a></li>
-                <li><a href="#">sub link</a></li>
-                <li><a href="#">sub link</a></li>
-              </ul>
-            </li>
-            <li><a href="#">link</a></li>
+            <li><a href="#specificita">Specificità</a></li>
+
+            <li><a href="#">Conclusioni</a></li>
           </ul>
         </aside>
 
         <!-- Begin page content -->
         <div class="content">
-          <h1>Guida CSS</h1>
-          <p><i class="fas fa-star-of-life"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h1 class="color-css">Guida CSS</h1>
+          <section id="introduzione" class="anchor">
+            <h2><span class="color-css"><i class="fas fa-hashtag"></i></span> Introduzione</h2>
+            <p>
+              I <strong>CSS</strong> servono per gestire tutto il <strong>layout</strong> di un sito Web. Grazie ad essi è possibile intervenire sulla formattazione del testo, sul posizionamento degli elementi grafici e sulla disposizione che questi elementi avranno rispetto ai diversi dispositivi.
+            </p>
+            <p>
+              L’acronimo CSS sta per <strong>Cascading Style Sheets</strong> (fogli di stile a cascata) e designa un linguaggio di stile per i documenti web. I CSS istruiscono un browser o un altro programma utente su come il documento debba essere presentato all’utente, per esempio definendone i font, i colori, le immagini di sfondo, il layout, il posizionamento delle colonne o di altri elementi sulla pagina, etc.
+            </p>
+          </section>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <!-- Regole CSS -->
+          <section id="css-syntax" class="anchor">
+            <h2><span class="color-css"><i class="fas fa-hashtag"></i></span> CSS: regole, proprietà</h2>
+            <p>
+              La tipica struttura di una regola CSS è composta da due blocchi principali:
+            </p>
+            <ul class="normal-list css-list">
+              <li><b>il selettore;</b></li>
+              <li><b>il blocco delle dichiarazioni;</b> </li>
+            </ul>
+            <p>
+              Il <strong>selettore</strong> serve a definire la parte del documento cui verrà applicata la regola
+            </p>
+            <p>
+              Il <strong>blocco delle dichiarazioni</strong> è delimitato rispetto al selettore e alle altre regole da due parentesi graffe, la prima di apertura e la seconda di chiusura. Al suo interno possono trovare posto più dichiarazioni.<br>
+              Una <strong>dichiarazione</strong> è composta da una coppia:
+            </p>
+            <ul class="normal-list css-list">
+              <li><b>proprietà;</b></li>
+              <li><b>valore;</b> </li>
+            </ul>
+            <div class="img-max-400">
+              <img src="../img/regole-dichiarazioni.webp" alt="regola-css">
+            </div>
+          </section>
+
+          <!-- CSS i selettori -->
+          <section id="selectors" class="anchor">
+            <div class="sub-section">
+              <h2><span class="color-css"><i class="fas fa-hashtag"></i></span> I selettori CSS</h2>
+              <p>
+                Il selettore serve "per selezionare" il o gli elementi della pagina cui applicare le dichiarazioni contenute tra le parentesi graffe (blocco delle dichiarazioni).
+              </p>
+            </div>
+
+            <!-- Selettore universale - jolly -->
+            <div class="sub-section" id="jolly">
+              <h3 class="anchor"><span class="color-css"><i class="fas fa-hashtag"></i></span> Selettore universale</h3>
+              <p>
+                Anche nei CSS abbiamo un <b>jolly</b>. Il selettore universale serve infatti a selezionare tutti gli elementi di un documento. Si esprime con il carattere <b>*</b> (asterisco) e rappresenta tutti gli elementi.<br>
+                In pratica il simbolo dell'asterisco potrà essere utilizzato per settare una regola globale per tutti gli elementi della pagina o per stilizzare tutti gli elementi all'interno di un dato selettore.
+              </p>
+              <div class="code">
+                * { padding: 0; }
+              </div>
+            </div>
+
+            <!-- Selettore di tipo -->
+            <div class="sub-section" id="type">
+              <h3 class="anchor"><span class="color-css"><i class="fas fa-hashtag"></i></span> Selettore di tipo</h3>
+              <p>
+                È il più semplice dei selettori. È costituito dal nome di uno specifico elemento HTML (h1, p, li, img ecc). Serve a selezionare tutti gli elementi di quel tipo presenti in un documento.
+              </p>
+              <div class="code">
+                h1 {color: green;}
+                p {background-color: yellow;}
+              </div>
+            </div>
+
+            <!-- Selettore di classe -->
+            <div class="sub-section" id="class">
+              <h3 class="anchor"><span class="color-css"><i class="fas fa-hashtag"></i></span> Selettore di classe</h3>
+              <p>
+                Per definire una classe si usa far precedere il nome da un semplice punto. n selettore di classe così definito può essere applicato a tutti gli elementi di un documento HTML.
+              </p>
+              <div class="code">
+                .testo-rosso {color: red;}
+              </div>
+            </div>
+
+            <!-- Selettore di Id -->
+            <div class="sub-section" id="id">
+              <h3 class="anchor"><span class="color-css"><i class="fas fa-hashtag"></i></span> Selettore di id</h3>
+              <p>
+                Per definire un id si usa far precedere il nome dal <b>#</b> (cancelletto). Solitamenti i nomi degli id sono <strong>univoci!</strong>
+              </p>
+              <div class="code">
+                #titolo {color: blue;}
+              </div>
+            </div>
+          </section>
+
+          <!-- Specificità CSS -->
+          <section id="specificita" class="anchor">
+            <h2><span class="color-css"><i class="fas fa-hashtag"></i></span> Specificità CSS</h2>
+            <p>
+              Per specificità si intende la <strong>priorità</strong> che una regola ha sulle altre che si riferiscono allo stesso selettore. La proprietà con valore di specificità maggiore avrà la precedenza sulle altre; nel caso in cui due o più regole. Se tale valore è uguale, verrà assegnata l’ultima inserita nell’ordine a cascata.<br>
+              Ecco la gerarchia:
+            </p>
+            <ul class="normal-list css-list">
+              <li><b class="color-laravel">!important</b> - unlimited power!!!!</li>
+              <li><b>inline style</b> - specificità 1000 (1000)</li>
+              <li><b>#id</b> - specificità 100 (0100)</li>
+              <li><b>.class</b> - specificità 10 (0010)</li>
+              <li><b>element selector</b> - specificità 1 (0001)</li>
+            </ul>
+            <div class="img-70">
+              <img src="../img/css-specificity-wars.png" alt="regole specificità">
+            </div>
+          </section>
+
         </div>
         <!-- End page content -->
       </div>
