@@ -1,0 +1,112 @@
+// RESET
+* {
+  @include reset;
+}
+
+body {
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  .color-html {
+    color: $color_html
+  }
+  .color-css {
+    color: $color_css
+  }
+  .color-js {
+    color: $color_js
+  }
+  .color-jq {
+    color: $color_jquery
+  }
+  .color-mysql {
+    color: $color_mysql
+  }
+  .color-php {
+    color: $color_php
+  }
+  .color-laravel {
+    color: $color_laravel
+  }
+}
+section {
+  margin-bottom: -30px;
+}
+h1, h2, h3, h4, h5 {
+  padding: 40px 0 10px;
+}
+p {
+  padding: 10px 0;
+  line-height: 26px;
+  letter-spacing: .5px;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+.anchor { padding-top: 30px; }
+ul {
+  list-style: none;
+  li {
+    padding: 5px 0;
+  }
+  &.normal-list {
+    padding-left: 30px;
+    line-height: 26px;
+    li::before {
+      content: "\25CF";
+      display: inline-block;
+      font-weight: bold;
+      font-size: 1.4em;
+      width: 1.4em;
+    }
+    &.html-list li::before {
+      color: $color_html;
+    }
+    &.css-list li::before {
+      color: $color_css;
+    }
+    &.js-list li::before {
+      color: $color_js;
+    }
+    &.jq-list li::before {
+      color: $color_jquery;
+    }
+    &.mysql-list li::before {
+      color: $color_mysql;
+    }
+    &.php-list li::before {
+      color: $color_php;
+    }
+    &.laravel-list li::before {
+      color: $color_laravel;
+    }
+  }
+}
+img {
+  display: block;
+  width: 100%;
+}
+.container {
+  width: 100%;
+  padding: 0 5%;
+}
+.container-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+.go-top {
+  position: fixed;
+  right: 3%;
+  bottom: 5%;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  background-color: $guide_red;
+  text-align: center;
+  color: #fff;
+}

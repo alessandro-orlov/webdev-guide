@@ -1,0 +1,141 @@
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #dedede;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+  position: relative;
+  .logo {
+    padding: 10px;
+    margin-left: -10px;
+    a {
+      @include clearfix;
+      img.avatar {
+        width: 50px;
+        border-radius: 50%;
+        float: left;
+      }
+      span {
+        float: left;
+        padding: 10px 5px;
+        font-size: .9em;
+        font-weight: 600;
+      }
+    }
+  }
+  nav {
+    .desktop-navigation {
+      display: none;
+      ul {
+        @include clearfix;
+        align-self: center;
+        li {
+          float: left;
+          margin: 0;
+          padding: 0;
+          a {
+            display: inline-block;
+            margin-left: 25px;
+            position: relative;
+            line-height: 70px;
+            padding: 0 10px;
+            span {
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              height: 4px;
+              width: 0%;
+              background-color: $guide_red;
+              transition: .2s ease-in-out;
+            }
+          }
+          a:last-child {
+            margin-right: -10px;
+          }
+          a:hover span {
+            width: 100%;
+            left: 0;
+          }
+        }
+      }
+    }
+    /* BURGER MENU */
+    .burger-menu {
+      line-height: 70px; /* height of header line*/
+      position: relative;
+      #burger-button {
+        background: none;
+        border:none;
+        outline: none;
+        cursor: pointer;
+        height: 23px;
+        span {
+          display: inline-block;
+          width: 35px;
+          height: 3px;
+          background-color: $guide_red;
+          position: relative;
+          vertical-align: middle;
+          transition: .2s;
+        }
+        span::before {
+          content: '';
+          width: 35px;
+          height: 3px;
+          background-color: $guide_red;
+          position: absolute;
+          top: -8px;
+          left:0;
+          transition: .2s;
+        }
+        span::after {
+          content: '';
+          width: 35px;
+          height: 3px;
+          background-color: $guide_red;
+          position: absolute;
+          top: 8px;
+          left:0;
+          transition: .2s;
+        }
+        &.active span {
+          height: 0;
+        }
+        &.active span::before {
+          top: 0;
+          transform: rotate(45deg);
+        }
+        &.active span::after {
+          top: 0;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    .mobile-menu {
+      position: fixed;
+      width: 100%;
+      height: calc(0% - 71px);
+      top: 71px;
+      left: 0;
+      text-align: center;
+      background-color:#fff;
+      z-index: 100;
+      overflow: hidden;
+      transition: all .5s ease;
+      &.visible {
+        height: calc(100% - 71px);
+      }
+      ul {
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        li {
+          margin: 15px 0;
+          a {
+            font-size: 1.2em;
+          }
+        }
+      }
+    }
+  }
+}

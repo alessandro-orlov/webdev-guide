@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html - guide by Alexander Orlov</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Source+Code+Pro:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <!-- Fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <!-- My Style -->
+    <link rel="stylesheet" href="../dist/app.css">
+  </head>
+  <body>
+    <span id="top">&nbsp;</span>
+    <div class="container-fixed">
+      <header>
+        <div class="logo">
+          <a href="../index.html">
+            <img class="avatar" src="../img/logo.jpg" alt="logo">
+            <span>Web Development guide <br>by Alexander Orlov </span>
+          </a>
+        </div>
+
+        <nav>
+          <!-- Begin desktop navigation -->
+          <div class="desktop-navigation">
+            <ul>
+              <li><a href="../index.html">home <span></span> </a></li>
+              <li><a href="html.html">html <span></span> </a></li>
+              <li><a href="css.html">css <span></span> </a></li>
+              <li><a href="javascript.html">javaScript <span></span> </a></li>
+              <li><a href="jquery.html">jQuery <span></span> </a></li>
+              <li><a href="mysql.html">mySQL <span></span> </a></li>
+              <li><a href="php.html">php <span></span> </a></li>
+              <li><a href="laravel.html">Laravel <span></span> </a></li>
+            </ul>
+          </div>
+          <!-- End desktop navigation -->
+
+          <!-- Begin mobile navigation -->
+          <div class="mobile-navigation">
+            <div class="burger-menu">
+              <button id="burger-button">
+                <span></span>
+              </button>
+            </div>
+
+            <div class="mobile-menu container">
+              <ul>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="html.html">html </a></li>
+                <li><a href="css.html">css </a></li>
+                <li><a href="javascript.html">javaScript </a></li>
+                <li><a href="jquery.html">jQuery </a></li>
+                <li><a href="mysql.html">mySQL </a></li>
+                <li><a href="php.html">php </a></li>
+                <li><a href="laravel.html">Laravel </a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- End mobile navigation -->
+        </nav>
+      </header>
+    </div>
+
+    <!-- Begin main content -->
+    <main>
+      <div class="flex-page">
+
+        <aside class="sidebar">
+          <h2>Navigazione Pagina</h2>
+          <ul class="page-navigation">
+            <li><a href="#introduzione">Introduzione</a></li>
+            <li><a href="#storia">Storia</a></li>
+            <li><a href="#html5">HTML 5: Web e Mobile</a></li>
+            <li><a href="#struttura-html">Struttura del HTML</a></li>
+            <li class="sub-list">
+              <a>
+                Elementi e tag in HTML
+                <span class="plus visible"><i class="fas fa-plus"></i></span>
+                <span class="minus"><i class="fas fa-minus"></i></span>
+              </a>
+              <ul>
+                <li><a href="#elementi-e-tag">Inizio</a></li>
+                <li><a href="#inline-e-block">Elementi inline e block</a></li>
+                <li><a href="#attributi">Gli Attributi</a></li>
+                <li><a href="#attributi-data">Gli Attributi data-</a></li>
+              </ul>
+            </li>
+            <li><a href="#">link</a></li>
+          </ul>
+        </aside>
+
+        <!-- Begin page content -->
+        <div class="content">
+          <h1 class="color-html">Guida HTML</h1>
+
+          <!-- introduzione -->
+          <section id="introduzione" class="anchor">
+            <h2><span class="color-html"><i class="fas fa-hashtag"></i></span> Introduzione</h2>
+            <p>
+              <strong>HTML</strong> è il principale linguaggio di pubblicazione di pagine Web, oltre che uno strumento sempre più utilizzato per la realizzazione di contenuti e applicazioni mobile. <br>
+              HTML è l’acronimo di HyperText Markup Language (“Linguaggio di contrassegno per gli Ipertesti”) e non è un linguaggio di programmazione ma di
+              markup (di ‘contrassegno’ o ‘di marcatura’), che permette di indicare come disporre gli elementi all’interno di una pagina.
+            </p>
+            <p>
+              Queste indicazioni vengono date attraverso degli appositi marcatori, detti tag (‘etichette’), che hanno la caratteristica di essere inclusi tra parentesi angolari <b>&lt;tag&gt;</b>
+            </p>
+          </section>
+
+          <!-- Storia -->
+          <section id="storia" class="anchor">
+            <h2><span class="color-html"><i class="fas fa-hashtag"></i></span> Storia</h2>
+            <p>
+              Nel 1990, <strong>Tim Berners-Lee</strong> al CERN inventa il <b>www</b> (World Wide Web).<br>
+              E ha definito la prima versione del linguaggio, fino ai giorni nostri, HTML ha continuato ad evolversi fino a maturare nello <strong>standard HTML 5</strong>.
+            </p>
+            <p>
+              Nel 1995 nasceva il <b>W3C: World Wide Web Consortium</b> l’organizzazione fondata dallo stesso Berners Lee con CERN e MIT, che oggi vede coinvolti numerosi istituti universitari e i più importanti attori tecnologici sulla scena mondiale come Apple, Microsoft, Google, Facebook, IBM, Adobe, e moltissimi altri.
+            </p>
+            <p>
+              Il W3C si occupa di traghettare lo standard attraverso la versione 3.2 (1997) fino alla definizione di HTML 4 nel 1998 e HTML 4.01, la versione che ha sostenuto la crescita del Web di tutti gli anni 2000 arrivando allo standard attuale HTML 5.
+            </p>
+          </section>
+
+          <!-- HTML 5: Web e Mobile -->
+          <section id="html5" class="anchor">
+            <h2><span class="color-html"><i class="fas fa-hashtag"></i></span> HTML 5: Web e Mobile</h2>
+            <p>
+              La versione attuale è l'HTML 5 che è anche la versione che nasce appositamente per uscire dal solo ambito Web e diventare piattaforma per la creazione di applicazioni, anche desktop e mobile.
+            </p>
+            <p>
+              La specifica HTML5 infatti si compone della definizione di:
+            </p>
+            <ul class="normal-list html-list">
+              <li>una sintassi per il markup più efficace e adatta alle esigenze più moderne, con l’introduzione di specifici controlli per i form o degli attributi <em>“data-”</em> da arricchire i tag di informazioni specifiche;</li>
+              <li>una serie di API che consentono di gestire, a livello approfondito aspetti come network, multimedia, e hardware dei dispositivi. In altre parole dalla gestione del video e dell’audio al monitoraggio delle batterie di un device.</li>
+            </ul>
+            <p>
+              Questo sviluppo dello standard ha dato il via alla generazione delle cosiddette <b>App mobile ibride</b>, che sfruttano sia HTML5, per creare app che si possono distribuire, come quelle native, sui marketplace dei dispositivi più comuni (come Google Play per Android ad esempio).
+            </p>
+          </section>
+
+          <!-- Struttura del HTML -->
+          <section id="struttura-html" class="anchor">
+            <h2><span class="color-html"><i class="fas fa-hashtag"></i></span> Struttura del HTML</h2>
+            <p>
+              HTML è un linguaggio interpretato dal browser (<i>Chrome, Firefox, Safari ecc.</i>) e per essere visualizzato correttamente il file deve avere l'estensione <b>.html</b>.<br>
+              La struttura del file è seguente:
+            </p>
+            <div class="code">
+              &lt;!doctype html&gt;
+              &lt;html lang="it"&gt;
+              &nbsp; &lt;head&gt;
+              &nbsp;&nbsp; &lt;title&gt; Ciao Mondo! &lt;/title&gt;
+              &nbsp;&nbsp; &lt;meta charset="utf-8"&gt;
+              &nbsp;&nbsp; &lt;meta name="description" content="descrizione della pagina"&gt;
+              &nbsp;&nbsp; &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+              &nbsp; &lt;/head&gt;
+              &nbsp; &lt;body&gt;
+              &nbsp;&nbsp; &lt;h1&gt; Ciao Mondo! &lt;/h1&gt;
+              &nbsp;&nbsp; &lt;p&gt; Questa è una pagina HTML! &lt;/p&gt;
+              &nbsp; &lt;/body&gt;
+              &lt;/html&gt;
+            </div>
+          </section>
+
+          <!-- Elementi e tag in HTML -->
+          <section id="elementi-e-tag" class="anchor">
+            <h2><span class="color-html"><i class="fas fa-hashtag"></i></span> Elementi e tag in HTML</h2>
+            <p>
+              In una pagina HTML tutti gli elementi sono connotati da <b>tag</b> (letteralmente “etichette”). Si tratta di marcatori che evidenziano non tanto l’aspetto, quanto il <b>senso</b>, il <b>ruolo</b>, o l’organizzazione che vogliamo assegnare ai contenuti.
+            </p>
+            <p>
+              Questa visione “semantica” degli elementi è fondamentale, ci aiuta a non perdere di vista il fatto che una pagina deve essere un luogo ordinato di informazioni, soprattutto sul Web.
+              Un tag è una keyword del linguaggio racchiusa tra parentesi angolari <code> &lt; tag &gt; </code>
+            </p>
+            <!-- Elementi inline e block -->
+            <h3 id="inline-e-block" class="anchor"><span class="color-html"><i class="fas fa-hashtag"></i></span> Elementi inline e block</h3>
+            <p>
+              I tag HTML possono rappresentare oggetti (come ad esempio le immagini) o servire a suddividere la pagina in aree (come i &lt;div&gt; o le &lt;section&gt;). Ci sono diverse tipologie di tag e conoscerle diventa determinante per usare il tag giusto al posto giusto e per applicare in seguito le regole CSS.
+            </p>
+            <p>
+              Le principali tipologie di visualizzazione in cui si dividono gli elementi sono:
+            </p>
+            <ul class="normal-list html-list">
+              <li><b>Block</b> - Elementi che costituiscono un blocco attorno a sé. Non fanno parte di un testo e di conseguenza mandano a capo, come i paragrafi i div o le section. </li>
+              <li><b>Inline</b> - Elementi che non vanno a capo e possono essere integrati nel testo, come i link, le immagini, oppure gli span </li>
+              <li><b>Liste</b> - Liste numerate o non numerate. Sono simili agli elementi blocco con una struttura particolare, ideali per definire elenchi o menu</li>
+            </ul>
+            <!-- gli attributi -->
+            <h3 id="attributi" class="anchor"><span class="color-html"><i class="fas fa-hashtag"></i></span> Gli Attributi</h3>
+            <p>
+              I tag HTML possono essere corredati di uno o più attributi, che servono per meglio specificare la funzione o la tipologia dell’elemento, per memorizzare dati o per arricchire di significato il contenuto.
+            </p>
+            <p>
+              Un tag con attributi si scrive in questo modo:
+            </p>
+            <div class="code">
+              &lt;tag attributo1="valore1" attributo2="valore2">
+            </div>
+            <p>
+              Ecco un esempio pratico:
+            </p>
+            <div class="code">
+              &lt;input type="email" name="email" placeholder="Scrivi il tuo indirizzo email...">
+            </div>
+            <p>
+              Quindi sono coppie chiave-valore separate dal carattere = (uguale), i valori sono tipicamente racchiusi tra virgolette "", ma è possibile anche utilizzare gli apici ''. Si scrivono lasciando almeno uno spazio dopo il nome dell’elemento nel tag di apertura (o nell’unico tag nel caso di elementi non contenitori).
+            </p>
+            <!-- Gli attributi data- -->
+            <h3 id="attributi-data" class="anchor"><span class="color-html"><i class="fas fa-hashtag"></i></span> Gli attributi <b>data-</b></h3>
+          </section>
+
+        </div>
+        <!-- End page content -->
+      </div>
+    </main>
+    <!-- End main content -->
+
+    <!-- Begin footer -->
+    <footer>
+      <div class="container">
+        <div class="credits">
+          <div>
+            <p>
+              <a href="https://github.com/alessandro-orlov" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=100013707540890" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/alfaandomega/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </p>
+          </div>
+          <p class="copy">&copy; 2020 Alexander Orlov - web development personal guide</p>
+        </div>
+      </div>
+    </footer>
+    <!-- End footer -->
+
+    <!-- Go to top -->
+    <a class="go-top" href="#top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JS -->
+    <script src="../dist/app.js"></script>
+
+    <!-- tamplate engine -->
+    <script id="entry-template" type="text/x-handlebars-template">
+      <a class="tech-container" href="{{link}}">
+        <div class="technology">
+          <div class="tech-logo">
+            <img src="img/stack-logos/{{logo}}" alt="{{title}} logo">
+          </div>
+          <h3>{{title}}</h3>
+          <p>
+            {{description}}
+          </p>
+        </div>
+      </a>
+    </script>
+  </body>
+</html>
