@@ -42,6 +42,9 @@
   main .flex-page .content {
     flex-basis: 73%;
     padding: 0 10% 0 30px;
+    .spec-wars {
+      width: 70%;
+    }
   }
   main .tech-stack .stack-selection .tech-container {
     flex-basis: calc(100% / 4);
@@ -52,6 +55,5 @@
 @media all and (min-width:1170px) {
   main .flex-page .content {
     flex-basis: 75%;
-    padding: 0 10% 0 30px;
   }
 }

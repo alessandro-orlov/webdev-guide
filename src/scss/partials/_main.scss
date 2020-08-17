@@ -89,12 +89,18 @@ main {
           }
         }
       }
+      h2 {
+        text-decoration: none;
+        font-size: 1.5em;
+      }
     }
     .content {
       flex-basis: 100%;
-      padding: 0 5% 0 30px;
+      padding: 0 5% 0 5%;
       code {
-        padding: 5px;
+        display: inline-block;
+        margin: 5px 0;
+        padding: 2px 5px;
         background-color: #f5f5fa;
       }
       .code {
@@ -124,6 +130,50 @@ main {
           border: 1px solid #dedede;
         }
       }
+      .example-squere {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        margin: 10px;
+        background-color: red;
+        color: #fff;
+        font-size: 12px;
+        vertical-align: middle;
+        cursor: pointer;
+        &.transition {
+          transition: background-color .5s ease-in-out .5s;
+          &:hover {
+            background-color: blue;
+          }
+        }
+        &:hover {
+          background-color: blue;
+        }
+      }
+      .example-animation-container {
+        border: 1px solid $color_css;
+        width: 300px;
+        height: 300px;
+        margin-bottom: 20px;
+        .animated-box {
+          display: inline-block;
+          width: 100px;
+          height: 100px;
+          background-color: red;
+          position: relative;
+          animation: EXAMPLE 4s linear 2s infinite alternate-reverse;
+        }
+      }
     }
   } // End guide pages
 } // End main
+
+/* The animation code */
+@keyframes EXAMPLE {
+0% {background-color:$color_laravel; left:0px; top:0px;}
+25% {background-color:$color_js; left:200px; top:0px;}
+50% {background-color:$color_css; left:200px; top:200px;}
+75% {background-color:$color_jquery; left:0px; top:200px;}
+100% {background-color:$color_php; left:0px; top:0px;}
+}

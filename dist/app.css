@@ -56,8 +56,17 @@ h1 {
   margin-bottom: -30px;
 }
 
+h1.index {
+  margin-bottom: 10px;
+}
+
 h2 {
-  font-size: 1.8emM;
+  font-size: 1.8em;
+  text-decoration: underline;
+}
+
+h3 {
+  font-size: 1.4em;
 }
 
 h1,
@@ -128,13 +137,21 @@ ul.normal-list.laravel-list li::before {
   color: #e74632;
 }
 
+ul.normal-list .under-list {
+  padding-left: 10px;
+}
+
+ul.normal-list .under-list li:before {
+  content: "\25CB";
+}
+
 .img-max-400 {
   margin: 20px 0;
   max-width: 400px;
 }
 
-.img-70 {
-  width: 70%;
+.spec-wars {
+  width: 100%;
   padding: 10px;
 }
 
@@ -444,13 +461,20 @@ main .flex-page aside .page-navigation li.sub-list ul.visible {
   display: block;
 }
 
+main .flex-page aside h2 {
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
 main .flex-page .content {
   flex-basis: 100%;
-  padding: 0 5% 0 30px;
+  padding: 0 5% 0 5%;
 }
 
 main .flex-page .content code {
-  padding: 5px;
+  display: inline-block;
+  margin: 5px 0;
+  padding: 2px 5px;
   background-color: #f5f5fa;
 }
 
@@ -481,6 +505,113 @@ main .flex-page .content table tr td:first-child {
 main .flex-page .content table td {
   padding: 10px;
   border: 1px solid #dedede;
+}
+
+main .flex-page .content .example-squere {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  margin: 10px;
+  background-color: red;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+main .flex-page .content .example-squere.transition {
+  transition: background-color 0.5s ease-in-out 0.5s;
+}
+
+main .flex-page .content .example-squere.transition:hover {
+  background-color: blue;
+}
+
+main .flex-page .content .example-squere:hover {
+  background-color: blue;
+}
+
+main .flex-page .content .example-animation-container {
+  border: 1px solid #29a9df;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+main .flex-page .content .example-animation-container .animated-box {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  animation: EXAMPLE 4s linear 2s infinite alternate-reverse;
+}
+
+/* The animation code */
+
+@-webkit-keyframes EXAMPLE {
+  0% {
+    background-color: #e74632;
+    left: 0px;
+    top: 0px;
+  }
+
+  25% {
+    background-color: #e9ca32;
+    left: 200px;
+    top: 0px;
+  }
+
+  50% {
+    background-color: #29a9df;
+    left: 200px;
+    top: 200px;
+  }
+
+  75% {
+    background-color: #009688;
+    left: 0px;
+    top: 200px;
+  }
+
+  100% {
+    background-color: #673ab7;
+    left: 0px;
+    top: 0px;
+  }
+}
+
+@keyframes EXAMPLE {
+  0% {
+    background-color: #e74632;
+    left: 0px;
+    top: 0px;
+  }
+
+  25% {
+    background-color: #e9ca32;
+    left: 200px;
+    top: 0px;
+  }
+
+  50% {
+    background-color: #29a9df;
+    left: 200px;
+    top: 200px;
+  }
+
+  75% {
+    background-color: #009688;
+    left: 0px;
+    top: 200px;
+  }
+
+  100% {
+    background-color: #673ab7;
+    left: 0px;
+    top: 0px;
+  }
 }
 
 footer {
@@ -564,6 +695,10 @@ footer p a:hover {
     padding: 0 10% 0 30px;
   }
 
+  main .flex-page .content .spec-wars {
+    width: 70%;
+  }
+
   main .tech-stack .stack-selection .tech-container {
     flex-basis: calc(100% / 4);
   }
@@ -572,7 +707,6 @@ footer p a:hover {
 @media all and (min-width: 1170px) {
   main .flex-page .content {
     flex-basis: 75%;
-    padding: 0 10% 0 30px;
   }
 }
 
