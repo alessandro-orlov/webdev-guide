@@ -512,7 +512,7 @@
                 }
 
                 var screenwidth = screen.width;
-                if (screenwidth < 400) {
+                if (screenwidth &lt; 400) {
                 &nbsp;&nbsp;document.write('Stai usando uno smartphone');
                 } else if (screenwidth &lt; 800) {
                 &nbsp;&nbsp;document.write('Stai usando un tablet');
@@ -536,13 +536,13 @@
                   <i>// individuo l'ora corrente</i>
                   var ora = dataObject.getHours();
 
-                  if (ora > 06 && ora <= 12) {
+                  if (ora > 06 && ora &lt;= 12) {
                     salutoOraOutput.innerHTML = 'Buon giorno!';
                   }
-                  else if (ora > 12 && ora <= 18) {
+                  else if (ora > 12 && ora &lt;= 18) {
                     salutoOraOutput.innerHTML = 'Buon pomeriggio!';
                   }
-                  else if (ora > 18 && ora <= 22) {
+                  else if (ora > 18 && ora &lt;= 22) {
                     salutoOraOutput.innerHTML = 'Buona sera!';
                   }
                   else {
