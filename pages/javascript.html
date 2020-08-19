@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="it" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -283,8 +283,8 @@
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Lo scope: variabili globali e locali</h2>
             <p>
               Lo <strong>scope</strong> o <strong>ambito di visibilità</strong> di una variabile è la parte di uno script all’interno del quale si può fare riferimento ad essa.<br><br>
-              Le variabili dichiarate <b>all’interno di una funzione</b> sono dette <strong><big>locali</big></strong> alla funzione dal momento che sono accessibili soltanto all’interno del suo corpo.<br>
-              Le variabili dichiarate <b>fuori da qualsiasi funzione</b> sono dette <strong><big>globali</big></strong> e sono accessibili da qualsiasi punto dello script, anche all’interno di funzioni.
+              Le variabili dichiarate <b>all’interno di una funzione</b> sono dette <strong>locali</strong> alla funzione dal momento che sono accessibili soltanto all’interno del suo corpo.<br>
+              Le variabili dichiarate <b>fuori da qualsiasi funzione</b> sono dette <strong>globali</strong> e sono accessibili da qualsiasi punto dello script, anche all’interno di funzioni.
             </p>
           </section>
 
@@ -303,7 +303,7 @@
               <strong>JavaScript <u>automaticamente riconoscerà</u> che tipo di dato è!</strong>
             </p>
             <p>
-              I tipi di dati nel JavaScript sono <strong><big>7</big></strong>
+              I tipi di dati nel JavaScript sono <strong>7</strong>
             </p>
             <ul class="normal-list js-list">
               <li><strong>Number</strong> - Numero</li>
@@ -315,7 +315,7 @@
               <li><strong>Undefined</strong> - Non Definito</li>
             </ul>
             <p>
-              Un altro tipo di dato particolare della variabile è l'<strong><big>array</big></strong>
+              Un altro tipo di dato particolare della variabile è l'<strong>array</strong>
             </p>
           </section>
 
@@ -329,17 +329,17 @@
             <div class="sub-section" id="assegnazione">
               <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Operatori di assegnazione</h3>
               <p>
-                Abbiamo già visto che per assegnare un valore ad una variabile utilizzaimao <b>l'operatore di assegnazione</b> <code><big>=</big></code>
+                Abbiamo già visto che per assegnare un valore ad una variabile utilizzaimao <b>l'operatore di assegnazione</b> <code>=</code>
               </p>
               <p>
                 Ma esistono anche altri operatori di assegnazione, specialmente se si lavora con dei valori o variabili numeriche.
               </p>
               <ul class="normal-list js-list">
-                <li><code><big>+=</big></code> - <b>operatore di assegn. incrementale</b> e viene usato cosi: <code>x += y</code> che equivale a <code>x = x + y</code> </li>
-                <li><code><big>-=</big></code> - <b>operatore di assegn. decrementale</b> e viene usato cosi: <code>x -= y</code> che equivale a <code>x = x - y</code></li>
-                <li><code><big>*=</big></code> - <b>operatore di assegn. di moltiplicazione</b> e viene usato cosi: <code>x *= y</code> che equivale a <code>x = x * y</code></li>
-                <li><code><big>/=</big></code> - <b>operatore di assegn. divizionale</b> e viene usato cosi: <code>x /= y</code> che equivale a <code>x = x / y</code></li>
-                <li><code><big>%=</big></code> - <b>operatore di assegn. modulare</b> e viene usato cosi: <code>x %= y</code> che equivale a <code>x = x % y</code></li>
+                <li><code>+=</code> - <b>operatore di assegn. incrementale</b> e viene usato cosi: <code>x += y</code> che equivale a <code>x = x + y</code> </li>
+                <li><code>-=</code> - <b>operatore di assegn. decrementale</b> e viene usato cosi: <code>x -= y</code> che equivale a <code>x = x - y</code></li>
+                <li><code>*=</code> - <b>operatore di assegn. di moltiplicazione</b> e viene usato cosi: <code>x *= y</code> che equivale a <code>x = x * y</code></li>
+                <li><code>/=</code> - <b>operatore di assegn. divizionale</b> e viene usato cosi: <code>x /= y</code> che equivale a <code>x = x / y</code></li>
+                <li><code>%=</code> - <b>operatore di assegn. modulare</b> e viene usato cosi: <code>x %= y</code> che equivale a <code>x = x % y</code></li>
               </ul>
             </div>
 
@@ -350,12 +350,12 @@
                 Gli operatori di concatenzaione servono appuno per concatenare 2 variabili stringa.
               </p>
               <ul class="normal-list js-list">
-                <li><code><big>+</big></code> - con questo operatore è possibile concatenare 2 variabili stringa</li>
+                <li><code>+</code> - con questo operatore è possibile concatenare 2 variabili stringa</li>
               </ul>
               <div class="code">
                 var text1 = 'hello';
                 var text2 = 'world';
-                ducument.write(text1 <big>+</big> text2);
+                ducument.write(text1 + text2);
 
                 <b>Output:</b>
                 <script>
@@ -365,11 +365,11 @@
                 </script>
               </div>
               <ul class="normal-list js-list">
-                <li><code><big>+=</big></code> - con questo operatore <code>+=</code> viene concatenato il valore della variabile di sinistra all'espressione di destra.</li>
+                <li><code>+=</code> - con questo operatore <code>+=</code> viene concatenato il valore della variabile di sinistra all'espressione di destra.</li>
               </ul>
               <div class="code">
                 var text = 'hello';
-                text <big>+=</big> 'world';
+                text += 'world';
                 document.write(text);
 
                 <b>Output:</b>
@@ -388,17 +388,17 @@
                 Si tratta di comuni operatori per effettuare operazioni matematiche tra <b>variabili numeriche</b>
               </p>
               <ul class="normal-list js-list">
-                <li><code><big>+</big></code> - Esegue un'addizione o concatena se <u>almeno una variabile è stringa</u></li>
-                <li><code><big>-</big></code> - Esegue una sottrazione</li>
-                <li><code><big>*</big></code> - Esegue una moltiplicazione</li>
-                <li><code><big>/</big></code> - Esegue una divisione</li>
-                <li><code><big>%</big></code> - (<b>modulo</b>) calcola il resto intero della divisione tra due numeri</li>
+                <li><code>+</code> - Esegue un'addizione o concatena se <u>almeno una variabile è stringa</u></li>
+                <li><code>-</code> - Esegue una sottrazione</li>
+                <li><code>*</code> - Esegue una moltiplicazione</li>
+                <li><code>/</code> - Esegue una divisione</li>
+                <li><code>%</code> - (<b>modulo</b>) calcola il resto intero della divisione tra due numeri</li>
               </ul>
               <p>
-                <b>Inoltre ci sono due operatori molto importanti:</b
+                <b>Inoltre ci sono due operatori molto importanti:</b>
               </p>
               <ul class="normal-list js-list">
-                <li><code><big>++</big></code> - operatore di incremento</li>
+                <li><code>++</code> - operatore di incremento</li>
               </ul>
               <div class="code">
                 var num = 7;
@@ -413,7 +413,7 @@
                 </script>
               </div>
               <ul class="normal-list js-list">
-                <li><code><big>--</big></code> - operatore di decremento</li>
+                <li><code>--</code> - operatore di decremento</li>
               </ul>
               <div class="code">
                 var num = 7;
@@ -426,6 +426,7 @@
                   num--;
                   document.write(num);
                 </script>
+              </div>
             </div>
 
             <!-- Operatori di confronto -->
@@ -436,13 +437,13 @@
                 L'Esito di questo confronto genera un valore booleano (<b>true o false</b>).
               </p>
               <ul class="normal-list js-list">
-                <li><code><big>==</big></code> - Uguaglianza</li>
-                <li><code><big>===</big></code> - Uguaglianza stretta (sia di tipo e di valore)</li>
-                <li><code><big>!=</big></code> - Diversità (Not)</li>
-                <li><code><big><</big></code> - Minore</li>
-                <li><code><big><=</big></code> - Minore o uguale</li>
-                <li><code><big>></big></code> - Maggiore</li>
-                <li><code><big>>=</big></code> - Maggiore o uguale</li>
+                <li><code>==&lt;</code> - Uguaglianza</li>
+                <li><code>===&lt;</code> - Uguaglianza stretta (sia di tipo e di valore)</li>
+                <li><code>!=&lt;</code> - Diversità (Not)</li>
+                <li><code>&lt;&lt;</code> - Minore</li>
+                <li><code>&lt;=</code> - Minore o uguale</li>
+                <li><code>&gt;</code> - Maggiore</li>
+                <li><code>&gt;=</code> - Maggiore o uguale</li>
               </ul>
               <p>
                 Questo tipo di operatori assume un'importanza centrale all'interno delle <b>strutture di controllo</b> (o <b>strutture condizionali</b>) quando, cioè, l'esito del confronto tra due o più variabili diventa determinante al fine del comportamento del programma stesso.
@@ -458,9 +459,9 @@
               </p>
               <ul class="normal-list js-list">
                 <li>
-                  <code><big>&&</big></code> - L'operatore <b>"AND"</b> (<b>operatore binario</b> - prevedono 2 operandi) è utilizzato per creare condizioni complesse composte da una pluralità di sotto-condizioni; Tutte le sotto-condizioni devono restituere <b>true</b> affinche la routine si verifichi </li>
-                <li><code><big>||</big></code> - UL'operatore <b>"OR"</b> (<b>operatore binario</b> - prevedono 2 operandi) è utilizzato per creare condizioni complesse composte da una pluralità di sotto-condizioni; affinché la routine si verifichi è necessario che almeno una delle sotto-condizioni sia vera.</li>
-                <li><code><big>!</big></code> - L'operatore <b>"NOT"</b> (<b>operatore unario</b> - richiede un operando) indica una negazione all'interno di una routine. In sostanza si usa per invertire il significato di una condizione.</li>
+                  <code>&&</code> - L'operatore <b>"AND"</b> (<b>operatore binario</b> - prevedono 2 operandi) è utilizzato per creare condizioni complesse composte da una pluralità di sotto-condizioni; Tutte le sotto-condizioni devono restituere <b>true</b> affinche la routine si verifichi </li>
+                <li><code>||</code> - UL'operatore <b>"OR"</b> (<b>operatore binario</b> - prevedono 2 operandi) è utilizzato per creare condizioni complesse composte da una pluralità di sotto-condizioni; affinché la routine si verifichi è necessario che almeno una delle sotto-condizioni sia vera.</li>
+                <li><code>!</code> - L'operatore <b>"NOT"</b> (<b>operatore unario</b> - richiede un operando) indica una negazione all'interno di una routine. In sostanza si usa per invertire il significato di una condizione.</li>
               </ul>
               <p>
                 <b>Esempio:</b>
@@ -471,8 +472,8 @@
                 var c = 9;
                 var d = 24;
 
-                if (a == b && c < d) { ... } <i>// il controllo restituisce FALSE</i>
-                if (a != b && c < d) { ... } <i>// il controllo restituisce TRUE</i>
+                if (a == b && c &lt; d) { ... } <i>// il controllo restituisce FALSE</i>
+                if (a != b && c &lt; d) { ... } <i>// il controllo restituisce TRUE</i>
                 if (a > b || c == d) { ... } <i>// il controllo restituisce TRUE</i>
                 if (!(a > b)) { ... } <i>// il controllo restituisce FALSE</i>
               </div>
@@ -495,9 +496,9 @@
                 La struttura è la seguente:
               </p>
               <ul>
-                <li>keyword <big>if</big> - significa "Se"</li>
-                <li>condizioe <big>(...)</big> - restituisce un valore booleano true/false come risultato</li>
-                <li>istruzione <big>{...}</big> - cosa accade se la condizione si verifica</li>
+                <li>keyword if - significa "Se"</li>
+                <li>condizioe (...) - restituisce un valore booleano true/false come risultato</li>
+                <li>istruzione {...} - cosa accade se la condizione si verifica</li>
               </ul>
               <div class="code">
                 if (condizione 1) {
@@ -510,10 +511,10 @@
                 &nbsp;&nbsp;istruzioni;
                 }
 
-                var screenwidth = <big>screen.width</big>;
+                var screenwidth = screen.width;
                 if (screenwidth < 400) {
                 &nbsp;&nbsp;document.write('Stai usando uno smartphone');
-                } else if (screenwidth < 800) {
+                } else if (screenwidth &lt; 800) {
                 &nbsp;&nbsp;document.write('Stai usando un tablet');
                 } else {
                 &nbsp;&nbsp;document.write('Stai usando un computer');
@@ -530,10 +531,10 @@
                   var salutoOraOutput = document.getElementById('ora-saluto-output');
 
                   <i>// creo un oggetto data</i>
-                  var dataObject = <big>new Date()</big>;
+                  var dataObject = new Date();
 
                   <i>// individuo l'ora corrente</i>
-                  var ora = dataObject.<big>getHours()</big>;
+                  var ora = dataObject.getHours();
 
                   if (ora > 06 && ora <= 12) {
                     salutoOraOutput.innerHTML = 'Buon giorno!';
@@ -553,7 +554,7 @@
                 Avvia lo script
               </p>
               <button type="button" id="ora-saluto">avvia lo script</button>
-              <script type="text/javascript">
+              <script>
               var oraSalutoBtn = document.getElementById('ora-saluto');
 
               oraSalutoBtn.addEventListener('click', function() {

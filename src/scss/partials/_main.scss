@@ -55,7 +55,7 @@ main {
     aside {
       background: linear-gradient(0deg,#fff, $bg_color_lightgray);
       padding: 0 5%;
-      flex-basis: 100%;
+      width: 100%;
       .page-navigation {
         li a {
           display: inline-block;
@@ -96,7 +96,7 @@ main {
     }
     .content {
       flex-basis: 100%;
-      padding: 0 5% 0 5%;
+      padding: 0 5%;
       code {
         display: inline-block;
         margin: 5px 0;
