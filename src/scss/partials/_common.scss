@@ -59,6 +59,9 @@ p {
   line-height: 26px;
   letter-spacing: .5px;
 }
+big {
+  font-weight: 600;
+}
 a {
   text-decoration: none;
   color: #333;
@@ -69,7 +72,7 @@ ul {
     padding: 5px 0;
   }
   &.normal-list {
-    padding-left: 30px;
+    padding-left: 20px;
     line-height: 26px;
     li::before {
       content: "\25CF";
@@ -100,7 +103,7 @@ ul {
       color: $color_laravel;
     }
     .under-list {
-      padding-left: 10px;
+      padding-left: 25px;
       li:before {
         content: '\25CB';
       }

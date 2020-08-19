@@ -116,6 +116,7 @@ main {
       table {
         width: 100%;
         border-collapse: collapse;
+        margin: 0 0 10px;
         // border: 1px solid #ccc;
         thead {
           background-color: #f5f5fa;
@@ -123,6 +124,11 @@ main {
         tr {
           td:first-child {
             width: 20%;
+          }
+        }
+        tr.odd-50 {
+          td {
+            width: 50%;
           }
         }
         td {
@@ -164,6 +170,10 @@ main {
           position: relative;
           animation: EXAMPLE 4s linear 2s infinite alternate-reverse;
         }
+      }
+      .esercizio {
+        padding: 10px;
+        border: 1px solid #dedede;
       }
     }
   } // End guide pages

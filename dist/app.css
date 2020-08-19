@@ -83,6 +83,10 @@ p {
   letter-spacing: 0.5px;
 }
 
+big {
+  font-weight: 600;
+}
+
 a {
   text-decoration: none;
   color: #333;
@@ -97,7 +101,7 @@ ul li {
 }
 
 ul.normal-list {
-  padding-left: 30px;
+  padding-left: 20px;
   line-height: 26px;
 }
 
@@ -138,7 +142,7 @@ ul.normal-list.laravel-list li::before {
 }
 
 ul.normal-list .under-list {
-  padding-left: 10px;
+  padding-left: 25px;
 }
 
 ul.normal-list .under-list li:before {
@@ -492,6 +496,7 @@ main .flex-page .content .code {
 main .flex-page .content table {
   width: 100%;
   border-collapse: collapse;
+  margin: 0 0 10px;
 }
 
 main .flex-page .content table thead {
@@ -500,6 +505,10 @@ main .flex-page .content table thead {
 
 main .flex-page .content table tr td:first-child {
   width: 20%;
+}
+
+main .flex-page .content table tr.odd-50 td {
+  width: 50%;
 }
 
 main .flex-page .content table td {
@@ -546,6 +555,11 @@ main .flex-page .content .example-animation-container .animated-box {
   background-color: red;
   position: relative;
   animation: EXAMPLE 4s linear 2s infinite alternate-reverse;
+}
+
+main .flex-page .content .esercizio {
+  padding: 10px;
+  border: 1px solid #dedede;
 }
 
 /* The animation code */
