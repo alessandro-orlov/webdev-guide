@@ -117,7 +117,19 @@
                 <li><a href="#do-while">do while</a></li>
               </ul>
             </li>
-            <li><a href="#array">Array</a></li>
+            <li class="sub-list">
+              <a>
+                Array
+                <span class="plus visible"><i class="fas fa-plus"></i></span>
+                <span class="minus"><i class="fas fa-minus"></i></span>
+              </a>
+              <ul>
+                <li><a href="#array">Inizo</a></li>
+                <li><a href="#array-sort">Ordinamento di un array</a></li>
+                <li><a href="#array-to-string">Array in stringa</a></li>
+                <li><a href="#array-cicli">Array e Cicli</a></li>
+              </ul>
+            </li>
             <li><a href="#dom">DOM</a></li>
             <li><a href="#functions">Funzioni</a></li>
             <li><a href="#object">Oggetto</a></li>
@@ -748,7 +760,8 @@
           <section id="array">
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Gli array</h2>
             <p>
-              Gli array consentono di <b>associare più valori ad un unico nome di variabile</b> (o identificatore). In genere i valori contenuti in un array hanno una qualche affinità (ad esempio l’elenco dei giorni della settimana). L’uso degli array evita di definire più variabili e semplifica lo svolgimento di operazioni cicliche su tutti i valori.
+              Gli array consentono di <b>associare più valori ad un unico nome di variabile</b> (o identificatore). In genere i valori contenuti in un array hanno una qualche affinità (ad esempio l’elenco dei giorni della settimana). L’uso degli array evita di definire più variabili e semplifica lo svolgimento di operazioni cicliche su tutti i valori.<br>
+              Gli elementi di un array possono essere di <b>qualsiasi tipo di dato/valore</b> previsto da JavaScript
             </p>
             <p>
               I valori/elementi dell’array sono delimitati da <b>parentesi quadre</b> e separati da virgole.<br>
@@ -771,27 +784,84 @@
               "Luca", "Marco", "Paolo", "Alessandro"
             </div>
 
-            <h3>Array + Cicli = <span class="color-laravel"><i class="fas fa-heart"></i></span></h3>
-            <p>
-              Se non sappiamo quanti elementi ci sono in un array ma dobbiamo visualizzarli, possiamo utilizzare il <b>ciclo for()</b> e la proprieta <code> <b>.length</b> </code>. Dove <b>i</b> avrà il valore 0 e con l'operatore di incremento avrà un valore diverso ad ogni ciclo permettendo di attraversare tutto l'array!
-            </p>
-            <ul class="normal-list js-list">
-              <li><code> <b>.length</b> </code> - è una proprietà degli array che ci dà la sua lunghezza, quindi il numero degli elementi contenuti</li>
-            </ul>
-            <p>
-              Esempio:
-            </p>
-            <div class="code">
-              var <b>nomi</b> = ["Luca", "Marco", "Paolo", "Alessandro"];
+            <!-- Ordinamento di un array -->
+            <div class="sub-section" id="array-sort">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Ordinamento di un array: sort() e reverse()</h3>
+              <p>
+                Lavorando con gli Array() a volte si ha l'esigenza di manipolare i dati in maniera diversa da quella nativa, ad esempio ordinando i dati secondo un certo ordine/criterio o manipolandoli come una stringa.
+              </p>
+              <p>
+                Con il metodo <code><b>sort()</b></code> possiamo ordinare un Array() in <b>ordine alfabetico</b>:
+              </p>
+              <div class="code">
+                var iscritti = ["Luca", "Marco", "Paolo", "Alessandro"];
 
-              <i>// stampiamo tutti i nomi dell'array</i>
-              for (var i = 0; i < <b>nomi.length</b>; i++) {
-              console.log(<b>nomi[i]</b>);
-              }
+                iscritti.sort();
+
+                <b>Risultato:</b>
+                ["Alessandro", "Luca", "Marco", "Paolo"];
+              </div>
+              <p>
+                Con il metodo <code><b>reverse()</b></code> possiamo invertire l'ordine di un Array() in <b>senso contrario</b>:
+              </p>
+              <div class="code">
+                var iscritti = ["Luca", "Marco", "Paolo", "Alessandro"];
+
+                iscritti.reverse();
+
+                <b>Risultato:</b>
+                ["Alessandro", "Paolo", "Marco", "Luca"]
+              </div>
             </div>
-            <p>
 
-            </p>
+            <!-- Convertire un array in stringa -->
+            <div class="sub-section" id="array-to-string">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Convertire un array in stringa</h3>
+              <p>
+                I metodi <b>toString()</b> e <b>join()</b>, la loro funzione è quella di convertire un Array() in una stringa.
+              </p>
+                Il metodo <code><b>toString()</b></code> crea un elenco di elementi separati da una virgola;
+              <div class="code">
+                var lettere = ['A','B','C','D'];
+
+                lettere.<b>toString();</b>
+
+                <b>Risultato:</b>
+                A,B,C,D
+              </div>
+                Il metodo <code><b>join()</b></code> permette di scegliere il o i caratteri da utilizzare per la separazione
+
+              <div class="code">
+                var lettere = ['A','B','C','D'];
+
+                lettere.<b>join('-');</b>
+
+                <b>Risultato:</b>
+                A-B-C-D
+              </div>
+            </div>
+
+            <div class="sub-section" id="array-cicli">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Array + Cicli = <span class="color-laravel"><i class="fas fa-heart"></i></span></h3>
+              <p>
+                Se non sappiamo quanti elementi ci sono in un array ma dobbiamo visualizzarli, possiamo utilizzare il <b>ciclo for()</b> e la proprieta <code> <b>.length</b> </code>. Dove <b>i</b> avrà il valore 0 e con l'operatore di incremento avrà un valore diverso ad ogni ciclo permettendo di attraversare tutto l'array!
+              </p>
+              <ul class="normal-list js-list">
+                <li><code> <b>.length</b> </code> - è una proprietà degli array che ci dà la sua lunghezza, quindi il numero degli elementi contenuti</li>
+              </ul>
+              <p>
+                Esempio:
+              </p>
+              <div class="code">
+                var <b>nomi</b> = ["Luca", "Marco", "Paolo", "Alessandro"];
+
+                <i>// stampiamo tutti i nomi dell'array</i>
+                for (var i = 0; i < <b>nomi.length</b>; i++) {
+                console.log(<b>nomi[i]</b>);
+                }
+              </div>
+            </div>
+
 
           </section>
 

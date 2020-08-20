@@ -190,6 +190,11 @@ img {
   color: #fff;
 }
 
+.test {
+  color: red;
+  font-weight: bold;
+}
+
 header {
   background-color: #fff;
   border-bottom: 1px solid #dedede;
