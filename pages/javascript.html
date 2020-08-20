@@ -111,6 +111,7 @@
                 <span class="minus"><i class="fas fa-minus"></i></span>
               </a>
               <ul>
+                <li><a href="#cicli">Inizo</a></li>
                 <li><a href="#for">for</a></li>
                 <li><a href="#while">while</a></li>
                 <li><a href="#do-while">do while</a></li>
@@ -655,9 +656,148 @@
             </div>
           </section>
 
+          <section id="cicli">
+            <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> I Cicli</h2>
+            <p>
+              Per una serie di motivi può nascere l'esigenza di dover <b>ripetere</b> una serie di istruzioni un determinato numero di volte, o finchè non <b>si verifichi una data condizione</b>. In tali circostanze è necessario ricorrere alle <b>iterazioni</b> o, più comunemente, ai <b>cicli</b>.<br>
+              Javascript supporta diverse <b>strutture iterative</b>:
+            </p>
+            <ul class="normal-list js-list">
+              <li>il ciclo <code><b>for()</b></code> </li>
+              <li>il ciclo <code><b>while()</b></code> </li>
+              <li>il ciclo <code><b>do while()</b></code> </li>
+            </ul>
+
+            <!-- Ciclo for -->
+            <div class="sub-section" id="for">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Il ciclo for()</h3>
+              <p>
+                Un ciclo for() serve a ripetere una serie di istruzioni un <b>determinato numero determinato di volte</b>. Per definire un ciclo for() si imposta:
+              </p>
+              <ul class="normal-list js-list">
+                <li>una <b>variabile contatore</b> a cui si assegna un valore di partenza arbitrario (solitamente 0);</li>
+                <li>la condizione di terminazione (cioè un valore della variabile contatore che, una volta raggiunto, blocca il ciclo);</li>
+                <li>ed uno <b>step</b> (cioè l'incremento - o decremento - da applicare alla variabile contatore ad ogni passaggio del ciclo).</li>
+              </ul>
+              <p>Ecco la sintassi:</p>
+              <div class="code">
+                for(var i=0; i&lt;3; i++) {
+                &nbsp;&nbsp;/*
+                &nbsp;&nbsp;istruzioni che verranno ripetute 3 volte
+                &nbsp;&nbsp;*/
+                }
+              </div>
+              <p>
+                Con <b>for</b> abbiamo definito il valore di partenza <b>(var i=0)</b>, la condizione che termina il ciclo <b>(i&lt;3)</b> ed il nostro step <b>(i++)</b>. In pratica for eseguirà le istruzioni contenute tra le parentesi graffe per tre volte in quanto al primo passaggio "i" avrà <b>valore 0</b>, al <b>secondo 1</b>, al <b>terzo 2</b> ed a questo punto si stopperà in quanto la condizione di terminazione ci dice che il ciclo dovrà continuare sino a quanto "i" è minore di 3.
+              </p>
+            </div>
+
+            <!-- Il ciclo while() -->
+            <div class="sub-section" id="while">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Il ciclo while()</h3>
+              <p>
+                A differenza di for(), il ciclo while() non prevede l'utilizzo di <b>alcun contatore</b> ma semplicemente <b>l'indicazione di una condizione di terminazione</b>: il ciclo terminerà non appena la condizione impostata si realizza(diventerà <b>true</b>).<br>
+                La sintassi è la seguente:
+              </p>
+              <div class="code">
+                while (condizione) {
+                &nbsp;&nbsp;istruzioni;
+                }
+
+                <i>Esempio 1</i>
+                var i = 0;
+                while (i < 10) {
+                &nbsp;&nbsp;document.write('Conto: ' + i);
+                &nbsp;&nbsp;i++; <i>// operatore di incremento è importante per evitare i loop</i>
+                }
+
+                <i>Esempio 2</i>
+                var eta = <b>parseInt</b>(prompt(quale la tua età?'));
+                while(<b>isNaN(eta) || eta === null</b>) {
+                &nbsp;&nbsp;eta = parseInt(prompt('errore: quale la tua età?'));
+                }
+              </div>
+              <p>
+                Il ciclo while si ferma non appena la condizione diventa <b>true</b>. Il ciclo while è pratico per eseguire cicli la cui condizione non  dipende per forza da un contatore, ma da unza condizione.<br>
+                A parte ciò, il ciclo <code><b>for()</b></code> e <code><b>while()</b></code> sono <b>equivalenti</b>.
+              </p>
+            </div>
+
+            <!-- Il ciclo do while() -->
+            <div class="sub-section" id="do-while">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Il ciclo do while()</h3>
+              <p>
+                La struttura <b>do while()</b> è una variante di while(). La differenza tra le due sintassi consiste nel fatto che il controllo della condizione avviene dopo l'esecuzione dell'istruzione e non prima; la differenza, da un punto di vista pratico, è che <b>l'istruzione viene eseguita sempre almeno una volta</b>.<br>
+                Questa la sintassi:
+              </p>
+              <div class="code">
+                do {
+                &nbsp;&nbsp;istruzioni;
+                }
+                while (condizione);
+
+                <i>Esempio</i>
+                do {
+                  var eta = parseInt(prompt(quale la tua età?'));
+                } while (isNaN(eta) || eta === null);
+              </div>
+            </div>
+          </section>
+
+          <!-- Gli Array -->
+          <section id="array">
+            <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Gli array</h2>
+            <p>
+              Gli array consentono di <b>associare più valori ad un unico nome di variabile</b> (o identificatore). In genere i valori contenuti in un array hanno una qualche affinità (ad esempio l’elenco dei giorni della settimana). L’uso degli array evita di definire più variabili e semplifica lo svolgimento di operazioni cicliche su tutti i valori.
+            </p>
+            <p>
+              I valori/elementi dell’array sono delimitati da <b>parentesi quadre</b> e separati da virgole.<br>
+              Ecco la sintassi:<br>
+              <code><b>var iscritti = ["Luca", "Marco", "Paolo"];</b></code>
+            </p>
+            <p>
+              Così, ad esempio, se vogliamo accedere al <b>primo elemento dell’array</b> scriveremo:<br>
+              <code><b>var studente = iscritti[0];</b></code>
+            </p>
+            <p>
+              Per aggiungere un elemento i un array abbiamo la funzione <code><b>.push()</b></code>:
+            </p>
+            <div class="code">
+              var iscritti = ["Luca", "Marco", "Paolo"];
+
+              iscritti<b>.push('Alessandro')</b>;
+
+              <b>Risultato:</b>
+              "Luca", "Marco", "Paolo", "Alessandro"
+            </div>
+
+            <h3>Array + Cicli = <span class="color-laravel"><i class="fas fa-heart"></i></span></h3>
+            <p>
+              Se non sappiamo quanti elementi ci sono in un array ma dobbiamo visualizzarli, possiamo utilizzare il <b>ciclo for()</b> e la proprieta <code> <b>.length</b> </code>. Dove <b>i</b> avrà il valore 0 e con l'operatore di incremento avrà un valore diverso ad ogni ciclo permettendo di attraversare tutto l'array!
+            </p>
+            <ul class="normal-list js-list">
+              <li><code> <b>.length</b> </code> - è una proprietà degli array che ci dà la sua lunghezza, quindi il numero degli elementi contenuti</li>
+            </ul>
+            <p>
+              Esempio:
+            </p>
+            <div class="code">
+              var <b>nomi</b> = ["Luca", "Marco", "Paolo", "Alessandro"];
+
+              <i>// stampiamo tutti i nomi dell'array</i>
+              for (var i = 0; i < <b>nomi.length</b>; i++) {
+              console.log(<b>nomi[i]</b>);
+              }
+            </div>
+            <p>
+
+            </p>
+
+          </section>
+
           <!-- Esercizi -->
           <section id="esercizi-js">
-            <h2>Esercizi:</h2>
+            <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Esercizi:</h2>
             <div class="esercizio">
               <p>
                 <b>Esercizio 1:</b><br>
@@ -672,7 +812,13 @@
 
                 esercizio1.addEventListener('click', function() {
                 &nbsp;&nbsp;var nome = prompt('quale il tuo nome?');
+                &nbsp;&nbsp;while(nome === null || nome === '' || !isNaN(nome)) {
+                &nbsp;&nbsp;&nbsp;&nbsp;nome = prompt('inserisci un nome valido')
+                &nbsp;&nbsp;}
                 &nbsp;&nbsp;var cognome = prompt('quale il tuo cognome?');
+                &nbsp;&nbsp;while(cognome === null || cognome === '' || !isNaN(cognome)) {
+                &nbsp;&nbsp;&nbsp;&nbsp;cognome = prompt('inserisci un cognome valido')
+                &nbsp;&nbsp;}
                 &nbsp;&nbsp;var eta = parseInt(prompt('quale la tua età?'));
                 &nbsp;&nbsp;while(isNaN(eta)) {
                 &nbsp;&nbsp;&nbsp;&nbsp;eta = parseInt(prompt('errore: quale la tua età?'));
@@ -690,7 +836,6 @@
               </p>
             </div>
           </section>
-
 
 
         </div>
@@ -747,9 +892,17 @@
 
     esercizio1.addEventListener('click', function() {
       var nome = prompt('quale il tuo nome?');
+      while(nome === null || nome === '' || !isNaN(nome)) {
+        nome = prompt('inserisci un nome valido')
+      }
+
       var cognome = prompt('quale il tuo cognome?');
+      while(cognome === null || cognome === '' || !isNaN(cognome)) {
+        cognome = prompt('inserisci un cognome valido')
+      }
+
       var eta = parseInt(prompt('quale la tua età?'));
-      while(isNaN(eta)) {
+      while(isNaN(eta) || eta === null) {
         eta = parseInt(prompt('errore: quale la tua età?'));
       }
 
