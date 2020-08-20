@@ -525,7 +525,7 @@
               <p>
                 Istruzioni condizionali composite (con operatori logici "AND"):
               </p>
-              <div class="code">
+              <!-- <div class="code">
                 var oraSalutoBtn = document.getElementById('ora-saluto');
 
                 oraSalutoBtn.addEventListener('click', function() {
@@ -551,8 +551,39 @@
                     salutoOraOutput.innerHTML = 'Buona notte!';
                   }
                 });
-              </div>
+              </div> -->
               <!-- END debug -->
+              <p>
+                Avvia lo script
+              </p>
+              <button type="button" id="ora-saluto">avvia lo script</button>
+              <script>
+              var oraSalutoBtn = document.getElementById('ora-saluto');
+
+              oraSalutoBtn.addEventListener('click', function() {
+                var salutoOraOutput = document.getElementById('ora-saluto-output');
+                // creo un oggetto data
+                var dataObject = new Date();
+
+                // individuo l'ora corrente
+                var ora = dataObject.getHours();
+
+                if (ora > 06 && ora <= 12) {
+                  salutoOraOutput.innerHTML = 'Buon giorno!';
+                }
+                else if (ora > 12 && ora <= 18) {
+                  salutoOraOutput.innerHTML = 'Buon pomeriggio!';
+                }
+                else if (ora > 18 && ora <= 22) {
+                  salutoOraOutput.innerHTML = 'Buona sera!';
+                }
+                else {
+                  salutoOraOutput.innerHTML = 'Buona notte!';
+                }
+              });
+              </script>
+
+              <p id="ora-saluto-output">&nbsp;</p>
 
             </div>
           </section>
