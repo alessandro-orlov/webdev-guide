@@ -521,37 +521,7 @@
                 &nbsp;&nbsp;document.write('Stai usando un computer');
                 }
               </div>
-              <p>
-                Istruzioni condizionali composite (con operatori logici "AND"):
-              </p>
-              <div class="code">
-                var oraSalutoBtn = document.getElementById('ora-saluto');
 
-                oraSalutoBtn.addEventListener('click', function() {
-                  <i>// html Output</i>
-                  var salutoOraOutput = document.getElementById('ora-saluto-output');
-
-                  <i>// creo un oggetto data</i>
-                  var dataObject = new Date();
-
-                  <i>// individuo l'ora corrente</i>
-                  var ora = dataObject.getHours();
-
-                  if (ora > 06 && ora &lt;= 12) {
-                    salutoOraOutput.innerHTML = 'Buon giorno!';
-                  }
-                  else if (ora > 12 && ora &lt;= 18) {
-                    salutoOraOutput.innerHTML = 'Buon pomeriggio!';
-                  }
-                  else if (ora > 18 && ora &lt;= 22) {
-                    salutoOraOutput.innerHTML = 'Buona sera!';
-                  }
-                  else {
-                    salutoOraOutput.innerHTML = 'Buona notte!';
-                  }
-                });
-              </div>
-              
             </div>
           </section>
 
