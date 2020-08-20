@@ -319,6 +319,167 @@
             </p>
           </section>
 
+          <!-- Operatori -->
+          <section id="operatori">
+            <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Operatori</h2>
+            <p>
+              Se è vero che le variabili svolgono un ruolo da primo piano in un qualsiasi programma, è altrettanto vero che lo è altrettanto saper svolgere su di esse determinate operazioni come, ad esempio, <b>operazioni matematiche, confronti, concatenazioni, ecc.</b>
+            </p>
+            <!-- operatori di assegnazione -->
+            <div class="sub-section" id="assegnazione">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Operatori di assegnazione</h3>
+              <p>
+                Abbiamo già visto che per assegnare un valore ad una variabile utilizzaimao <b>l'operatore di assegnazione</b> <code>=</code>
+              </p>
+              <p>
+                Ma esistono anche altri operatori di assegnazione, specialmente se si lavora con dei valori o variabili numeriche.
+              </p>
+              <ul class="normal-list js-list">
+                <li><code>+=</code> - <b>operatore di assegn. incrementale</b> e viene usato cosi: <code>x += y</code> che equivale a <code>x = x + y</code> </li>
+                <li><code>-=</code> - <b>operatore di assegn. decrementale</b> e viene usato cosi: <code>x -= y</code> che equivale a <code>x = x - y</code></li>
+                <li><code>*=</code> - <b>operatore di assegn. di moltiplicazione</b> e viene usato cosi: <code>x *= y</code> che equivale a <code>x = x * y</code></li>
+                <li><code>/=</code> - <b>operatore di assegn. divizionale</b> e viene usato cosi: <code>x /= y</code> che equivale a <code>x = x / y</code></li>
+                <li><code>%=</code> - <b>operatore di assegn. modulare</b> e viene usato cosi: <code>x %= y</code> che equivale a <code>x = x % y</code></li>
+              </ul>
+            </div>
+
+            <!-- operatori di concatenzaione -->
+            <div class="sub-section" id="concatenzaione">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Operatori di concatenzaione</h3>
+              <p>
+                Gli operatori di concatenzaione servono appuno per concatenare 2 variabili stringa.
+              </p>
+              <ul class="normal-list js-list">
+                <li><code>+</code> - con questo operatore è possibile concatenare 2 variabili stringa</li>
+              </ul>
+              <div class="code">
+                var text1 = 'hello';
+                var text2 = 'world';
+                ducument.write(text1 + text2);
+
+                <b>Output:</b>
+                <script>
+                var text1 = 'hello';
+                var text2 = 'world';
+                document.write(text1 + text2)
+                </script>
+              </div>
+              <ul class="normal-list js-list">
+                <li><code>+=</code> - con questo operatore <code>+=</code> viene concatenato il valore della variabile di sinistra all'espressione di destra.</li>
+              </ul>
+              <div class="code">
+                var text = 'hello';
+                text += 'world';
+                document.write(text);
+
+                <b>Output:</b>
+                <script>
+                  var text = 'hello';
+                  text += 'world';
+                  document.write(text);
+                </script>
+              </div>
+            </div>
+
+            <!-- Operatori matematici -->
+            <div class="sub-section" id="math">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Operatori matematici</h3>
+              <p>
+                Si tratta di comuni operatori per effettuare operazioni matematiche tra <b>variabili numeriche</b>
+              </p>
+              <ul class="normal-list js-list">
+                <li><code>+</code> - Esegue un'addizione o concatena se <u>almeno una variabile è stringa</u></li>
+                <li><code>-</code> - Esegue una sottrazione</li>
+                <li><code>*</code> - Esegue una moltiplicazione</li>
+                <li><code>/</code> - Esegue una divisione</li>
+                <li><code>%</code> - (<b>modulo</b>) calcola il resto intero della divisione tra due numeri</li>
+              </ul>
+              <p>
+                <b>Inoltre ci sono due operatori molto importanti:</b>
+              </p>
+              <ul class="normal-list js-list">
+                <li><code>++</code> - operatore di incremento</li>
+              </ul>
+              <div class="code">
+                var num = 7;
+                num++;
+                document.write(num);
+
+                <b>Output:</b>
+                <script>
+                  var num = 7;
+                  num++;
+                  document.write(num);
+                </script>
+              </div>
+              <ul class="normal-list js-list">
+                <li><code>--</code> - operatore di decremento</li>
+              </ul>
+              <div class="code">
+                var num = 7;
+                num--;
+                document.write(num);
+
+                <b>Output:</b>
+                <script>
+                  var num = 7;
+                  num--;
+                  document.write(num);
+                </script>
+              </div>
+            </div>
+
+            <!-- Operatori di confronto -->
+            <div class="sub-section" id="confronto">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Operatori di confronto</h3>
+              <p>
+                Operatori di confronto oppure gli possiamo anche chiamare operatori <strong>relazioneli</strong>, possono agire su diversi tipi di variabili (<em>stringa, numero, valore booleano ecc</em>) e sono utilizzati per effettuare appunto il confronto.<br>
+                L'Esito di questo confronto genera un valore booleano (<b>true o false</b>).
+              </p>
+              <ul class="normal-list js-list">
+                <li><code>==&lt;</code> - Uguaglianza</li>
+                <li><code>===&lt;</code> - Uguaglianza stretta (sia di tipo e di valore)</li>
+                <li><code>!=&lt;</code> - Diversità (Not)</li>
+                <li><code>&lt;&lt;</code> - Minore</li>
+                <li><code>&lt;=</code> - Minore o uguale</li>
+                <li><code>&gt;</code> - Maggiore</li>
+                <li><code>&gt;=</code> - Maggiore o uguale</li>
+              </ul>
+              <p>
+                Questo tipo di operatori assume un'importanza centrale all'interno delle <b>strutture di controllo</b> (o <b>strutture condizionali</b>) quando, cioè, l'esito del confronto tra due o più variabili diventa determinante al fine del comportamento del programma stesso.
+              </p>
+            </div>
+
+            <!-- Operatori logici -->
+            <div class="sub-section" id="logic">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Operatori logici</h3>
+              <p>
+                Questi operatori consentono di effettuare operazioni logiche di associazione.<br>
+                Anche questi operatori sono utilizzati nelle strutture di controllo del flusso di programma.
+              </p>
+              <ul class="normal-list js-list">
+                <li>
+                  <code>&&</code> - L'operatore <b>"AND"</b> (<b>operatore binario</b> - prevedono 2 operandi) è utilizzato per creare condizioni complesse composte da una pluralità di sotto-condizioni; Tutte le sotto-condizioni devono restituere <b>true</b> affinche la routine si verifichi </li>
+                <li><code>||</code> - UL'operatore <b>"OR"</b> (<b>operatore binario</b> - prevedono 2 operandi) è utilizzato per creare condizioni complesse composte da una pluralità di sotto-condizioni; affinché la routine si verifichi è necessario che almeno una delle sotto-condizioni sia vera.</li>
+                <li><code>!</code> - L'operatore <b>"NOT"</b> (<b>operatore unario</b> - richiede un operando) indica una negazione all'interno di una routine. In sostanza si usa per invertire il significato di una condizione.</li>
+              </ul>
+              <p>
+                <b>Esempio:</b>
+              </p>
+              <div class="code">
+                var a = 10;
+                var b = 3;
+                var c = 9;
+                var d = 24;
+
+                if (a == b && c &lt; d) { ... } <i>// il controllo restituisce FALSE</i>
+                if (a != b && c &lt; d) { ... } <i>// il controllo restituisce TRUE</i>
+                if (a > b || c == d) { ... } <i>// il controllo restituisce TRUE</i>
+                if (!(a > b)) { ... } <i>// il controllo restituisce FALSE</i>
+              </div>
+            </div>
+          </section>
+
 
         </div>
         <!-- End page content -->
