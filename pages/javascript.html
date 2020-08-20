@@ -664,13 +664,8 @@
                 Chiedi all’utente il suo nome, poi chiedi il suo cognome, poi chiedi l'età, Infine scrivi sulla pagina <br>
                 nomecognomeeta19
               </p>
-              <button type="button" id="btn-esercizio1">avvia lo script</button>
               <p>
-                <b>OUTPUT:</b><br>
-                <span id="output-esercizio1"></span>
-              </p>
-              <p>
-                codice eseguito:
+                Script eseguito:
               </p>
               <div class="code">
                 var esercizio1 = document.getElementById('btn-esercizio1');
@@ -686,7 +681,13 @@
                 &nbsp;&nbsp;var outputEsercizio1 = document.getElementById('output-esercizio1');
                 &nbsp;&nbsp;outputEsercizio1.innerHTML = nome + cognome + eta + 20;
               });
+
               </div>
+              <button type="button" id="btn-esercizio1">avvia lo script</button>
+              <p>
+                <b>OUTPUT:</b><br>
+                <span id="output-esercizio1"></span>
+              </p>
             </div>
           </section>
 
@@ -738,5 +739,25 @@
         </div>
       </a>
     </script>
+
+    <!-- Esercizi -->
+    <!-- =========== Esercizio 1 ==================================== -->
+    <script>
+    var esercizio1 = document.getElementById('btn-esercizio1');
+
+    esercizio1.addEventListener('click', function() {
+      var nome = prompt('quale il tuo nome?');
+      var cognome = prompt('quale il tuo cognome?');
+      var eta = parseInt(prompt('quale la tua età?'));
+      while(isNaN(eta)) {
+        eta = parseInt(prompt('errore: quale la tua età?'));
+      }
+
+      var outputEsercizio1 = document.getElementById('output-esercizio1');
+      outputEsercizio1.innerHTML = nome + cognome + eta + 20;
+
+    });
+    </script>
+
   </body>
 </html>

@@ -16157,24 +16157,7 @@ $(document).ready(function () {
   }); // =========== Print YEAR in footer =========================== //
 
   var year = new Date().getFullYear();
-  $('.current-year').append(year); // ============================================================ //
-  // =========== Esercizi ======================================= //
-  //
-  // =========== Esercizio 1 ==================================== //
-
-  var esercizio1 = document.getElementById('btn-esercizio1');
-  esercizio1.addEventListener('click', function () {
-    var nome = prompt('quale il tuo nome?');
-    var cognome = prompt('quale il tuo cognome?');
-    var eta = parseInt(prompt('quale la tua età?'));
-
-    while (isNaN(eta)) {
-      eta = parseInt(prompt('errore: quale la tua età?'));
-    }
-
-    var outputEsercizio1 = document.getElementById('output-esercizio1');
-    outputEsercizio1.innerHTML = nome + cognome + eta + 20;
-  });
+  $('.current-year').append(year);
 }); // END document ready
 
 /***/ }),
