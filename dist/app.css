@@ -433,17 +433,16 @@ main .flex-page aside {
   width: 100%;
 }
 
+main .flex-page aside .page-navigation li {
+  cursor: pointer;
+}
+
 main .flex-page aside .page-navigation li a {
   display: inline-block;
   padding: 4px 0;
   margin: 0;
   transition: all 0.2s ease-in-out;
   font-weight: 500;
-  cursor: pointer;
-}
-
-main .flex-page aside .page-navigation li a:hover {
-  margin-left: 10px;
 }
 
 main .flex-page aside .page-navigation li.sub-list ul a {
@@ -482,7 +481,6 @@ main .flex-page .content {
 
 main .flex-page .content code {
   display: inline-block;
-  margin: 5px 0;
   padding: 2px 5px;
   background-color: #f5f5fa;
 }
@@ -712,6 +710,10 @@ footer p a:hover {
     top: 71px;
     height: calc(100vh - 70px);
     overflow: auto;
+  }
+
+  main .flex-page aside .page-navigation li a:hover {
+    margin-left: 10px;
   }
 
   main .flex-page .content {

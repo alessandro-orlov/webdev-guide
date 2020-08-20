@@ -38,6 +38,9 @@
     height: calc(100vh - 70px);
     overflow: auto;
   }
+  main .flex-page aside .page-navigation li a:hover {
+    margin-left: 10px;
+  }
   main .flex-page .content {
     flex-basis: 73%;
     padding: 0 10% 0 30px;

@@ -844,7 +844,8 @@
             <div class="sub-section" id="array-cicli">
               <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Array + Cicli = <span class="color-laravel"><i class="fas fa-heart"></i></span></h3>
               <p>
-                Se non sappiamo quanti elementi ci sono in un array ma dobbiamo visualizzarli, possiamo utilizzare il <b>ciclo for()</b> e la proprieta <code> <b>.length</b> </code>. Dove <b>i</b> avrà il valore 0 e con l'operatore di incremento avrà un valore diverso ad ogni ciclo permettendo di attraversare tutto l'array!
+                Se non sappiamo quanti elementi ci sono in un array ma dobbiamo visualizzarli, possiamo utilizzare il <b>ciclo for()</b> e la proprieta <code> <b>.length</b> </code>.<br>
+                Dove <b>i</b> avrà il valore 0 e con l'operatore di incremento avrà un valore diverso ad ogni ciclo permettendo di attraversare tutto l'array!
               </p>
               <ul class="normal-list js-list">
                 <li><code> <b>.length</b> </code> - è una proprietà degli array che ci dà la sua lunghezza, quindi il numero degli elementi contenuti</li>
@@ -861,8 +862,71 @@
                 }
               </div>
             </div>
+          </section>
 
-
+          <section id="dom">
+            <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Il DOM</h2>
+            <p>
+              Il <b>Document Object Model</b> (o, più brevemente, DOM) è uno standard ufficiale del W3C attraverso il quale la struttura di un documento (esem. pagina HTML) è rappresentata sotto forma di un <b>modello orientato agli oggetti</b>.
+            </p>
+            <p>
+              In pratica ogni elemento della struttura del documento è rappresentato sotto forma di nodo di un elemento padre creando una sorta di "albero" con dei rami.
+            </p>
+            <div class="code">
+              &#9679; documento
+              &nbsp;&nbsp;&#9675; head
+              &nbsp;&nbsp;&nbsp;&nbsp;&#9726; title
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9725; titolo del documento (text node)
+              &nbsp;&nbsp;&#9675; body
+              &nbsp;&nbsp;&nbsp;&nbsp;&#9726; h1
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9725; titolo H1 (text node)
+              &nbsp;&nbsp;&nbsp;&nbsp;&#9726; p
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9725; testo testo testo (text node)
+            </div>
+            <p>
+              Con Javascript è possibile <b>manipolare il DOM</b> della pagina; ogni elemento della pagina viene rappresentato come un oggetto il quale può essere manipolato <b>attraverso metodi e proprietà</b>.
+            </p>
+            <p>
+              L'oggetto di base per la manipolazione del DOM è <code><b>document</b></code> il quale rappresenta la radice del documento nel suo complesso (cioè la pagina web).<br>
+            </p>
+            <p>
+              Con JavaScript possiamo:
+            </p>
+            <ul class="normal-list js-list">
+              <li>
+                <b>Modificare l'HTML</b>
+                <ul class="under-list">
+                  <li>Aggiungere/rimuovere classi css</li>
+                  <li>Cambiare l’inner html di un elemento</li>
+                  <li>Nascondere elementi</li>
+                </ul>
+              </li>
+              <li>
+                <b>Reagire a eventi</b>
+                <ul class="under-list">
+                  <li>Al click</li>
+                  <li>Al hover</li>
+                  <li>Al caricamento completo dalla pagina</li>
+                  <li>...</li>
+                </ul>
+              </li>
+              <li>
+                <b>Interagire con il browser</b>
+                <ul class="under-list">
+                  <li>Impostare i cookie</li>
+                  <li>Leggere lo user-agent</li>
+                  <li>...</li>
+                </ul>
+              </li>
+            </ul>
+            <p>
+              Per identificare il o gli elementi sui quali agire èutilizziamo uno di questi metodi:
+            </p>
+            <ul class="normal-list js-list">
+              <li><code><b>getElementByID()</b></code> -  identifica un solo elemento della pagina attraverso l'attributo ID (univoco);</li>
+              <li><code><b>getElementByTagName()</b></code> - identifica un set di elementi della pagina attraverso l'indicazione dello specifico tag (ad esempio tutti i paragrafi o tutti i link); </li>
+              <li><code><b>getElementByClassName()</b></code> - identifica un set di elementi della pagina attraverso l'indicazione di una specifica classe; </li>
+            </ul>
           </section>
 
           <!-- Esercizi -->
