@@ -484,6 +484,7 @@ main .flex-page .content code {
 
 main .flex-page .content .code {
   color: #000;
+  font-size: 0.9em;
   font-family: "Source Code Pro", monospace;
   white-space: pre-line;
   padding: 0 15px 20px;
@@ -678,6 +679,10 @@ footer p a:hover {
 
   main .tech-stack .stack-selection .tech-container .technology {
     height: 380px;
+  }
+
+  main .flex-page .content .code {
+    font-size: 1em;
   }
 }
 

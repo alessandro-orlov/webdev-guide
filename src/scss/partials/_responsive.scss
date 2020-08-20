@@ -6,7 +6,6 @@
     height: 420px;
   }
 }
-
 @media all and (min-width:769px) {
   main .tech-stack .stack-selection {
     justify-content: flex-start;
@@ -16,6 +15,9 @@
   }
   main .tech-stack .stack-selection .tech-container .technology {
     height: 380px;
+  }
+  main .flex-page .content .code {
+    font-size: 1em;
   }
 }
 @media all and (min-width:1025px) {
