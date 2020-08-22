@@ -32,11 +32,13 @@
   }
   main .flex-page aside {
     flex-basis: 25%;
-    padding: 0 30px 0 10%;
+    padding: 0 30px 30px 10%;
     position: sticky;
     top: 71px;
     height: calc(100vh - 70px);
     overflow: auto;
+    scrollbar-color: $guide_red #282828;
+    scrollbar-width: thin;
   }
   main .flex-page aside .page-navigation li a:hover {
     margin-left: 10px;

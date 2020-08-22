@@ -51,7 +51,7 @@ main {
   .flex-page {
     display: flex;
     flex-wrap: wrap;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     aside {
       background: linear-gradient(0deg,#fff, $bg_color_lightgray);
       padding: 0 5%;
@@ -176,6 +176,7 @@ main {
       .esercizio {
         padding: 10px;
         border: 1px solid #dedede;
+        margin-bottom: 50px;
       }
     }
   } // End guide pages

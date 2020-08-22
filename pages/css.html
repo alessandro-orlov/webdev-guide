@@ -111,6 +111,7 @@
                 <li><a href="#reset">RESET</a></li>
                 <li><a href="#float">Float e Clearfix</a></li>
                 <li><a href="#center-position">Center position</a></li>
+                <li><a href="#custom-scrollbar">Scrollbar personalizato</a></li>
               </ul>
             </li>
             <li class="sub-list">
@@ -404,6 +405,45 @@
                 &nbsp;&nbsp;left: 50%;
                 &nbsp;&nbsp;transform: translate(-50%, -50%);
                 }
+              </div>
+            </div>
+
+            <div class="sub-section" id="custom-scrollbar">
+              <h3><span class="color-css"><i class="fas fa-hashtag"></i></span> Scrollbar personalizato</h3>
+              <p>
+                Per <b>google chrome</b> basta inserire il codice sequente:
+              </p>
+              <div class="code">
+                <i>/* Scrollbar width */</i>
+                ::-webkit-scrollbar {
+                  width: 10px;
+                }
+                <i>/* Track */</i>
+                ::-webkit-scrollbar-track {
+                  background: #444; <i>// colore di backgroun dello scroll</i>
+                }
+                <i>/* Handle */</i>
+                ::-webkit-scrollbar-thumb {
+                  background: red; <i>// colore dello scroll</i>
+                  border-radius: 10px;
+                }
+                <i>/* Handle on hover */</i>
+                ::-webkit-scrollbar-thumb:hover {
+                  background: brown;
+                }
+              </div>
+              <p>
+                Per <b>Mozilla Firefox</b> il codice va aggiunto all'elemento con lo scroll:
+              </p>
+              <div class="code">
+                <i>Elemento scrollabile in CSS:</i>
+                .sidebar {
+                &nbsp;&nbsp;overflow: auto;
+                &nbsp;&nbsp;scrollbar-color: red black; <i>// primo colore è dello scroll, second di background</i>
+                &nbsp;&nbsp;scrollbar-width: thin;
+                }
+
+
               </div>
             </div>
           </section>

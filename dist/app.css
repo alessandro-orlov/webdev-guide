@@ -11,6 +11,8 @@ body {
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
   color: #333;
+  scrollbar-color: #f53152 #282828;
+  scrollbar-width: thin;
 }
 
 body .color-html {
@@ -193,6 +195,33 @@ img {
 .test {
   color: red;
   font-weight: bold;
+}
+
+/*==================*/
+
+/* CUSTOM SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: #444;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #f53152;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f53152;
 }
 
 header {
@@ -424,7 +453,7 @@ main .tech-stack .stack-selection .tech-container .technology:hover {
 main .flex-page {
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 main .flex-page aside {
@@ -568,6 +597,7 @@ main .flex-page .content .example-animation-container .animated-box {
 main .flex-page .content .esercizio {
   padding: 10px;
   border: 1px solid #dedede;
+  margin-bottom: 50px;
 }
 
 /* The animation code */
@@ -708,12 +738,14 @@ footer p a:hover {
 
   main .flex-page aside {
     flex-basis: 25%;
-    padding: 0 30px 0 10%;
+    padding: 0 30px 30px 10%;
     position: -webkit-sticky;
     position: sticky;
     top: 71px;
     height: calc(100vh - 70px);
     overflow: auto;
+    scrollbar-color: #f53152 #282828;
+    scrollbar-width: thin;
   }
 
   main .flex-page aside .page-navigation li a:hover {
