@@ -130,7 +130,23 @@
                 <li><a href="#array-cicli">Array e Cicli</a></li>
               </ul>
             </li>
-            <li><a href="#dom">DOM</a></li>
+            <li class="sub-list">
+              <a>
+                DOM
+                <span class="plus visible"><i class="fas fa-plus"></i></span>
+                <span class="minus"><i class="fas fa-minus"></i></span>
+              </a>
+              <ul>
+                <li><a href="#dom">Inizio</a></li>
+                <li><a href="#dom-lista-operazioni">Lista delle operazini</a></li>
+                <li><a href="#dom-selezionare-elementi">Selezionare gli elementi</a></li>
+                <li><a href="#dom-modificare-html">Modificare l'HTML</a></li>
+                <li><a href="#dom-modificare-attr">Modificare il valore di un attributo</a></li>
+                <li><a href="#dom-modificare-css">Modificare il CSS</a></li>
+                <li><a href="#dom-eventi">Gestire gli eventi</a></li>
+                <li><a href="#dom-gestire-classi">Gestire le classi</a></li>
+              </ul>
+            </li>
             <li><a href="#functions">Funzioni</a></li>
             <li><a href="#object">Oggetto</a></li>
             <li><a href="#api">API</a></li>
@@ -919,14 +935,151 @@
                 </ul>
               </li>
             </ul>
-            <p>
-              Per identificare il o gli elementi sui quali agire èutilizziamo uno di questi metodi:
-            </p>
-            <ul class="normal-list js-list">
-              <li><code><b>getElementByID()</b></code> -  identifica un solo elemento della pagina attraverso l'attributo ID (univoco);</li>
-              <li><code><b>getElementByTagName()</b></code> - identifica un set di elementi della pagina attraverso l'indicazione dello specifico tag (ad esempio tutti i paragrafi o tutti i link); </li>
-              <li><code><b>getElementByClassName()</b></code> - identifica un set di elementi della pagina attraverso l'indicazione di una specifica classe; </li>
-            </ul>
+
+            <!-- Lista operazioni -->
+            <div class="sub-section" id="dom-lista-operazioni">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Lista delle operazini da effettuare sull'element in JS</h3>
+              <p>Ci sono più di 80 operazioni che si posssono fare con JavaScript<br>Eccone alcuni:</p>
+              <ul class="normal-list js-list">
+                <li><code><b>element.classList</b></code> - restituisce i nomi delle classi CSS associate all’elemento</li>
+                <li><code><b>element.className</b></code> - permette di impostare il/le classi CSS che l’elemento ha associate</li>
+                <li><code><b>element.innerHTML</b></code> - permette di modificare l’innerHTML dell’elemento</li>
+                <li><code><b>element.style</b></code> - aggancia un funzione che sarà chiamata quando accade un evento
+                (es. click)</li>
+                <li><code><b>element.value</b></code> - per ottenere il valore di un element, se ne ha uno (utile nei <b>form input</b>)</li>
+              </ul>
+            </div>
+
+            <!-- Selezionare gli elementi -->
+            <div class="sub-section" id="dom-selezionare-elementi">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Selezionare gli elementi della pagina HTML</h3>
+              <p>
+                Per identificare il o gli elementi sui quali agire èutilizziamo uno di questi metodi:
+              </p>
+              <ul class="normal-list js-list">
+                <li><code><b>getElementByID()</b></code> -  identifica un solo elemento della pagina attraverso l'attributo ID (univoco);</li>
+                <li><code><b>getElementByTagName()</b></code> - identifica un set di elementi della pagina attraverso l'indicazione dello specifico tag (ad esempio tutti i paragrafi o tutti i link); </li>
+                <li><code><b>getElementByClassName()</b></code> - identifica un set di elementi della pagina attraverso l'indicazione di una specifica classe; </li>
+              </ul>
+            </div>
+
+            <!--Modificare L'html -->
+            <div class="sub-section" id="dom-modificare-html">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Modificare l'HTML del documento</h3>
+              <p>
+                Attraverso la proprietà <b>innerHTML</b> possiamo "scrivere" codice HTML all'interno di un qualsiasi nodo della pagina.
+              </p>
+              <div class="code">
+                var testoArticolo = document.getElementById('articolo');
+                testoArticolo<b>.innerHTML</b> = 'Scrivo codice &lt;b>HTML&lt;/b>...'; <i>// scrivo all'interno dell'elemento selezionato</i>
+              </div>
+            </div>
+
+            <!-- Modifivare attributo -->
+            <div class="sub-section" id="dom-modificare-attr">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Modificare il valore di un attributo</h3>
+              <p>
+                Con JavaScript è possibile cambiare il <b>valore dell'attributo</b><br>
+                Ad esempio, di voler cambiare l'immagine sorgente (attributo <b>src</b>) di un tag &lt;img>:
+              </p>
+              <div class="code">
+                document.getElementById('miafoto')<b>.src</b> = 'path/nuovafoto.jpg';
+              </div>
+            </div>
+
+            <!-- Modificare lo stile CSS -->
+            <div class="sub-section" id="dom-modificare-css">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Modificare lo stile CSS di un elemento</h3>
+              <p>
+                L'attributo <b>.style</b> dell'element può diventare a sua volta un oggetto ed essere manipolato attraverso una serie di proprietà corrispondenti alle proprietà dei fogli di stile.
+              </p>
+              <div class="code">
+                <i>// imposto il colore rosso per il testo</i>
+                document.getElementById('articolo')<b>.style.color = '#ff0000';</b>
+
+                document.getElementById('articolo')<b>.style.font-size = '26px';</b>
+              </div>
+            </div>
+
+            <!-- Gestire gli eventi  -->
+            <div class="sub-section" id="dom-eventi">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Gestire gli eventi utilizzando il DOM</h3>
+              <p>
+                Attraverso l'utilizzo del DOM è anche possibile <b>assegnare un evento</b> ad un dato elemento della pagina. Ad esempio:
+              </p>
+              <div class="code">
+                <i>// l'evento Javascript si trasforma in una proprietà dell'oggetto element e, come tale, può essere settato a piacimento.</i>
+                document.getElementById('miafoto')<b>.onclick = function(){ ... };</b>
+              </div>
+              <p>
+                Sempre attraverso il DOM è possibile creare degli <b>event listener</b> cioè dei "rilevatori di eventi" associati a specifici elementi della pagina.<br> Ad esempio:
+              </p>
+              <div class="code">
+                <i>// assegno una funzione esterna</i>
+                foto<b>.addEventListener('click', miafunzione);</b>
+
+                <i>// definisco internamente al metodo le istruzioni da eseguire</i>
+                var actionBtn = document.getElementById('action-btn');
+
+                actionBtn.addEventListener('click', function() {
+                &nbsp;&nbsp;alert('hello world');
+                });
+              </div>
+              <p>
+                Ci sono altri eventi da ascoltare in JavaScript:<br>
+                <code>.addEventListener('hover' function() {......});</code><br>
+                <code>.addEventListener('focus' function() {......});</code><br>
+              </p>
+            </div>
+
+            <!-- Aggiungere una classe -->
+            <div class="sub-section" id="dom-gestire-classi">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> Gestire le classi del documento html</h3>
+              <p>
+                Con JavaScript possiamo <strong>assegnare una classe</strong> con la proprietà <code><b>.className</b></code>.<br>
+                <b class="color-laravel">Attenzione</b> però, tutte le <b>classi</b> dell'elementno html <b>vengono sostituiti</b> con la nuova classe!<br>
+                Ad Esempio:
+              </p>
+              <div class="code">
+                <i>In HTML prima:</i>
+                &lt;h1 id="main-title"> Guida JS &lt;/h1>
+
+                <i>In JavaScript:</i>
+                var title = getElementByID('main-title');
+                title<b>.className = "big-text"</b> <i>// nome dalla classe da aggiungere</i>
+
+                <i>HTML dopo:</i>
+                &lt;h1 id="main-title" <b>class="big-text"</b>> Guida JS &lt;/h1>
+              </div>
+              <p>
+                Se volessimo, invece, <strong>aggiungere una classe alla lista delle classi</strong>, possiamo utilizzare la proprietà <code><b>.classList.add()</b></code>
+              </p>
+              <div class="code">
+                <i>In HTML prima:</i>
+                &lt;h1 id="main-title" class="<b>main-class</b>"> Guida JS &lt;/h1>
+
+                <i>In JavaScript:</i>
+                var title = getElementByID('main-title');
+                title<b>.classList.add('second-class', 'third-class');</b> <i>// nomi dalla classe da aggiungere</i>
+
+                <i>HTML dopo:</i>
+                &lt;h1 id="main-title" class="main-class <b>second-class third-class</b>"> Guida JS &lt;/h1>
+              </div>
+              <p>
+                Per <strong>rimuovere una classe dalla liste delle classi</strong>, possiamo utilizzare la proprietà <code><b>.remove</b></code>
+              </p>
+              <div class="code">
+                <i>In HTML prima:</i>
+                &lt;h1 id="main-title" class="main-class second-class <b>third-class</b>"> Guida JS &lt;/h1>
+
+                <i>In JavaScript:</i>
+                var title = getElementByID('main-title');
+                title<b>.classList.remove('third-class');</b> <i>// nomi dalla classe da aggiungere</i>
+
+                <i>HTML dopo:</i>
+                &lt;h1 id="main-title" class="main-class second-class"> Guida JS &lt;/h1>
+              </div>
+            </div>
           </section>
 
           <!-- Esercizi -->
