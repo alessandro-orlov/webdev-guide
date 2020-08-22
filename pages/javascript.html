@@ -147,7 +147,7 @@
                 <li><a href="#dom-gestire-classi">Gestire le classi</a></li>
               </ul>
             </li>
-            <li><a href="#functions">Funzioni</a></li>
+            <li><a href="#funzioni">Funzioni</a></li>
             <li><a href="#object">Oggetto</a></li>
             <li><a href="#api">API</a></li>
             <li><a href="#esercizi-js">Esercizi</a></li>
@@ -1082,6 +1082,72 @@
             </div>
           </section>
 
+          <!-- Le Funzioni -->
+          <section id="funzioni">
+            <h2><span class="color-js"><i class="fas fa-hashtag"></i></span>  Le Funzioni</h2>
+            <p>
+              Uno degli elementi chiave di un programma, in questo caso di un programma JavaScript, sono le <strong>funzioni</strong>.
+            </p>
+            <p>
+               buona norma <b>riutilizzare</b> il codice ogni volta che ve ne sia la possibilità, così da evitare di scrivere codice identico. Le funzioni rendono il <b>codice più pulito</b>  e si <b>riducono le possibilità di fare errori</b>.
+            </p>
+            <p>
+              <b>Le funzioni</b>, quindi, sono dei pezzi di codice che <b>possono essere richiamati</b> più e più volte nel nostro programma principale.
+            </p>
+            <p>
+              Ecco la sintassi:
+            </p>
+            <div class="code">
+              function nomeFunzione(<i>argomenti</i>) {
+              &nbsp;&nbsp;<i>// blocco di istruzioni</i>
+              }
+            </div>
+            <p>
+              Le funzini possono <b>accettare dei dati in ingresso!</b> come gli <code><b>(argomenti)</b></code> che sono una <b>lista opzionale di variabili</b> separati da virgole che verranno utilizzate all’interno del corpo della funzione, cioè il blocco istruzioni.
+            </p>
+            <p>
+              Ad esempio:
+            </p>
+            <div class="code">
+              function somma(num1, num2) {
+                &nbsp;&nbsp;risultato = num1 + num2;
+                &nbsp;&nbsp;return risultato;
+                <i>// tutto quello che sta dopo il risultato non viene eseguito</i>
+              }
+            </div>
+            <p>
+              La funzione per eseguire il codice al suo interno deve essere <b>richiamata/evocata</b>
+            </p>
+            <p>
+              Esempio pratico:
+            </p>
+            <div class="code">
+              <i>Aganciamo la funzione al "click" del pulsante in HTML:</i>
+              &lt;button type="button" <b>onclick="functionSomma()"</b>avvia lo script&lt;/button>
+
+              <i>// Il codice che verra eseguito:</i>
+              function <b>functionSomma()</b> {
+              &nbsp;&nbsp;do {
+              &nbsp;&nbsp;&nbsp;&nbsp;var num1 = parseInt(prompt('Inserisci il primo numero'));
+              &nbsp;&nbsp;} while (isNaN(num1));
+
+              &nbsp;&nbsp;do {
+              &nbsp;&nbsp;&nbsp;&nbsp;var num2 = parseInt(prompt('Inserisci il secondo numero'));
+              &nbsp;&nbsp;} while (isNaN(num2));
+
+              &nbsp;&nbsp;var risultatoSomma = num1 + num2;
+
+              &nbsp;&nbsp;var esempioFunzioneOutput = document.getElementById('esempio-funzione-output');
+              &nbsp;&nbsp;esempioFunzioneOutput.innerHTML = 'La somma dei numeri inseriti: ' + risultatoSomma;
+              }
+            </div>
+            <button type="button" onclick="functionSomma()">avvia lo script</button>
+            <p>
+              <b>OUTPUT:</b><br>
+              <span id="esempio-funzione-output"></span>
+            </p>
+
+          </section>
           <!-- Esercizi -->
           <section id="esercizi-js">
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Esercizi:</h2>
@@ -1172,9 +1238,26 @@
       </a>
     </script>
 
-    <!-- Esercizi -->
-    <!-- =========== Esercizio 1 ==================================== -->
+
+    <!-- =========== Esercizi ==================================== -->
     <script>
+    function functionSomma() {
+      do {
+        var num1 = parseInt(prompt('Inserisci il primo numero'));
+      } while (isNaN(num1));
+
+      do {
+        var num2 = parseInt(prompt('Inserisci il secondo numero'));
+      } while (isNaN(num2));
+
+      var risultatoSomma = num1 + num2;
+
+      var esempioFunzioneOutput = document.getElementById('esempio-funzione-output');
+      esempioFunzioneOutput.innerHTML = 'La somma dei numeri inseriti: ' + risultatoSomma;
+    }
+
+
+    // Esercizio 1
     var esercizio1 = document.getElementById('btn-esercizio1');
 
     esercizio1.addEventListener('click', function() {
@@ -1197,6 +1280,7 @@
       outputEsercizio1.innerHTML = nome + cognome + eta + 20;
 
     });
+
     </script>
 
   </body>
