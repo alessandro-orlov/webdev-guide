@@ -1261,6 +1261,8 @@
           <!-- Esercizi -->
           <section id="esercizi-js">
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Esercizi:</h2>
+
+            <!-- Esercizio 1 -->
             <div class="esercizio">
               <p>
                 <b>Esercizio 1:</b><br>
@@ -1299,6 +1301,41 @@
               </p>
             </div>
 
+            <!-- Esercizio 2: FizzBuzz -->
+            <div class="esercizio">
+              <p>
+                <b>Esercizio 2: FizzBuzz</b> <br>
+                Stampare a schermo i numeri da 1 a 100. Se il numero si divide per 3 al posto del numero stampare Fizz, se si divide per 5 - stampare Buzz, se il numero si divide sia per 3 che per 5 stampare FizzBuzz.
+              </p>
+              <p>
+                Script eseguito:
+              </p>
+              <div class="code">
+                for (var i = 1; i <= 100; i++) {
+                <i>// Seleziono dove stampare il risultato</i>
+                &nbsp;&nbsp;var fizzBuzzOutput = document.getElementById('output-esercizio2');
+
+                <i>// Struttura condizionale</i>
+                &nbsp;&nbsp;if (i % 15 === 0) {
+                &nbsp;&nbsp;&nbsp;&nbsp;fizzBuzzOutput.innerHTML += 'FizzBuzz' + '&lt;br>'
+                &nbsp;&nbsp;} else if (i % 5 === 0) {
+                &nbsp;&nbsp;&nbsp;&nbsp;fizzBuzzOutput.innerHTML += 'Buzz' + '&lt;br>'
+                &nbsp;&nbsp;} else if (i % 3 === 0) {
+                &nbsp;&nbsp;&nbsp;&nbsp;fizzBuzzOutput.innerHTML += 'Fizz' + '&lt;br>'
+                &nbsp;&nbsp;} else {
+                &nbsp;&nbsp;&nbsp;&nbsp;fizzBuzzOutput.innerHTML += i + '&lt;br>'
+                &nbsp;&nbsp;}
+                }
+              </div>
+              <button type="button" onclick="fizzBuzz()">avvia lo script</button>
+              <p>
+                <b>OUTPUT:</b><br>
+                <span id="output-esercizio2"></span>
+              </p>
+            </div>
+
+
+            <!-- Esercizio 3: Palindromo -->
             <div class="esercizio">
               <p>
                 <b>Esercizio 3: Palindromo</b> <br>
@@ -1452,6 +1489,23 @@
       outputEsercizio1.innerHTML = nome + cognome + eta + 20;
 
     });
+
+    // Esercizio 2: FizzBuzz
+    function fizzBuzz() {
+      for (var i = 1; i <= 100; i++) {
+        var fizzBuzzOutput = document.getElementById('output-esercizio2');
+
+        if (i % 15 === 0) {
+          fizzBuzzOutput.innerHTML += 'FizzBuzz' + '<br>'
+        } else if (i % 5 === 0) {
+          fizzBuzzOutput.innerHTML += 'Buzz' + '<br>'
+        } else if (i % 3 === 0) {
+          fizzBuzzOutput.innerHTML += 'Fizz' + '<br>'
+        } else {
+          fizzBuzzOutput.innerHTML += i + '<br>'
+        }
+      }
+    }
 
     // Esercizio 3: palindromo
     function palindromo() {
