@@ -1246,7 +1246,7 @@
 
               <i>// Ciclo sull'oggeto</i>
               for(var key in studente) {
-                outputForIn.innerHTML += studente[key] +'<br>'
+                outputForIn.innerHTML += studente[key] +'&lt;br>'
               };
             </div>
             <button type="button" onclick="esempioForIn()">avvia lo script</button>
@@ -1297,6 +1297,47 @@
                 <b>OUTPUT:</b><br>
                 <span id="output-esercizio1"></span>
               </p>
+            </div>
+
+            <div class="esercizio">
+              <p>
+                <b>Esercizio 3: Palindromo</b> <br>
+                Chiedere all'utente una parola, verificare se la parola è palindroma (viene letta nello stesso modo sia da sinistra a destra che da destra a sinistra.
+              </p>
+              <p>
+                Script eseguito:
+              </p>
+              <div class="code">
+                <i>// chiedo la parola all'utente</i>
+                do {
+                  var parola = prompt('Inserisci una parola');
+                } while (parola == null || !(isNaN(parola)) || parola.length <= 2 );
+
+
+                var parolaInvertita = ""; <i>// variabile vuota</i>
+
+                <i>// ciclo dalla fine della parola inserita. !importante: parola.length - 1; per evitare valore undefined</i>
+                for(var i = <b>parola.length - 1</b>; i >= 0; i--) {
+                parolaInvertita += parola[i]; <i>// Inserisco le lettere della parola digitata dall'utente</i>
+                }
+
+                <i>// Controllo</i>
+                var risultato = 'non è palindroma';
+                if (parola === parolaInvertita) {
+                  risultato = 'è palindroma';
+                }
+
+                <i>// Output</i>
+                var palindromaOutput = document.getElementById('output-esercizio3');
+                palindromaOutput.innerHTML = 'la parola ' + <b>parola</b> + ' ' + <b>risultato</b>;
+              }
+              </div>
+              <button type="button" onclick="palindromo()">avvia lo script</button>
+              <p>
+                <b>OUTPUT:</b><br>
+                <span id="output-esercizio3"></span>
+              </p>
+
             </div>
           </section>
 
@@ -1411,6 +1452,26 @@
       outputEsercizio1.innerHTML = nome + cognome + eta + 20;
 
     });
+
+    // Esercizio 3: palindromo
+    function palindromo() {
+      do {
+        var parola = prompt('Inserisci una parola');
+      } while (parola == null || !(isNaN(parola)) || parola.length <= 2 );
+
+      var parolaInvertita = "";
+      for(var i = parola.length - 1; i >= 0; i--) {
+      parolaInvertita += parola[i];
+      }
+
+      var risultato = 'non è palindroma';
+      if (parola === parolaInvertita) {
+        risultato = 'è palindroma';
+      }
+
+      var palindromaOutput = document.getElementById('output-esercizio3');
+      palindromaOutput.innerHTML = 'la parola ' + parola + ' ' + risultato;
+    }
 
     </script>
 
