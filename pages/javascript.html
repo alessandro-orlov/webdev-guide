@@ -1009,7 +1009,8 @@
               </p>
               <div class="code">
                 <i>// l'evento Javascript si trasforma in una proprietà dell'oggetto element e, come tale, può essere settato a piacimento.</i>
-                document.getElementById('miafoto')<b>.onclick = function(){ ... };</b>
+                var element = document.getElementById('id');
+                element<b>.onclick = function(){ ... };</b>
               </div>
               <p>
                 Sempre attraverso il DOM è possibile creare degli <b>event listener</b> cioè dei "rilevatori di eventi" associati a specifici elementi della pagina.<br> Ad esempio:
@@ -1027,8 +1028,8 @@
               </div>
               <p>
                 Ci sono altri eventi da ascoltare in JavaScript:<br>
-                <code>.addEventListener('hover' function() {......});</code><br>
-                <code>.addEventListener('focus' function() {......});</code><br>
+                <code>.addEventListener('hover', function() {......});</code><br>
+                <code>.addEventListener('focus', function() {......});</code><br>
               </p>
             </div>
 
