@@ -995,9 +995,9 @@
               </p>
               <div class="code">
                 <i>// imposto il colore rosso per il testo</i>
-                document.getElementById('articolo')<b>.style.color = '#ff0000';</b>
+                element<b>.style.color = '#ff0000';</b>
 
-                document.getElementById('articolo')<b>.style.font-size = '26px';</b>
+                element.<b>.style.font-size = '26px';</b>
               </div>
             </div>
 
@@ -1122,7 +1122,9 @@
               Esempio pratico:
             </p>
             <div class="code">
-              <i>Aganciamo la funzione al "click" del pulsante in HTML:</i>
+              <i>// Chiadiamo due numeri all'utente, la somma di due numeri appendiamo nel campo <b>OUTPUT</b> </i>
+
+              <i>// Settiamo la funzione al "click" del pulsante in HTML:</i>
               &lt;button type="button" <b>onclick="functionSomma()"</b>avvia lo script&lt;/button>
 
               <i>// Il codice che verra eseguito:</i>
@@ -1138,7 +1140,7 @@
               &nbsp;&nbsp;var risultatoSomma = num1 + num2;
 
               &nbsp;&nbsp;var esempioFunzioneOutput = document.getElementById('esempio-funzione-output');
-              &nbsp;&nbsp;esempioFunzioneOutput.innerHTML = 'La somma dei numeri inseriti: ' + risultatoSomma;
+              &nbsp;&nbsp;esempioFunzioneOutput.innerHTML = 'La somma dei numeri inseriti è: ' + risultatoSomma;
               }
             </div>
             <button type="button" onclick="functionSomma()">avvia lo script</button>
@@ -1146,8 +1148,115 @@
               <b>OUTPUT:</b><br>
               <span id="esempio-funzione-output"></span>
             </p>
+          </section>
+
+          <section id="object">
+            <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Gli Oggetti in JavaScript</h2>
+            <p>
+              Un <strong>Object</strong> <i>oggetto letterale:</i> è una <b>struttura di dati</b> che può contenere <b>più valori</b> ai quali si può accedere per mezzo di un <b>indice di nomi.</b>
+            </p>
+            <p>
+              Ecco come si crea un oggetto:
+            </p>
+            <ul class="normal-list js-list">
+              <li>Creiamo una <b>variabile</b></li>
+              <li>Apriamo le <b>parentesi graffe</b></li>
+              <li>Inseriamo una serie di coppie <b>nome: valore</b></li>
+            </ul>
+            <div class="code">
+              var studente = {
+              &nbsp;&nbsp;'nome'<b class="color-laravel">:</b> 'Alessandro'<b class="color-laravel">,</b>
+              &nbsp;&nbsp;'cognome'<b class="color-laravel">:</b> 'Orlov'<b class="color-laravel">,</b>
+              &nbsp;&nbsp;'occupazione'<b class="color-laravel">:</b> 'sviluppatore'
+              }
+            </div>
+            <h3>Leggere il valore di un Oggetto</h3>
+            <p>
+              Per <b>recuperare un valore</b> di un object ci sono 2 vie:
+            </p>
+            <ul class="normal-list js-list">
+              <li><b>dot notation</b> - <b>nome_oggetto.nome_proprieta</b> <code><b>studente.nome</b></code></li>
+              <li><b>parentesi quadre</b> come per gli array - <b>nome_oggetto[nome_proprieta]</b> <code><b>studente['cognome']</b></code></li>
+            </ul>
+            <h3>Aggiungere un valore ad un Object</h3>
+            <p>
+              Come per la lettura del valore anche per modificare un valore ad un oggetto sarà sufficiente comportarsi come nel caso della assegnazione di un nuovo valore ad una comune variabile: <code><b>nome_oggetto.nome_proprieta = nuovo_valore</b></code> oppure <code><b>nome_oggetto[nome_proprieta] = nuovo_valore</b> </code>
+            </p>
+            <div class="code">
+              <i>// Dot notation:</i>
+              studente.nome = 'Alex'
+
+              <i>// Parentesi quadre</i>
+              studente['occupazione'] = 'sviluppatore web'
+            </div>
+            <h3>Eliminazione di proprietà di un oggetto</h3>
+            <p>
+              L'eliminazione di proprietà avviene mediante lo <b>statement delete</b> secondo questa sintassi: <code><b>delete</b> nome_oggetto.nome_proprieta</code>
+            </p>
+            <div class="code">
+              delete studente.cognome
+            </div>
+            <p>
+              D'ora in avanti, cercando di accedere a questa proprietà, l'interprete Javascript ci restituirà un <b>valore undefined.</b>
+            </p>
+
+            <h3>Objects - for..in</h3>
+            <p>
+              Se vogliamo stampare tutte le proprietà di un oggetto senza doverne conoscere il numero e il nome utilizziamo il ciclo per gli oggetti <b>for..in</b>
+            </p>
+            <p>
+              Il ciclo <i>for..in</i> passa attraverso tutte le chiavi dell'oggetto e si scrive in questo modo:
+            </p>
+            <ul class="normal-list js-list">
+              <li>keyword <code><b>for</b></code> </li>
+              <li>
+                <b>condizione</b><br>
+                Andiamo avanti finché esistono delle chiavi da analizzare all’interno dell’oggetto
+                <ul class="under-list">
+                  <li>var <code><b>key</b></code> - indica la chiave sulla quale operiamo</li>
+                  <li>keyword <code><b>in</b></code> - stiamo ciclando all’interno di</li>
+                  <li>nome dell’oggetto</li>
+                </ul>
+              </li>
+            </ul>
+            <p>
+              Ecco la sintassi:
+            </p>
+            <div class="code">
+                <b>for</b>(var <b>key</b> in <b>nomeOggetto</b>) {
+                &nbsp;&nbsp;console.log(nomeOggetto[key])
+                }
+              <i>// Le parentesi quadre qui sono necessarie per poter usare la variabile <b>key</b></i>
+            </div>
+            <p>
+              Stampiamo tutti i valori dell'oggetto studente:
+            </p>
+            <div class="code">
+              <i>// Oggetto studente</i>
+              var studente = {
+                'nome':'Alex',
+                'cognome':'Orlov',
+                'occupazione': 'sviluppatore web'
+              }
+
+              <i>// Output per i valori delle chiavi dell'oggetto</i>
+              var outputForIn = document.getElementById('output-for-in');
+              outputForIn.innerHTML = '';
+
+              <i>// Ciclo sull'oggeto</i>
+              for(var key in studente) {
+                outputForIn.innerHTML += studente[key] +'<br>'
+              };
+            </div>
+            <button type="button" onclick="esempioForIn()">avvia lo script</button>
+            <p>
+              <b>OUTPUT:</b><br>
+              <span id="output-for-in"></span>
+            </p>
+
 
           </section>
+
           <!-- Esercizi -->
           <section id="esercizi-js">
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Esercizi:</h2>
@@ -1219,6 +1328,9 @@
     <a class="go-top" href="#top">
       <i class="fas fa-arrow-up"></i>
     </a>
+    <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!-- ////////////////////////////////////////////////// END PAGE /////////////////////////////////////////////////////////////// -->
+    <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
     <!-- JS -->
     <script src="../dist/app.js"></script>
@@ -1241,6 +1353,8 @@
 
     <!-- =========== Esercizi ==================================== -->
     <script>
+    // Funzione di esempio nella sezione Funzioni.
+    // Funzione agganciata al bottone a riga 1146
     function functionSomma() {
       do {
         var num1 = parseInt(prompt('Inserisci il primo numero'));
@@ -1250,10 +1364,26 @@
         var num2 = parseInt(prompt('Inserisci il secondo numero'));
       } while (isNaN(num2));
 
+      // Somma tra due numeri inseriti dall'utente
       var risultatoSomma = num1 + num2;
 
+      // Stampo il risultato nel tag dedicato
       var esempioFunzioneOutput = document.getElementById('esempio-funzione-output');
-      esempioFunzioneOutput.innerHTML = 'La somma dei numeri inseriti: ' + risultatoSomma;
+      esempioFunzioneOutput.innerHTML = 'La somma dei numeri inseriti è: ' + risultatoSomma;
+    }
+
+    function esempioForIn() {
+      var studente = {
+        'nome':'Alex',
+        'cognome':'Orlov',
+        'occupazione': 'sviluppatore web'
+      };
+
+      var outputForIn = document.getElementById('output-for-in');
+      outputForIn.innerHTML = '';
+      for(var key in studente) {
+        outputForIn.innerHTML += studente[key] + '<br>';
+      };
     }
 
 
