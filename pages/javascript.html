@@ -149,7 +149,20 @@
             </li>
             <li><a href="#funzioni">Funzioni</a></li>
             <li><a href="#object">Oggetto</a></li>
-            <li><a href="#api">API</a></li>
+            <li class="sub-list">
+              <a>
+                API (HTTP, AJAX, JSON)
+                <span class="plus visible"><i class="fas fa-plus"></i></span>
+                <span class="minus"><i class="fas fa-minus"></i></span>
+              </a>
+              <ul>
+                <li><a href="#server-communication">Inizio</a></li>
+                <li><a href="#http">HTTP</a></li>
+                <li><a href="#ajax">AJAX</a></li>
+                <li><a href="#json">JSON</a></li>
+                <li><a href="#api">API</a></li>
+              </ul>
+            </li>
             <li><a href="#esercizi-js">Esercizi</a></li>
           </ul>
         </aside>
@@ -364,11 +377,11 @@
                 Ma esistono anche altri operatori di assegnazione, specialmente se si lavora con dei valori o variabili numeriche.
               </p>
               <ul class="normal-list js-list">
-                <li><code>+=</code> - <b>operatore di assegn. incrementale</b> e viene usato cosi: <code>x += y</code> che equivale a <code>x = x + y</code> </li>
-                <li><code>-=</code> - <b>operatore di assegn. decrementale</b> e viene usato cosi: <code>x -= y</code> che equivale a <code>x = x - y</code></li>
-                <li><code>*=</code> - <b>operatore di assegn. di moltiplicazione</b> e viene usato cosi: <code>x *= y</code> che equivale a <code>x = x * y</code></li>
-                <li><code>/=</code> - <b>operatore di assegn. divizionale</b> e viene usato cosi: <code>x /= y</code> che equivale a <code>x = x / y</code></li>
-                <li><code>%=</code> - <b>operatore di assegn. modulare</b> e viene usato cosi: <code>x %= y</code> che equivale a <code>x = x % y</code></li>
+                <li><code>+=</code>  <b>operatore di assegn. incrementale</b> e viene usato cosi: <code>x += y</code> che equivale a <code>x = x + y</code> </li>
+                <li><code>-=</code>  <b>operatore di assegn. decrementale</b> e viene usato cosi: <code>x -= y</code> che equivale a <code>x = x - y</code></li>
+                <li><code>*=</code>  <b>operatore di assegn. di moltiplicazione</b> e viene usato cosi: <code>x *= y</code> che equivale a <code>x = x * y</code></li>
+                <li><code>/=</code>  <b>operatore di assegn. divizionale</b> e viene usato cosi: <code>x /= y</code> che equivale a <code>x = x / y</code></li>
+                <li><code>%=</code>  <b>operatore di assegn. modulare</b> e viene usato cosi: <code>x %= y</code> che equivale a <code>x = x % y</code></li>
               </ul>
             </div>
 
@@ -379,7 +392,7 @@
                 Gli operatori di concatenzaione servono appuno per concatenare 2 variabili stringa.
               </p>
               <ul class="normal-list js-list">
-                <li><code>+</code> - con questo operatore è possibile concatenare 2 variabili stringa</li>
+                <li><code>+</code>  con questo operatore è possibile concatenare 2 variabili stringa</li>
               </ul>
               <div class="code">
                 var text1 = 'hello';
@@ -394,7 +407,7 @@
                 </script>
               </div>
               <ul class="normal-list js-list">
-                <li><code>+=</code> - con questo operatore <code>+=</code> viene concatenato il valore della variabile di sinistra all'espressione di destra.</li>
+                <li><code>+=</code>  con questo operatore viene concatenato il valore della variabile di sinistra all'espressione di destra.</li>
               </ul>
               <div class="code">
                 var text = 'hello';
@@ -417,17 +430,17 @@
                 Si tratta di comuni operatori per effettuare operazioni matematiche tra <b>variabili numeriche</b>
               </p>
               <ul class="normal-list js-list">
-                <li><code>+</code> - Esegue un'addizione o concatena se <u>almeno una variabile è stringa</u></li>
-                <li><code>-</code> - Esegue una sottrazione</li>
-                <li><code>*</code> - Esegue una moltiplicazione</li>
-                <li><code>/</code> - Esegue una divisione</li>
-                <li><code>%</code> - (<b>modulo</b>) calcola il resto intero della divisione tra due numeri</li>
+                <li><code>+</code>  Esegue un'addizione o concatena se <u>almeno una variabile è stringa</u></li>
+                <li><code>-</code>  Esegue una sottrazione</li>
+                <li><code>*</code>  Esegue una moltiplicazione</li>
+                <li><code>/</code>  Esegue una divisione</li>
+                <li><code>%</code>  (<b>modulo</b>) calcola il resto intero della divisione tra due numeri</li>
               </ul>
               <p>
                 <b>Inoltre ci sono due operatori molto importanti:</b>
               </p>
               <ul class="normal-list js-list">
-                <li><code>++</code> - operatore di incremento</li>
+                <li><code>++</code>  operatore di incremento</li>
               </ul>
               <div class="code">
                 var num = 7;
@@ -442,7 +455,7 @@
                 </script>
               </div>
               <ul class="normal-list js-list">
-                <li><code>--</code> - operatore di decremento</li>
+                <li><code>--</code>  operatore di decremento</li>
               </ul>
               <div class="code">
                 var num = 7;
@@ -466,13 +479,13 @@
                 L'Esito di questo confronto genera un valore booleano (<b>true o false</b>).
               </p>
               <ul class="normal-list js-list">
-                <li><code>==&lt;</code> - Uguaglianza</li>
-                <li><code>===&lt;</code> - Uguaglianza stretta (sia di tipo e di valore)</li>
-                <li><code>!=&lt;</code> - Diversità (Not)</li>
-                <li><code>&lt;&lt;</code> - Minore</li>
-                <li><code>&lt;=</code> - Minore o uguale</li>
-                <li><code>&gt;</code> - Maggiore</li>
-                <li><code>&gt;=</code> - Maggiore o uguale</li>
+                <li><code>==</code>  Uguaglianza</li>
+                <li><code>===</code>  Uguaglianza stretta (sia di tipo e di valore)</li>
+                <li><code>!=</code>  Diversità (Not)</li>
+                <li><code>&lt;</code>  Minore</li>
+                <li><code>&lt;=</code>  Minore o uguale</li>
+                <li><code>&gt;</code>  Maggiore</li>
+                <li><code>&gt;=</code>  Maggiore o uguale</li>
               </ul>
               <p>
                 Questo tipo di operatori assume un'importanza centrale all'interno delle <b>strutture di controllo</b> (o <b>strutture condizionali</b>) quando, cioè, l'esito del confronto tra due o più variabili diventa determinante al fine del comportamento del programma stesso.
@@ -1254,8 +1267,175 @@
               <b>OUTPUT:</b><br>
               <span id="output-for-in"></span>
             </p>
+          </section>
 
+          <!-- Api general (HTTP, AJAX, JSON) -->
+          <section id="server-communication">
+            <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> API (HTTP, AJAX, JSON)</h2>
+            <p>
+              JavaScript ha la possibilità di fare le chiamate a server e gestire le risposta, cosi la pagina può dialogare con l'esterno.
+            </p>
 
+            <!-- HTTP -->
+            <div class="sub-section" id="http">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> HTTP</h3>
+              <p>
+                La communicazione avviene con il <b>protocollo HTTP</b>
+              </p>
+              <p>
+                <b>L'HTTP</b> è un protocollo utilizzato come principale sistema per la <b>trasmisione di informazioni sul web</b>, con architetture <b>client-server</b>.<br>
+                Il messaggio è composto da 4 parti:
+              </p>
+              <ul class="normal-list js-list">
+                <li><b>Riga di richiesta</b></li>
+                <li><b>Header</b></li>
+                <li><b>Riga vuota</b></li>
+                <li><b>Body</b> (corpo) della richiesta</li>
+              </ul>
+              <div class="img-max-600">
+                <img src="../img/http-request.png" alt="http request">
+              </div>
+              <h3>HTTP - Riga di Richiesta</h3>
+              <p>
+                <b>METODO:</b><br>
+                Identifica il tipo di operazione richiesta dal client. I due metodi più utilizzati sono <b>GET</b> e <b>POST</b> (ma esistono anche HEAD, PUT, PATCH, DELETE, OPTIONS, TRACE, CONNECT)
+              </p>
+              <p>
+                <b>URI:</b><br>
+                <i>unified resource identifier</i> è il nome del server che voglio contattare
+              </p>
+              <p>
+                <b>VERSIONE PROTOCOLLO:</b><br>
+                1.1 dal 1997 fino al 2014<br>
+                2.0 dal 2015
+              </p>
+              <h3>HEADER</h3>
+              <p>
+                <b>Header</b> è uno spazio di lunghezza variabile che può contenere diverse informazioni nel <b>formato chiave: valore</b>
+              </p>
+              <div class="code">
+                <b>User-Agent:</b> una stringa identificativa del browser utilizzato (chrome)
+                <b>Accept:</b> una lista di file che il client si aspetta per la richiesta che ha fatto
+                <b>Content -Length:</b> la lunghezza della richiesta, in modo che il server possa verificare di averla ricevuta correttamente
+                <b>Authorization:</b> una stringa che il client invia per identificarsi
+              </div>
+              <h3>BODY</h3>
+              <p>
+                <b>Body</b> il corpo della richiesta non è altro che la parte che <b>identifica la risorsa da richiedere</b>.
+              </p>
+              <div class="code">
+                www.boolean.careers<mark>/corso/serale</mark>
+              </div>
+            </div>
+
+            <!-- AJAX -->
+            <div class="sub-section" id="ajax">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> AJAX</h3>
+              <p>
+                Anche i programmatori web possono fare chiamate HTTP utilizzando Javascript!
+              </p>
+              <p>
+                AJAX, <b>Asynchronous Javascript And XML,</b> permette di fare chiamate asincrone.
+              </p>
+              <p>
+                <b>jQuery migliora e facilita la creazione di una chiamata Ajax.</b> vedi metodo <a href="jquery.html" class="color-js">qui</a>
+              </p>
+            </div>
+
+            <!-- JSON -->
+            <div class="sub-section" id="json">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> JSON & XML</h3>
+              <p>
+                Per <b>comunicare</b> tra loro <b>client e server</b> devono "parlare" la stessa lingua!<br>
+                Ne esistono <b>2 standard</b>:
+              </p>
+              <ul class="normal-list js-list">
+                <li><b>XML (eXtensible Markup Language)</b> è una linguaggio di markup (simile all’HTML) che stabilisce un meta linguaggio per passare dati strutturati.</li>
+                <li><b>JSON (JavaScript Object Notation)</b> utilizza la notazione che conosciamo per definire gli oggetti in JavaScript</li>
+              </ul>
+              <p>
+                Ecco come si presentano:
+              </p>
+              <table>
+                <thead>
+                  <tr class="odd-50" style="font-weight: 700; text-align:center;">
+                    <td>XML</td>
+                    <td>JSON</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="code">
+                        &lt;?xml version="1.0" encoding="UTF-8"?>
+                        &lt;utenti>
+                        &nbsp;&nbsp;&lt;utente anni="20">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;nome>Ema&lt;/nome>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;cognome>Princi&lt;/cognome>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;indirizzo>Torino&lt;/indirizzo>
+                        &nbsp;&nbsp;&lt;/utente>
+                        &nbsp;&nbsp;&lt;utente anni="54">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;nome>Max&lt;/nome>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;cognome>Rossi&lt;/cognome>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;indirizzo>Roma&lt;/indirizzo>
+                        &nbsp;&nbsp;&lt;/utente>
+                        &lt;/utenti>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="code">
+                        {
+                        &nbsp;&nbsp;"users": [
+                        &nbsp;&nbsp;&nbsp;&nbsp;{
+                        &nbsp;&nbsp;&nbsp;&nbsp;"nome": "Ema",
+                        &nbsp;&nbsp;&nbsp;&nbsp;"cognome": "Princi",
+                        &nbsp;&nbsp;&nbsp;&nbsp;"indirizzo": "Torino",
+                        &nbsp;&nbsp;&nbsp;&nbsp;"anni": 20
+                        &nbsp;&nbsp;&nbsp;&nbsp;},
+                        &nbsp;&nbsp;&nbsp;&nbsp;{
+                        &nbsp;&nbsp;&nbsp;&nbsp;"nome": "Max",
+                        &nbsp;&nbsp;&nbsp;&nbsp;"cognome": "Rossi",
+                        &nbsp;&nbsp;&nbsp;&nbsp;"indirizzo": "Roma",
+                        &nbsp;&nbsp;&nbsp;&nbsp;"anni": 54
+                        &nbsp;&nbsp;&nbsp;&nbsp;}
+                        &nbsp;&nbsp;]
+                        }
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3>JS + JSON = <span class="color-laravel"><i class="fas fa-heart"></i></span></h3>
+              <p>
+                Una volta arrivato <b>la risposta</b> dal server in formato <b>JSON</b>, è molto semplice <b>trasformare</b> la risposta (che è semplicemente testo) in un <b>oggetto JavaScript</b>, con <code><b>JSON.parse()</code></b>.
+              </p>
+              <div class="code">
+                var obj = <b>JSON.parse(</b>'{ "name":"John", "age":30, "city":"New York"}'<b>)</b>;
+              </div>
+            </div>
+
+            <!-- Api -->
+            <div class="sub-section" id="api">
+              <h3><span class="color-js"><i class="fas fa-hashtag"></i></span> API: Application Programming Interface</h3>
+              <p>
+                Con API si intende un insieme di procedure rese disponibili ad un programmatore per svolgere un insieme coerente di operazioni.
+              </p>
+              <h3>Query String</h3>
+              <p>
+                Un modo per <b>passare dati al server</b> è attraverso l’URI aggiungendo al termine una <b>querystring</b>.
+              </p>
+              <p>
+                <code>www.boolean.careers <mark><b>?</b>email=alex@mail.com<b>&</b>title=student</mark> </code>
+              </p>
+              <p>
+                Ecco cosa abbiamo:
+              </p>
+              <ul class="normal-list js-list">
+                <li><code><b>?</b></code> indica che inizia la query string</li>
+                <li><b>chiave=valore</b></li>
+                <li>ogni chiave valore è separata da un <b>&</b></li>
+              </ul>
+            </div>
           </section>
 
           <!-- Esercizi -->
