@@ -1356,55 +1356,47 @@
               <p>
                 Ecco come si presentano:
               </p>
-              <!-- <table>
-                <thead>
-                  <tr class="odd-50" style="font-weight: 700; text-align:center;">
-                    <td>XML</td>
-                    <td>JSON</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <div class="code">
-                        &lt;?xml version="1.0" encoding="UTF-8"?>
-                        &lt;utenti>
-                        &nbsp;&nbsp;&lt;utente anni="20">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;nome> Ema &lt;/nome>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;cognome> Princi &lt;/cognome>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;indirizzo> Torino &lt;/indirizzo>
-                        &nbsp;&nbsp;&lt;/utente>
-                        &nbsp;&nbsp;&lt;utente anni="54">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;nome> Max &lt;/nome>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;cognome> Rossi &lt;/cognome>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;indirizzo> Roma &lt;/indirizzo>
-                        &nbsp;&nbsp;&lt;/utente>
-                        &lt;/utenti>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="code">
-                        {
-                        &nbsp;&nbsp;"users": [
-                        &nbsp;&nbsp;&nbsp;&nbsp;{
-                        &nbsp;&nbsp;&nbsp;&nbsp;"nome": "Ema",
-                        &nbsp;&nbsp;&nbsp;&nbsp;"cognome": "Princi",
-                        &nbsp;&nbsp;&nbsp;&nbsp;"indirizzo": "Torino",
-                        &nbsp;&nbsp;&nbsp;&nbsp;"anni": 20
-                        &nbsp;&nbsp;&nbsp;&nbsp;},
-                        &nbsp;&nbsp;&nbsp;&nbsp;{
-                        &nbsp;&nbsp;&nbsp;&nbsp;"nome": "Max",
-                        &nbsp;&nbsp;&nbsp;&nbsp;"cognome": "Rossi",
-                        &nbsp;&nbsp;&nbsp;&nbsp;"indirizzo": "Roma",
-                        &nbsp;&nbsp;&nbsp;&nbsp;"anni": 54
-                        &nbsp;&nbsp;&nbsp;&nbsp;}
-                        &nbsp;&nbsp;]
-                        }
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table> -->
+              <div class="client-server-lang">
+                <div class="xml-lang">
+                  <h3>XML</h3>
+                  <div class="code">
+                    &lt;?xml version="1.0" encoding="UTF-8"?>
+                    &lt;utenti>
+                    &nbsp;&nbsp;&lt;utente anni="20">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;nome> Ema &lt;/nome>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;cognome> Princi &lt;/cognome>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;indirizzo> Torino &lt;/indirizzo>
+                    &nbsp;&nbsp;&lt;/utente>
+                    &nbsp;&nbsp;&lt;utente anni="54">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;nome> Max &lt;/nome>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;cognome> Rossi &lt;/cognome>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;indirizzo> Roma &lt;/indirizzo>
+                    &nbsp;&nbsp;&lt;/utente>
+                    &lt;/utenti>
+                  </div>
+                </div>
+                <div class="json-lang">
+                  <h3>JSON</h3>
+                  <div class="code">
+                    {
+                    &nbsp;&nbsp;"users": [
+                    &nbsp;&nbsp;&nbsp;&nbsp;{
+                    &nbsp;&nbsp;&nbsp;&nbsp;"nome": "Ema",
+                    &nbsp;&nbsp;&nbsp;&nbsp;"cognome": "Princi",
+                    &nbsp;&nbsp;&nbsp;&nbsp;"indirizzo": "Torino",
+                    &nbsp;&nbsp;&nbsp;&nbsp;"anni": 20
+                    &nbsp;&nbsp;&nbsp;&nbsp;},
+                    &nbsp;&nbsp;&nbsp;&nbsp;{
+                    &nbsp;&nbsp;&nbsp;&nbsp;"nome": "Max",
+                    &nbsp;&nbsp;&nbsp;&nbsp;"cognome": "Rossi",
+                    &nbsp;&nbsp;&nbsp;&nbsp;"indirizzo": "Roma",
+                    &nbsp;&nbsp;&nbsp;&nbsp;"anni": 54
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    &nbsp;&nbsp;]
+                    }
+                  </div>
+                </div>
+              </div>
               <h3>JS + JSON = <span class="color-laravel"><i class="fas fa-heart"></i></span></h3>
               <p>
                 Una volta arrivato <b>la risposta</b> dal server in formato <b>JSON</b>, è molto semplice <b>trasformare</b> la risposta (che è semplicemente testo) in un <b>oggetto JavaScript</b>, con <code><b>JSON.parse()</code></b>.

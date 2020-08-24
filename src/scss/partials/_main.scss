@@ -178,6 +178,20 @@ main {
         border: 1px solid #dedede;
         margin-bottom: 50px;
       }
+      .client-server-lang {
+        @include flex_rule;
+        .xml-lang,
+        .json-lang {
+          flex-basis: 100%;
+          border: 1px solid #ccc;
+          h3 {
+            padding: 20px 0;
+            text-align: center;
+            background-color: #f5f5fa;
+            border-bottom: 1px solid #ccc;
+          }
+        }
+      }
     }
   } // End guide pages
 } // End main

@@ -605,6 +605,26 @@ main .flex-page .content .esercizio {
   margin-bottom: 50px;
 }
 
+main .flex-page .content .client-server-lang {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+main .flex-page .content .client-server-lang .xml-lang,
+main .flex-page .content .client-server-lang .json-lang {
+  flex-basis: 100%;
+  border: 1px solid #ccc;
+}
+
+main .flex-page .content .client-server-lang .xml-lang h3,
+main .flex-page .content .client-server-lang .json-lang h3 {
+  padding: 20px 0;
+  text-align: center;
+  background-color: #f5f5fa;
+  border-bottom: 1px solid #ccc;
+}
+
 /* The animation code */
 
 @-webkit-keyframes EXAMPLE {
@@ -768,6 +788,15 @@ footer p a:hover {
 
   main .tech-stack .stack-selection .tech-container {
     flex-basis: calc(100% / 4);
+  }
+
+  main .flex-page .content .client-server-lang .xml-lang,
+  main .flex-page .content .client-server-lang .json-lang {
+    flex-basis: 50%;
+  }
+
+  main .flex-page .content .client-server-lang .xml-lang {
+    border-right: none;
   }
 }
 
