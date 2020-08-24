@@ -576,7 +576,7 @@
                   // creo un oggetto data
                   var dataObject = new Date();
 
-                  // individuo l'ora corrente<
+                  // individuo l'ora corrente
                   var ora = dataObject.getHours();
 
                   if (ora > 06 && ora &lt;= 12) {
@@ -747,7 +747,7 @@
 
                 <i>Esempio 1</i>
                 var i = 0;
-                while (i < 10) {
+                while (i &lt; 10) {
                 &nbsp;&nbsp;document.write('Conto: ' + i);
                 &nbsp;&nbsp;i++; <i>// operatore di incremento è importante per evitare i loop</i>
                 }
@@ -886,7 +886,7 @@
                 var <b>nomi</b> = ["Luca", "Marco", "Paolo", "Alessandro"];
 
                 <i>// stampiamo tutti i nomi dell'array</i>
-                for (var i = 0; i < <b>nomi.length</b>; i++) {
+                for (var i = 0; i &lt; <b>nomi.length</b>; i++) {
                 console.log(<b>nomi[i]</b>);
                 }
               </div>
@@ -1363,14 +1363,14 @@
                     &lt;?xml version="1.0" encoding="UTF-8"?>
                     &lt;utenti>
                     &nbsp;&nbsp;&lt;utente anni="20">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;nome> Ema &lt;/nome>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;cognome> Princi &lt;/cognome>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;indirizzo> Torino &lt;/indirizzo>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;nome>Ema&lt;/nome>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;cognome>Princi&lt;/cognome>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;indirizzo>Torino&lt;/indirizzo>
                     &nbsp;&nbsp;&lt;/utente>
                     &nbsp;&nbsp;&lt;utente anni="54">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;nome> Max &lt;/nome>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;cognome> Rossi &lt;/cognome>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;indirizzo> Roma &lt;/indirizzo>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;nome>Max&lt;/nome>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;cognome>Rossi&lt;/cognome>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;indirizzo>Roma&lt;/indirizzo>
                     &nbsp;&nbsp;&lt;/utente>
                     &lt;/utenti>
                   </div>
@@ -1399,7 +1399,7 @@
               </div>
               <h3>JS + JSON = <span class="color-laravel"><i class="fas fa-heart"></i></span></h3>
               <p>
-                Una volta arrivato <b>la risposta</b> dal server in formato <b>JSON</b>, è molto semplice <b>trasformare</b> la risposta (che è semplicemente testo) in un <b>oggetto JavaScript</b>, con <code><b>JSON.parse()</code></b>.
+                Una volta arrivato <b>la risposta</b> dal server in formato <b>JSON</b>, è molto semplice <b>trasformare</b> la risposta (che è semplicemente testo) in un <b>oggetto JavaScript</b>, con <code><b>JSON.parse()</b></code>.
               </p>
               <div class="code">
                 var obj = <b>JSON.parse(</b>'{ "name":"John", "age":30, "city":"New York"}'<b>)</b>;
@@ -1417,7 +1417,7 @@
                 Un modo per <b>passare dati al server</b> è attraverso l’URI aggiungendo al termine una <b>querystring</b>.
               </p>
               <p>
-                <code>www.boolean.careers <mark><b>?</b>email=alex@mail.com<b>&</b>title=student</mark> </code>
+                <code>www.boolean.careers<mark><b>?</b>email=alex@mail.com<b>&</b>title=student</mark> </code>
               </p>
               <p>
                 Ecco cosa abbiamo:
@@ -1483,7 +1483,7 @@
                 Script eseguito:
               </p>
               <div class="code">
-                for (var i = 1; i <= 100; i++) {
+                for (var i = 1; i &lt;= 100; i++) {
                 <i>// Seleziono dove stampare il risultato</i>
                 &nbsp;&nbsp;var fizzBuzzOutput = document.getElementById('output-esercizio2');
 
@@ -1520,7 +1520,7 @@
                 <i>// chiedo la parola all'utente</i>
                 do {
                   var parola = prompt('Inserisci una parola');
-                } while (parola == null || !(isNaN(parola)) || parola.length <= 2 );
+                } while (parola == null || !(isNaN(parola)) || parola.length &lt;= 2 );
 
 
                 var parolaInvertita = ""; <i>// variabile vuota</i>

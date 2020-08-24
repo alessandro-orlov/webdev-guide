@@ -64,7 +64,7 @@ var techStack = [
 
 ];
 
-// =========== Print tech cards in index.html ================= //
+// =========== Print guide stak cards in index.html ================= //
 var source = $('#entry-template').html();
 var template = Handlebars.compile(source);
 
@@ -86,7 +86,7 @@ $('.page-navigation .sub-list').click(function() {
 
 });
 
-// =========== Print YEAR in footer =========================== //
+// =========== Print YEAR in the footer =========================== //
 var year = new Date().getFullYear();
 $('.current-year').append(year);
 

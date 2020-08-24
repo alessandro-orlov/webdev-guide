@@ -202,6 +202,10 @@ img {
   font-weight: bold;
 }
 
+mark {
+  background-color: #7fffd4;
+}
+
 /*==================*/
 
 /* CUSTOM SCROLLBAR */

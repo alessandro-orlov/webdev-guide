@@ -16138,7 +16138,7 @@ $(document).ready(function () {
     'logo': 'laravel-logo.png',
     'title': 'Laravel',
     'description': 'il framework per “Web Artisans” orientato alla programmazione ad oggetti ed al pattern architetturale MVC '
-  }]; // =========== Print tech cards in index.html ================= //
+  }]; // =========== Print guide stak cards in index.html ================= //
 
   var source = $('#entry-template').html();
   var template = Handlebars.compile(source);
@@ -16154,7 +16154,7 @@ $(document).ready(function () {
     $(this).find('.plus').toggleClass('visible');
     $(this).find('.minus').toggleClass('visible');
     $(this).find('ul').slideToggle('visible');
-  }); // =========== Print YEAR in footer =========================== //
+  }); // =========== Print YEAR in the footer =========================== //
 
   var year = new Date().getFullYear();
   $('.current-year').append(year);
