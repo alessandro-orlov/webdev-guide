@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="it">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery - guide by Alexander Orlov</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Quicksand:wght@465&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- Fontawsome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <!-- My Style -->
@@ -75,26 +76,40 @@
             <li><a href="#storia">Storia</a></li>
             <li><a href="#implement-jq">Implementare jQuery</a></li>
             <li><a href="#syntax">La sintassi</a></li>
-            <li><a href="#selector">I selettori</a></li>
-            <li><a href="#actions">Le azioni</a></li>
-            <li><a href="#doc-ready">Document ready</a></li>
-            <li><a href="#toggle">Toggle</a></li>
-            <li><a href="#callback">Funzioni di callback</a></li>
-            <li><a href="#this">this</a></li>
-            <li><a href="#dom-manip">Monipolazione del DOM</a></li>
+            <li><a href="#selector">Selettori</a></li>
+            <li><a href="#actions">Azioni</a></li>
             <li class="sub-list">
-              <a href="#">
-                link
+              <a>
+                Eventi
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
                 <span class="minus"><i class="fas fa-minus"></i></span>
               </a>
               <ul>
-                <li><a href="#">sub link</a></li>
-                <li><a href="#">sub link</a></li>
-                <li><a href="#">sub link</a></li>
+                <li><a href="#doc-ready">Document ready</a></li>
+                <li><a href="#mouse-events">Mouse events</a></li>
+                <li><a href="#kbd-events">Keyboard events</a></li>
+                <li><a href="#form-events">Form events</a></li>
               </ul>
             </li>
-            <li><a href="#">link</a></li>
+            <li class="sub-list">
+              <a>
+                Effetti
+                <span class="plus visible"><i class="fas fa-plus"></i></span>
+                <span class="minus"><i class="fas fa-minus"></i></span>
+              </a>
+              <ul>
+                <li><a href="#effects">Inizio</a> </li>
+                <li><a href="#toggle">Toggle</a></li>
+                <li><a href="#show-hide">Show & Hide</a></li>
+                <li><a href="#fade-in-out">Fade In & Out</a></li>
+                <li><a href="#slide">Slide</a></li>
+              </ul>
+            </li>
+            <li><a href="#callback">Funzioni di callback</a></li>
+            <li><a href="#this">this</a></li>
+            <li><a href="#dom-manip">Manipolazione del DOM</a></li>
+            <li><a href="#each">Metodo .each()</a></li>
+            <li><a href="#ajax">Ajax</a></li>
           </ul>
         </aside>
 
@@ -136,7 +151,6 @@
             </p>
             <div class="code">
               &lt;script src="https://code.jquery.com/jquery-3.5.1.min.js"
-              integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
               crossorigin="anonymous">&lt;/script>
             </div>
           </section>
@@ -193,6 +207,422 @@
             </div>
           </section>
 
+          <!-- Le azioni -->
+          <section id="actions">
+            <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> Le azioni</h2>
+            <p>
+              Le azioni indicano cosa accadrà all’elemento selezionato con il selector.<br>
+              Ci sono cintinaia disponibili, ecco qualche esempio:
+            </p>
+            <ul>
+              <li><li><code><b>$('selector')<mark>.addClass('nomeClasse');</mark>;</b></code> aggiunge la classe “nomeclasse” all’elemento selezionato </li>
+              <li><li><code><b>$('selector')<mark>.removeClass('nomeClasse');</mark></b></code> rimuove la classe nomeClasse dal elemento selezionato</li>
+              <li><li><code><b>$('selector')<mark>.hasClass();</mark></b></code> utilizzato delle strrutture condizionale(if else), esito: <b>true</b> o <b>false</b></li>
+              <li><li><code><b>$('selector')<mark>.hide();</mark></b></code> nasconde un elemento (display: none;)</li>
+              <li><li><code><b>$('selector')<mark>.show();</mark></b></code> mostra l'elemento (display: block)</li>
+              <li><li><code><b>$('selector')<mark>.click();</mark></b></code> associa ad un click una funzione</li>
+            </ul>
+          </section>
+
+          <!-- Gli Eventi -->
+          <section>
+            <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> Gli Eventi</h2>
+            <p>
+              jQuery offre un accesso ancora più semplice agli eventi che JavaScript offre.
+            </p>
+
+            <!-- Document ready -->
+            <div class="sub-section" id="doc-ready">
+              <h3><span class="color-jq"><i class="fas fa-hashtag"></i></span> Document ready</h3>
+              <p>
+                Uno degli eventi più utilizzati, indica che lo script deve essere eseguito al completmento della pagina html
+              </p>
+              <div class="code">
+                $(document).ready(function() {
+                  <i>// tutto il codice</i>
+                });
+              </div>
+            </div>
+
+            <!-- Mouse events -->
+            <div class="sub-section" id="mouse-events">
+              <h3><span class="color-jq"><i class="fas fa-hashtag"></i></span> Mouse Events</h3>
+              <p>
+                Sono gli eventi che vengono azionati con il mouse
+              </p>
+              <ul>
+                <li><li><code><b>$('#myButton')<mark>.click();</mark></b></code> Click sull'id myButton</li>
+                <li><li><code><b>$('#myButton')<mark>.dblclick();</mark></b></code> Doppio Click sull'id myButton</li>
+                <li><li><code><b>$('#mySquare')<mark>.mouseenter();</mark></b></code> Quando il mouse "entra" nel quadrato</li>
+                <li><li><code><b>$('#mySquare')<mark>.mouseleave();</mark></b></code> Quando il mouse "esce" nel quadrato</li>
+                <li><li><code><b>$('#mySquare')<mark>.hover();</mark></b></code> combinazione tra <b>mouseenter</b> e <b>mouseleave</b></li>
+              </ul>
+            </div>
+
+            <!-- Keyboard events -->
+            <div class="sub-section" id="kbd-events">
+              <h3><span class="color-jq"><i class="fas fa-hashtag"></i></span> Keyboard events</h3>
+              <p>
+                Gli eventi della tastiera
+              </p>
+              <ul>
+                <li><li><code><b>$('input[text]')<mark>.keyup();</mark></b></code> si attiva all'rilascio del testo</li>
+                <li><li><code><b>$('input[text]')<mark>.keydown();</mark></b></code> si attiva quando il tasto è stato premuto</li>
+                <li><li><code><b>$('input[text]')<mark>.keypress();</mark></b></code> si attiva quando il tasto è piggiato</li>
+              </ul>
+              <p>
+                Ogni tasto della tastiera corrisponde ad un numero, ad esempio <b>13</b> - corrisponde all'invio (tasto <b>ENTER</b>).<br>
+                Tutti i numeri della tastiera: <a href="https://keycode.info/" class="color-jq" target="_blank"><b>qui</b></a>
+              </p>
+              <div class="code">
+                $('selector')<mark><b>.keypress</b></mark>(function(<mark><b>event</b></mark>) {
+                &nbsp;&nbsp;if(<mark><b>event.which</b></mark> === <mark><b>13</b></mark>) {
+                &nbsp;&nbsp;&nbsp;&nbsp;<i>// codice da eseguire</i>
+                &nbsp;&nbsp;}
+                });
+              </div>
+            </div>
+
+            <!-- Form Events -->
+            <div class="sub-section" id="form-events">
+              <h3><span class="color-jq"><i class="fas fa-hashtag"></i></span> Form Events</h3>
+              <p>
+                Gli eventi del form
+              </p>
+              <ul>
+                <li><code><b>$('selector')<mark>.submit();</mark></b></code> evento al click sul tasto submit</li>
+                <li><code><b>$('selector')<mark>.change();</mark></b></code> evento al cambiamento del form <b>select</b> </li>
+                <li><code><b>$('selector')<mark>.focus();</mark></b></code> evento equivalente al  <b>::focus css</b></li>
+                <li><code><b>$('selector')<mark>.blur();</mark></b></code> evento eseguito quando il campo <b>perde il focus</b></li>
+              </ul>
+
+              <p>
+                <b>Metodo on()</b><br>
+                Questo metodo è particolarmente efficace per applicare gli eventi ai <b>contenuti generati dinamicamente</b>!
+              </p>
+              <div class="code">
+                $('selector')<mark><b>.on</b></mark>('click', function() {
+                &nbsp;&nbsp;<i>// codice da eseguire</i>
+              });
+
+              <i>// Eventi multipli</i>
+              $("p")<mark><b>.on({</b></mark>
+                &nbsp;&nbsp;mouseenter: function(){
+                &nbsp;&nbsp;&nbsp;&nbsp;$(this).css("background-color", "lightgray");
+                &nbsp;&nbsp},
+                &nbsp;&nbsp;mouseleave: function(){
+                &nbsp;&nbsp;&nbsp;&nbsp;$(this).css("background-color", "lightblue");
+                &nbsp;&nbsp},
+                &nbsp;&nbsp;click: function(){
+                &nbsp;&nbsp;&nbsp;&nbsp;$(this).css("background-color", "yellow");
+                &nbsp;&nbsp}
+              <mark><b>});</b></mark>
+              </div>
+            </div>
+          </section>
+
+          <!-- Gli Effetti -->
+          <section id="effects">
+            <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> Gli Effetti</h2>
+            <p>
+              Gli effetti che possiamo applicare con jQuery
+            </p>
+            <!-- Toggle -->
+            <div class="sub-section">
+              <h3><span class="color-jq"><i class="fas fa-hashtag"></i></span> La keyword "toggle"</h3>
+              <p>
+                <b>Toggle</b> è una keyword che troveremo associata a molti metodi jQuery e che ci permetterà di utilizzare <b>due metodi opposti</b> senza dover fare ulteriori check.
+              </p>
+              <p>
+                Ecco alcuni esempi di metodi che accettano il toggle:
+              </p>
+              <ul>
+                <li><code>$('button')<mark><b>.toggle();</b></mark></code> unisce show e hide</li>
+                <li><code>$('selector')<mark><b>.slideToggle();</b></mark></code> tipo faq</li>
+                <li><code>$('selector')<mark><b>.fadeToggle();</b></mark></code> con transition</li>
+                <li><code>$('selector')<mark><b>.toggleClass();</b></mark></code> aggiunge/rimuove una classe css</li>
+              </ul>
+            </div>
+
+            <!-- show & hide -->
+            <div class="sub-section" id="show-hide">
+              <h3><span class="color-jq"><i class="fas fa-hashtag"></i></span> Show e Hide</h3>
+              <p>
+                Sono <b>effetti</b> che ci permettono di <b>rendere visibile o invisibile</b> un elemento. Possono essere utilizzati in <b>3 modi diversi</b>, passando alla funzione <b>0, 1 o 2 argomenti</b>
+              </p>
+              <ul class="normal-list jq-list">
+                <li>
+                  <b>1 metodo:</b> Senza argomento
+                  <ul class="under-list">
+                    <li><code>$('button')<mark><b>.show();</b></mark></code> </li>
+                    <li><code>$('button')<mark><b>.hide();</b></mark></code> </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>2 metodo:</b> Passo come argomento la <b>durata</b> dell’effetto in <b>ms</b> o con una keyword come <b>“slow” o “fast”</b>.
+                  <ul class="under-list">
+                    <li><code>$('button')<mark><b>.show(2000);</b></mark></code> 2000 equivale a 2 secondi</li>
+                    <li><code>$('button')<mark><b>.hide('fast');</b></mark></code> </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>3 metodo:</b> Posso, oltre alla durata, anche una <b>funzione di callback</b> che verrà invocata alla fine dell’effetto.<br>
+                   Può essere <b>sia una funzione "tradizionale", sia una funziona anonima</b>.
+                  <ul class="under-list">
+                    <li><code>$('button')<mark><b>.show(2000, function () {/*code*/ });</b></mark></code> funzine anonima</li>
+                    <li><code>$('button')<mark><b>.hide(2000, myFunction);</b></mark></code> funzione "tradizionale"</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Fada in fade out -->
+            <div class="sub-section" id="fade-in-out">
+              <h3><span class="color-jq"><i class="fas fa-hashtag"></i></span> Fade-in e Fade-out</h3>
+              <p>
+                Un’altro metodo per giocare con la <b>visibilità degli elementi</b>. Possono essere utilizzati in <b>3 modi diversi</b>, passando alla funzione <b>0, 1 o 2 argomenti</b> argomenti
+              </p>
+              <ul class="normal-list jq-list">
+                <li>
+                  <b>1 metodo:</b> Senza argomento
+                  <ul class="under-list">
+                    <li><code>$('button')<mark><b>.fadeIn();</b></mark></code> </li>
+                    <li><code>$('button')<mark><b>.fadeOut();</b></mark></code> </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>2 metodo:</b> Passo come argomento la <b>durata</b> dell’effetto in <b>ms</b> o con una keyword come <b>“slow” o “fast”</b>.
+                  <ul class="under-list">
+                    <li><code>$('button')<mark><b>.fadeIn(2000);</b></mark></code></li>
+                    <li><code>$('button')<mark><b>.fadeOut('fast');</b></mark></code> </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>3 metodo:</b> Passo, oltre alla durata, anche una <b>funzione di callback</b> che verrà invocata alla fine dell’effetto.<br>
+                   Può essere <b>sia una funzione "tradizionale", sia una funziona anonima</b>.
+                  <ul class="under-list">
+                    <li><code>$('button')<mark><b>.fadeIn(2000, function () {/*code*/ });</b></mark></code> funzine anonima</li>
+                    <li><code>$('button')<mark><b>.fadeOut(2000, myFunction);</b></mark></code> funzione "tradizionale"</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Slide -->
+            <div class="sub-section" id="slide">
+              <h3><span class="color-jq"><i class="fas fa-hashtag"></i></span> Efetto Slide</h3>
+              <p>
+                jQuery crea per noi anche l’effetto slide che può essere richiamato in maniera molto simile all’effetto fade passando come parametri opzionali la durata e una funzione di callback.
+              </p>
+              <ul class="normal-list jq-list">
+                <li><code><b>slideDown</b></code> setterà il display su <b>block</b> di un selettore aggiungendo una transizione che farà cadere dall’alto l’elemento</li>
+                <li><code><b>slideUp</b></code> setterà il display su <b>none</b> facendo scomparire in alto l’elemento.</li>
+                <li><code><b>slideToggle</b></code> farà uno slideDown qualora l’elemento sia hidden e slideUp qualora fosse block.</li>
+              </ul>
+              <div class="code">
+                $('button').slideToggle(500, function () {
+                &nbsp;&nbsp; <i>// codice da eseguire</i>
+                });
+              </div>
+            </div>
+          </section>
+
+          <!-- Funzioni di callback -->
+          <section id="callback">
+            <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> Funzioni di callback</h2>
+            <p>
+              Come abbiamo visto precedentemente, quando utilizziamo un <b>effetto</b>, abbiamo sempre la possibilità di associare una <b>funzione di callback</b>.
+            </p>
+            <p>
+              <u>La funzione di callback verrà eseguita una volta che l’effetto è stato completato al 100%.</u>
+            </p>
+            <div class="code">
+              <i>// Partirà un alert una volta che un testo è completamente nascosto.</i>
+
+              $('.text').hide(1000, function () {
+              &nbsp;&nbsp;alert('Testo nascosto');
+              });
+            </div>
+          </section>
+
+          <!-- JQuery $(this) -->
+          <section id="this">
+            <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> L’utilizzo di this</h2>
+            <p>
+              Spesso potremmo dover intercettare il click o un qualsiasi altro evento associato ad una classe.
+            </p>
+            <p>
+              <b>Non essendo un id</b> e quindi interagendo con un selettore che si riferisce a diversi elementi potremmo aver bisogno di <b>utilizzare <code>this</code></b>.
+            </p>
+            <p>
+              La keyword <code><b>this</b></code> identifica per noi <b>l’esatto componente</b> che è stato ad esempio cliccato.
+            </p>
+            <div class="code">
+              $('.buttons').click(function () {
+              &nbsp;&nbsp;$(this).hide(); <i>// nascondiamo esattamente il bottone che l’utente ha cliccato</i>
+              });
+            </div>
+          </section>
+
+          <!-- DOM -->
+          <section id="dom-manip">
+            <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> Manipolazione del DOM</h2>
+            <p>
+              Con dei metodi molto semplici che ci offre jQuery, possimao manipolare il DOM modificando l’html, il text o le value di un selettore o leggere gli attributi di un selettore. Muoversi all'interno del DOM
+            </p>
+            <ul class="normal-list jq-list">
+              <li><code><b>text()</b></code> Cambia o ritorna il testo di un selettore</li>
+              <li><code><b>html()</b></code> Cambia o ritorna l’html di un selettore, incluso il markup (&lt;tag> html)</li>
+              <li><code><b>val()</b></code> Cambia o ritorna il valore di un form input</li>
+              <li><code><b>attr()</b></code> Cambia o ritorna i valori di un attributo di un selettore.</li>
+            </ul>
+            <p>
+              <br>
+              <b><code>text()</code> e <code>val()</code></b> possono essere utilizzati con o senza parametro. <b>Senza</b> parametro - <b>lettura</b>. <b>Con</b> il parametro - <b>modifica</b>.
+            </p>
+            <div class="code">
+              <i>// senza parametro restituiscono il valore attuale</i>
+              $('.text').text(); <i>// lettura del testo</i>
+
+              <i>// con parametro modificano il valore</i>
+              $('.text').text('Nuovo testo'); <i>// modifica del testo</i>
+            </div>
+            <p>
+              <br>
+              <code><b>attr()</b></code> invece necessita di un <b>primo parametro</b> che indica l’attributo da <b>leggere</b> e un <b>secondo</b> per la <b>modifica</b>.
+            </p>
+            <div class="code">
+              $('.link').attr('href'); <i>// lettura del href</i>
+
+              $('.text').attr('href', 'http://newHref.it'); <i>// scrittura del nuovo href</i>
+            </div>
+            <p>
+              Possiamo <b>modificare anche più attributi insieme</b> (come oggetto js):
+            </p>
+            <div class="code">
+              $('.selector').attr({
+              &nbsp;&nbsp;'href': 'http://myhref.it',
+              &nbsp;&nbsp;'Title': 'Nuovo Titolo'
+              });
+            </div>
+
+            <h3>Concatenare delle funzioni</h3>
+            <p>
+              Possiamo anche <b>concatenare diverse funzioni</b> per rendere il codice più compatto.
+            </p>
+            <div class="code">
+              <i>// cambiamo il testo di un p, cambiamo il colore al testo</i>
+
+              <mark>(</mark>$('p').html('Ciao')<mark>)</mark>.css('color', 'red');
+            </div>
+
+            <h3>Metodo CSS</h3>
+            <p>
+              Modifichiamo o leggiamo le regole css di un selettore.
+            </p>
+            <div class="code">
+              $('.square').css('background'); <i>// lettura della regola css background</i>
+
+              $('.square').css('background', <b>'red'</b>); <i>// scrittura del nuovo valore background</i>
+            </div>
+
+            <h3>Navigare nel DOM</h3>
+            <p>
+              jQuery mette a disposizione numerosi metodi per <b>muoversi all'interno di un documento</b> effettuando ricerche all'interno di un elemento oppure sfruttando legami di tipo padre-figlio e così via.
+            </p>
+            <ul>
+              <li><code><b>$('.index')<mark>.children()</mark></b></code> seleziona figlio diretto del index </li>
+              <li><code><b>$('.index')<mark>.find('selettore')</mark></b></code> permette di selezionare gli elementi contenuti all'interno del index <code>$('.index')<mark>.find('p')</mark>.hide();</code> </li>
+              <li><code><b>$('.index')<mark>.siblings()</mark></b></code> seleziona <b>tutti</b> elementi fratelli </li>
+              <li><code><b>$('.index')<mark>.siblings('selettore')</mark></b></code> seleziona elementi fratelli con selettore selezionato </li>
+              <li><code><b>$('.index')<mark>.parent()</mark></b></code> seleziona il genitore diretto dell'elemento index </li>
+              <li><code><b>$('.index')<mark>.parents()</mark></b></code> eleziona il genitore a qualsiasi livello dell'elemento index </li>
+              <li><code><b>$('.index')<mark>.closest()</mark></b></code> parte dall'elemento corrente e restituisce sempre un solo elemento - quello più vicino </li>
+              <li><code><b>$('.index')<mark>.next(), .nextAll(), .prev(), .prevAll()</mark></b></code> questi metodi servono per selezionare gli elementi successivi e precedenti a quello selezionato. </li>
+            </ul>
+
+            <h3>Metodo append()</h3>
+            <p>
+              E' possibile <b>aggiungere</b> un elemento alla fine dell’elemento selezionato con il metodo <b>append()</b>
+            </p>
+            <div class="code">
+              $('#append-output').append('&lt;h3>Ciao, sono Append&lt;/h3>');
+            </div>
+            <button type="button" onclick="append()">avvia lo script</button>
+            <button type="button" onclick="cancella()">delete</button>
+            <p>
+              <b>OUTPUT:</b><br>
+              <div id="append-output"></div>
+            </p>
+            <p>
+              Altri metodi:
+            </p>
+            <ul class="normal-list jq-list">
+              <li><code><b>prepend()</b></code> aggiunge elemento all'inizio</li>
+              <li><code><b>prependTo('selector')</b></code></li>
+              <li><code><b>prependTo('selector')</b></code></li>
+            </ul>
+          </section>
+
+          <!-- .each() -->
+          <section id="each">
+            <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> Metodo .each()</h2>
+            <p>
+              Il metodo <strong>.each()</strong> è utilizzato per iterare un oggetto jQuery contenente una selezione di elementi del DOM. Il metodo in oggetto pretende come parametro una funzione di callback alla quale vengono passati i vari item presenti all'interno dell'oggetto.
+            </p>
+            <p>
+              Ad esempio: aggiungiamo il target "_blank" a tutti i link con classe <b>sponsor</b>:
+            </p>
+            <div class="code">
+              <i>// ciclo tutti i link selezionati</i>
+              $('#menu a').each(function() {
+              &nbsp;&nbsp;<i>// verifico che abbiano la classe sponsor</i>
+              &nbsp;&nbsp;if ($(this).hasClass('.sponsor')) {
+              &nbsp;&nbsp;&nbsp;&nbsp;<i>// in caso affermativo aggiungo l'attributo target con valore "_blank"</i>
+              &nbsp;&nbsp;&nbsp;&nbsp;$(this).attr('target','_blank');
+              &nbsp;&nbsp;}
+              });
+            </div>
+            <p>
+               la keyword <b>this</b> ci si riferisce all'oggetto corrente. All'interno del loop <code><b>$(this)</b></code> è utilizzato per fare riferimento ad <b>ogni singolo link</b> ciclato.
+            </p>
+          </section>
+
+          <!-- AJAX -->
+          <section id="ajax">
+            <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> Chiamata AJAX</h2>
+            <p>
+              jQuery migliora e facilita la creazione di una chiamata Ajax.<br>
+              <code><b>$.ajax</b></code> è un metodo di jQuery che richiede come argomento un <b>oggetto</b> che può avere <b>molte opzioni</b>.
+            </p>
+            <p>
+              I parametri di base di una chiamata AJAX sono:
+            </p>
+            <ul class="normal-list jq-list">
+              <li><code><b>url:</b></code> l’indirizzo al quale inviare la chiamata</li>
+              <li><code><b>method:</b></code> tipo di operazione richiesta dal client</li>
+              <li><code><b>success:</b></code> funzione da lanciare se la richiesta ha successo. Accetta come argomenti i dati restituiti dal server (interpretati di default come html o xml) e lo stato della chiamata</li>
+              <li><code><b>error:</b></code> funzione lanciata in caso di errore. Accetta un riferimento alla chiamata XMLHttpRequest, il suo stato ed eventuali errori notificati</li>
+            </ul>
+            <p>
+              Ecco l'esempio di un chiamata ajax:
+            </p>
+            <div class="code">
+              $.ajax(
+              &nbsp;&nbsp;{
+              &nbsp;&nbsp;&nbsp;&nbsp;url: "http://www.boolean.careers/api/random/boolean",
+              &nbsp;&nbsp;&nbsp;&nbsp;method: "GET",
+              &nbsp;&nbsp;&nbsp;&nbsp;success: function (<mark><b>data</b></mark>, stato) {
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(<mark><b>data</b></mark>);
+              &nbsp;&nbsp;&nbsp;&nbsp;},
+              &nbsp;&nbsp;&nbsp;&nbsp;error: function (richiesta, stato, <mark><b>errore</b></mark>) {
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("E' avvenuto un errore. " + <mark><b>errore</b></mark>);
+              &nbsp;&nbsp;&nbsp;&nbsp;}
+              &nbsp;&nbsp;}
+              );
+            </div>
+          </section>
+
         </div>
         <!-- End page content -->
       </div>
@@ -238,6 +668,19 @@
           </p>
         </div>
       </a>
+    </script>
+
+    <!-- Esercizi e esempi -->
+    <script>
+
+    function append() {
+      $('#append-output').append('<h3>Ciao, sono Append</h3>');
+    }
+
+    function cancella() {
+      $('#append-output').html('');
+    }
+
     </script>
   </body>
 </html>
