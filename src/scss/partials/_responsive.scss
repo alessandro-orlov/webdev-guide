@@ -53,14 +53,12 @@
   main .tech-stack .stack-selection .tech-container {
     flex-basis: calc(100% / 4);
   }
-  main .flex-page .content .client-server-lang .xml-lang,
-  main .flex-page .content .client-server-lang .json-lang {
+  main .flex-page .content .flex-table .column {
     flex-basis: 50%;
   }
-  main .flex-page .content .client-server-lang .xml-lang {
+  main .flex-page .content .flex-table .column:first-child {
     border-right: none;
   }
-
 }
 
 @media all and (min-width:1170px) {

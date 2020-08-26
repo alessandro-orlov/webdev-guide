@@ -178,10 +178,9 @@ main {
         border: 1px solid #dedede;
         margin-bottom: 50px;
       }
-      .client-server-lang {
+      .flex-table {
         @include flex_rule;
-        .xml-lang,
-        .json-lang {
+        .column {
           flex-basis: 100%;
           border: 1px solid #ccc;
           h3 {

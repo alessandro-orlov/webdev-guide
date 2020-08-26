@@ -609,20 +609,18 @@ main .flex-page .content .esercizio {
   margin-bottom: 50px;
 }
 
-main .flex-page .content .client-server-lang {
+main .flex-page .content .flex-table {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-main .flex-page .content .client-server-lang .xml-lang,
-main .flex-page .content .client-server-lang .json-lang {
+main .flex-page .content .flex-table .column {
   flex-basis: 100%;
   border: 1px solid #ccc;
 }
 
-main .flex-page .content .client-server-lang .xml-lang h3,
-main .flex-page .content .client-server-lang .json-lang h3 {
+main .flex-page .content .flex-table .column h3 {
   padding: 20px 0;
   text-align: center;
   background-color: #f5f5fa;
@@ -794,12 +792,11 @@ footer p a:hover {
     flex-basis: calc(100% / 4);
   }
 
-  main .flex-page .content .client-server-lang .xml-lang,
-  main .flex-page .content .client-server-lang .json-lang {
+  main .flex-page .content .flex-table .column {
     flex-basis: 50%;
   }
 
-  main .flex-page .content .client-server-lang .xml-lang {
+  main .flex-page .content .flex-table .column:first-child {
     border-right: none;
   }
 }
