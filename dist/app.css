@@ -36,7 +36,7 @@ body .color-mysql {
 }
 
 body .color-php {
-  color: #673ab7;
+  color: #7739e6;
 }
 
 body .color-laravel {
@@ -50,7 +50,7 @@ section {
 
 section .sub-section {
   padding-top: 40px;
-  margin-top: -50px;
+  margin: -50px 0 30px;
 }
 
 h1 {
@@ -136,7 +136,7 @@ ul.normal-list.mysql-list li::before {
 }
 
 ul.normal-list.php-list li::before {
-  color: #673ab7;
+  color: #7739e6;
 }
 
 ul.normal-list.laravel-list li::before {
@@ -655,7 +655,7 @@ main .flex-page .content .flex-table .column h3 {
   }
 
   100% {
-    background-color: #673ab7;
+    background-color: #7739e6;
     left: 0px;
     top: 0px;
   }
@@ -687,7 +687,7 @@ main .flex-page .content .flex-table .column h3 {
   }
 
   100% {
-    background-color: #673ab7;
+    background-color: #7739e6;
     left: 0px;
     top: 0px;
   }

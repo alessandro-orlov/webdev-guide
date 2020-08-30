@@ -69,7 +69,7 @@
       <div class="flex-page">
 
         <aside class="sidebar">
-          <h2>Page navigation</h2>
+          <h2>Navigazione Pagina</h2>
           <ul class="page-navigation">
             <li><a href="#intro">Introduzione</a></li>
             <li><a href="#story">Storia</a></li>
@@ -79,17 +79,21 @@
             <li><a href="#functions">Le funzioni</a></li>
             <li class="sub-list">
               <a>
-                link
+                OOP
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
                 <span class="minus"><i class="fas fa-minus"></i></span>
               </a>
               <ul>
-                <li><a href="#">sub link</a></li>
-                <li><a href="#">sub link</a></li>
-                <li><a href="#">sub link</a></li>
+                <li><a href="#oop-intro">Inizio</a></li>
+                <li><a href="#oop-classe">Le Classi</a></li>
+                <li><a href="#oop-var">Variabili (o attributi)</a></li>
+                <li><a href="#oop-method">Metodi nelle Classi</a></li>
+                <li><a href="#oop-construct">Costruttori</a></li>
+                <li><a href="#oop-eredit">Ereditarietà</a></li>
+                <li><a href="#oop-traits">Traits</a></li>
+                <li><a href="#oop-visibility">Visibilità</a></li>
               </ul>
             </li>
-            <li><a href="#">link</a></li>
           </ul>
         </aside>
 
@@ -149,6 +153,296 @@
                 </ul>
               </div>
             </div>
+          </section>
+
+          <section id="oop-intro">
+            <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> OOP - Programmazione Orientata ad Oggetti</h2>
+            <p>
+              <b>OOP - Object oriented programming</b>
+            </p>
+            <p>
+              Gestire <b>grandi progetti</b> richiede grandi quantità di codice che, cresce velocemente di complessità.
+            </p>
+            <p>
+              L’approccio OOP introduce regole per promuovere le seguenti pratiche:
+            </p>
+            <ul class="normal-list php-list">
+              <li><b>Modularità</b></li>
+              <li><b>Riutilizzo del Codice</b></li>
+              <li><b>Isolamento</b></li>
+              <li><b>Estensibilità</b></li>
+            </ul>
+
+            <!-- Le classi -->
+            <div class="sub-section" id="oop-classe">
+              <h3><span class="color-php"><i class="fas fa-hashtag"></i></span> Le Classi</h3>
+              <p>
+                Alla base della <b>OOP</b> c’è il concetto di <b>Classe</b>.<br>
+                Una classe è un <b>modello</b> che <b>descrive</b> un preciso <b>pezzo di realtà</b>
+              </p>
+              <p>
+                Ad esempio:
+              </p>
+              <ul class="normal-list php-list">
+                <li>Un'auto</li>
+                <li>Un animale</li>
+                <li>Un utente di un sistema di contenuti</li>
+              </ul>
+              <h3>Le istanze o oggetti</h3>
+              <p>
+                Una <b>Classe</b>, nel momento in cui viene <b>implementata</b>, genera una <b>istanza (o oggetto)</b>.<br>
+                Le <b>istanze</b> sono le <b>concretizzazioni</b> di quel <b>modello</b>.
+              </p>
+              <p>
+                Ecco l'esempio:
+              </p>
+              <ul class="normal-list php-list">
+                <li>La <b>classe Auto</b> ha <b>2 istanze</b>: l’auto <b>Alfa Romeo</b> e l’auto <b>BMW</b></li>
+                <li>La <b>classe Utente</b> ha <b>3 istanze</b>: Gli utenti <b>Pippo</b>, <b>Pluto</b> e <b>Mikey</b></li>
+              </ul>
+              <h3>Classe PHP - Sintassi</h3>
+              <p>
+                <b>Per creare una classe in PHP abbiamo bisogno di:</b>
+              </p>
+              <ul class="normal-list php-list">
+                <li><b class="color-php">keyword:</b> class</li>
+                <li><b class="color-js">nome della classe</b> il nome di una classe si indica in PascalCase.</li>
+              </ul>
+              <div class="code">
+                <b class="color-php">class</b> <b class="color-js">User</b> {
+                  <i>// variabili (o attributi)</i>
+                }
+              </div>
+              <p>
+                <b>Per generare gli oggetti/istanze di quella classe abbiamo bisogno di:</b>
+              </p>
+              <ul class="normal-list php-list">
+                <li><b class="color-php">keyword:</b> new</li>
+                <li><b class="color-js">nome della classe</b> richiamiamo la classe con le parentesi tonde, proprio come si invoca una funzione.</li>
+              </ul>
+              <div class="code">
+                <i>//Istanza 1</i>
+                <b class="color-laravel">$pippo</b> = <b class="color-php">new</b> <b class="color-js">User()</b>;
+
+                <i>// Istanza 2</i>
+                <b class="color-laravel">$pluto</b> = <b class="color-php">new</b> <b class="color-js">User()</b>;
+              </div>
+              <p>
+                <b class="color-laravel">N.B:</b> <b>Ogni stanza è come una copia della classe di partenza.<br>
+                Hanno in comune le caratteristiche espresse nella classe, ma sono mondi separati.</b>
+              </p>
+            </div>
+
+            <!-- Variabili (o argomenti) -->
+            <div class="sub-section" id="oop-var">
+              <h3><span class="color-php"><i class="fas fa-hashtag"></i></span> Variabili (o attributi) nelle classi</h3>
+              <p>
+                Le classi possono avere delle <b>variabili</b>, dette <b>attributi</b>.
+              </p>
+              <div class="code">
+                <i>// Creo la classe</i>
+                <span class="color-php">class</span> <b class="color-js">User</b> {
+                &nbsp;&nbsp;<span class="color-php">public</span> <b class="color-laravel">$nome;</b> <i>// attributo nome</i>
+                &nbsp;&nbsp;<span class="color-php">public</span> <b class="color-laravel">$email;</b> <i>// attributo email</i>
+                }
+              </div>
+              <p>
+                Per <b>accedere</b> all'attributo di un istanza ci serviamo dell'operatore <code><b>-&gt;</b></code>
+              </p>
+              <div class="code">
+                <b class="color-laravel">$pippo</b> = <b class="color-php">new</b> <b class="color-js">User</b>();
+                <b class="color-laravel">$pippo</b><b>-></b><b class="color-laravel">nome</b> = <b class="color-jq">"Pippo"</b>
+                <b class="color-laravel">$pippo</b><b>-></b><b class="color-laravel">email</b> = <b class="color-jq">"pippo@email.it"</b>
+              </div>
+            </div>
+
+            <!-- Metodi -->
+            <div class="sub-section" id="oop-method">
+              <h3><span class="color-php"><i class="fas fa-hashtag"></i></span> Metodi nelle Classi</h3>
+              <p>
+                Le Classi possono avere delle <b>funzioni</b>, dette <b>metodi</b>, pertinenti a ciò che rappresentano.
+              </p>
+              <p>
+                Ogni istanza avrà a disposizione tutti metodi definiti nella classe.
+              </p>
+              <p>
+                Esempio:
+              </p>
+              <div class="code">
+                <b class="color-php">class</b> <b class="color-js">User</b> {
+                &nbsp;&nbsp;<b class="color-php">public</b> <b class="color-laravel">$nome</b>;
+                &nbsp;&nbsp;<b class="color-php">public</b> <b class="color-laravel">$sconto = 0</b>;
+
+                &nbsp;&nbsp;<i>// Creo la funzione detta metodo per settare lo sconto: </i>
+                &nbsp;&nbsp;<b class="color-php">public function</b> <b class="color-css">setSconto</b>(<b class="color-laravel">$eta</b>) {
+                &nbsp;&nbsp;&nbsp;&nbsp;<b class="color-php">if</b>(<b class="color-laravel">$eta</b> > 65) {
+                &nbsp;&nbsp;&nbsp;&nbsp;<b class="color-laravel">$this->sconto</b> = 40;
+                &nbsp;&nbsp;&nbsp;&nbsp;}
+                &nbsp;&nbsp;}
+
+                &nbsp;&nbsp;<i>// Metodo per leggere lo scondo dell'istanza</i>
+                &nbsp;&nbsp;<b class="color-php">public function</b> <b class="color-css">getSconto()</b> {
+                &nbsp;&nbsp;&nbsp;&nbsp;<b class="color-php">return</b> <b class="color-laravel">$this->sconto</b>;
+                &nbsp;&nbsp;}
+                }
+              </div>
+              <p>
+                Per accedere ai metodi di un istanza ci serviamo del operatore <code><b>-&gt;</b></code>
+              </p>
+              <div class="code">
+                <b class="color-laravel">$pippo</b> = <b class="color-php">new</b> <b class="color-js">User</b>();
+                <b class="color-laravel">$pippo</b><b>-></b><b class="color-css">setSconto(40)</b>;
+                <b class="color-laravel">$sconto = $pippo</b><b>-></b><b class="color-css">getSconto()</b>;
+              </div>
+            </div>
+
+            <!-- Costruttori -->
+            <div class="sub-section" id="oop-construct">
+              <h3><span class="color-php"><i class="fas fa-hashtag"></i></span> Costruttori</h3>
+              <p>
+                Ogni Classe può avere un <b>particolare</b> tipo di <b>funzione</b>, chiamata <b class="color-css">costruttore</b>.
+              </p>
+              <p>
+                Il costruttore permette di eseguire azioni nel momento in cui viene creata l’istanza della classe.
+              </p>
+              <div class="code">
+                <i>// creo la classe User</i>
+                <b class="color-php">class</b> <b class="color-js">User</b> {
+                &nbsp;&nbsp;<b class="color-php">public</b> <b class="color-laravel">$nome</b>;
+                &nbsp;&nbsp;<b class="color-php">public</b> <b class="color-laravel">$eta</b>;
+
+                &nbsp;&nbsp;<b class="color-php">function</b> <b class="color-css">__construct</b>(<b class="color-laravel">$eta</b>) {
+                &nbsp;&nbsp;<b class="color-laravel">$this->eta = $eta</b>;
+                &nbsp;&nbsp;}
+                }
+              </div>
+              <p>
+                Se <u>prevediamo un argomento per il costruttore</u>, dobbiamo fornire il relativo <b>valore</b> al momento della <b>creazione dell’istanza.</b>
+              </p>
+              <div class="code">
+                <b class="color-laravel">$pippo</b> = <b class="color-php">new</b> <b class="color-js">User</b>(50); <i>// La manifestazione del costruttore nell’istanza sono proprio le parentesi tonde.</i>
+                <b class="color-css">echo</b> <b class="color-laravel">$paperino->eta</b>; <i>// 50</i>
+              </div>
+            </div>
+
+            <!-- Ereditarietà -->
+            <div class="sub-section" id="oop-eredit">
+              <h3><span class="color-php"><i class="fas fa-hashtag"></i></span> Ereditarietà</h3>
+              <p>
+                L’ereditarietà è una possibile relazione da due classi.<br>
+              </p>
+              <p>
+                Una <b>classe B eredita da una classe A</b> quando riceve tutti i metodi e le proprietà di A e ne aggiunge altri che meglio specificano le caratteristiche di B.
+              </p>
+              <p>
+                Questa ereditarietà si scrive in questo modo:<br>
+                <code><b class="color-php">class</b> <b class="color-css">NomeClasseFiglia</b> <b class="color-php">extends</b> <b class="color-js">NomeClasseGenitore</b></code>
+              </p>
+              <p>
+                Ad esempio:
+              </p>
+              <div class="code">
+                <i>// Classe User</i>
+                <b class="color-php">class</b> <b class="color-js">User</b> {
+                &nbsp;&nbsp;<b class="color-php">public</b> <b class="color-laravel">$nome</b>;
+                &nbsp;&nbsp;<b class="color-php">public</b> <b class="color-laravel">$sconto = 0</b>;
+                &nbsp;&nbsp;<b class="color-php">public function</b> <b class="color-css">setSconto</b>(<b class="color-laravel">$eta</b>) {
+                &nbsp;&nbsp;&nbsp;&nbsp;<b class="color-php">if</b>(<b class="color-laravel">$eta</b> > 65) {
+                &nbsp;&nbsp;&nbsp;&nbsp;<b class="color-laravel">$this->sconto</b> = 40;
+                &nbsp;&nbsp;&nbsp;&nbsp;}
+                &nbsp;&nbsp;}
+                &nbsp;&nbsp;<b class="color-php">public function</b> <b class="color-css">getSconto()</b> {
+                &nbsp;&nbsp;&nbsp;&nbsp;<b class="color-php">return</b> <b class="color-laravel">$this->sconto</b>;
+                &nbsp;&nbsp;}
+                }
+              </div>
+              <p>
+                Una classe Employee che ha gli stessi argomenti e metodi della classe User:
+              </p>
+              <div class="code">
+                <b class="color-php">class</b> <b class="color-js">Employee</b> <b class="color-php">extends</b> <b class="color-js">User</b> {
+                &nbsp;&nbsp;<b class="color-php">public</b> <b class="color-laravel">$livello</b>;
+                &nbsp;&nbsp;<b class="color-php">public function</b> <b class="color-css">setLivello</b>(<b class="color-laravel">$livello</b>) {
+                &nbsp;&nbsp;&nbsp;&nbsp;<b class="color-laravel">$this->livello = $livello</b>;
+                &nbsp;&nbsp;}
+                }
+              </div>
+              <h3>Ereditarietà: Polimorfismo</h3>
+              <p>
+                Se volessimo avere <b>nella classe figlia una funzione(o metodo)</b> con lo <b>stesso nome</b> e con un codice diverso all’interno rispetto alla classe Genitore, il metodo della classe figlia <b>riscriverebbe il metodo del genitore</b> ma solo per questa istanza.
+              </p>
+            </div>
+
+            <!-- Traits -->
+            <div class="sub-section" id="oop-traits">
+              <h3><span class="color-php"><i class="fas fa-hashtag"></i></span> Traits</h3>
+              <p>
+                In PHP non è possibile ereditare da più classi, perché è un <b>single inheritance language.</b> Esiste però un modo per riutilizzare il codice in più classi - <b>Traits</b>
+              </p>
+              <p>
+                I trait possono essere usati per creare proprietà da applicare a più classi.
+              </p>
+              <h3>Creare trait</h3>
+              <p>
+                Per <b>creare</b> una <b>trait</b> abbiamo bisogno di:
+              </p>
+              <ul class="normal-list php-list">
+                <li><b class="color-php">keyword:</b> <b>trait</b></li>
+                <li><b class="color-js">nome trait</b> il nome di una trait si indica in PascalCase.</li>
+              </ul>
+              <div class="code">
+                <b class="color-php">trait</b> <b class="color-js">Position</b> {
+                &nbsp;&nbsp;<b class="color-php">public</b> <b class="color-laravel">$lat</b>;
+                &nbsp;&nbsp;<b class="color-php">public</b> <b class="color-laravel">$lng</b>;
+                &nbsp;&nbsp;<b class="color-php">public function</b> <b class="color-css">getAddress()</b> {
+                &nbsp;&nbsp;&nbsp;&nbsp;<b class="color-php">return</b> <b class="color-laravel">$address;</b>
+                &nbsp;&nbsp;}
+                }
+              </div>
+              <h3>Collegare trait</h3>
+              <p>
+                Per <b>collegare</b> una <b>trait</b> ad una classe abbiamo bisogno di:
+              </p>
+              <ul class="normal-list php-list">
+                <li><b class="color-php">keyword:</b> <b>use</b></li>
+                <li><b class="color-js">nome trait</b> richiamiamo il trait per nome.</li>
+              </ul>
+              <p>
+                E succisivamente si applica alla classe che vogliamo che abbia le proprità di trait:
+              </p>
+              <div class="code">
+                <i>// estendo la classe Employee con gli argomenti e metodi di User</i>
+                <b class="color-php">class</b> <b class="color-js">Employee</b> <b class="color-php">extends</b> <b class="color-js">User</b> {
+                &nbsp;&nbsp;<i>// Collego trait</i>
+                &nbsp;&nbsp;<b class="color-php">use</b> <b class="color-js">Position</b>;
+
+                &nbsp;&nbsp;<b class="color-php">public</b> <b class="color-laravel">$name</b>;
+                &nbsp;&nbsp;<b class="color-php">public</b> <b class="color-laravel">$email</b>;
+                }
+              </div>
+            </div>
+
+            <!-- Visibilità -->
+            <div class="sub-section" id="oop-visibility">
+              <h3><span class="color-php"><i class="fas fa-hashtag"></i></span> Visibilità</h3>
+              <p>
+                Per migliorare i concetti di isolamento, possiamo <b>restringere l’accesso a metodi e variabili</b> secondo <b>determinate condizioni</b>.
+              </p>
+              <ul class="normal-list php-list">
+                <li>
+                  <b>public</b> I metodi e le variabili public saranno accessibili da qualsiasi file o metodo abbia accesso all’istanza.
+                </li>
+                <li>
+                  <b>protected</b> Potranno essere utilizzati all’interno della classe o dalle classi che derivano da essa, ma non dall’esterno della classe
+                </li>
+                <li>
+                  <b>private</b> Potranno essere utilizzati solo all’interno della classe dove sono stati dichiarati
+                </li>
+
+              </ul>
+            </div>
+
+
           </section>
 
         </div>
