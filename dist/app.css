@@ -539,6 +539,21 @@ main .flex-page .content .code i {
   color: #ccc;
 }
 
+main .flex-page .content .powershell {
+  display: block;
+  color: #fff;
+  background-color: #333;
+  font-size: 0.9em;
+  font-family: "Source Code Pro", monospace;
+  padding: 5px 10px;
+  margin: 5px 0;
+  line-height: 26px;
+}
+
+main .flex-page .content .powershell i {
+  color: #8dde78;
+}
+
 main .flex-page .content table {
   width: 100%;
   border-collapse: collapse;
