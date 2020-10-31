@@ -71,6 +71,7 @@
         <aside class="sidebar">
           <h2>Navigazione Pagina</h2>
           <ul class="page-navigation">
+            <li><a class="toscroll" href="#smooth-scroll">scroll</a> </li>
             <li><a href="#intro">Introduzione</a></li>
             <li><a href="#story">Storia</a></li>
             <li><a href="#work-space">Ambiente di lavoro</a></li>
@@ -155,6 +156,140 @@
             </div>
           </section>
 
+          <!-- Ambiente di lavoro -->
+          <section id="work-space">
+            <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Ambiente di lavoro</h2>
+            <p>
+              Per sviluppare in PHP non sono necessari di molti strumenti, il set up della macchina è piuttosto veloce e si è operativi in breve tempo. Vediamo di quali soluzioni abbiamo bisogno:
+            </p>
+            <ul class="normal-list php-list">
+              <li><b>un server Web</b></li>
+              <li><b>PHP</b></li>
+              <li><b>un editor di testo (Atom, PhpStorm)</b></li>
+              <li><b>un browser per la navigazione Internet</b></li>
+              <li><b>un gestore di database per l’eventuale interazione con i dati</b></li>
+            </ul>
+            <p>
+              La scelta del server Web dipende innanzitutto dal sistema operativo su cui si sta lavorando. Nonostante sia <b>preferibile</b> che i nostri script girino su un server <b>Linux</b>), possiamo tranquillamente progettarli sulla nostra macchina, indipendentemente dal sistema operativo installato.
+            </p>
+            <h3><span class="color-php"><i class="fas fa-hashtag"></i></span> Software per l’installazione automatica dell’ambiente di sviluppo</h3>
+            <p>
+              Sono presenti in Rete anche numerosi <b>PHP development environment</b> che installano e configurano <b>automaticamente</b> i software ed i servizi di cui abbiamo bisogno; <br>
+              Alcuni sono cross-platform, altri sono specifici per una piattaforma.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <td><b>Software</b></td>
+                  <td><b>MAC</b></td>
+                  <td><b>Windows</b></td>
+                  <td><b>Linux</b></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a class="color-php" href="http://www.ampps.com/">AMPPS</a></td>
+                  <td><i>V</i></td>
+                  <td><i>V</i></td>
+                  <td><i>V</i></td>
+                </tr>
+                <tr>
+                  <td><a class="color-php" href="https://www.wampserver.com/en/">WAMP</a></td>
+                  <td></td>
+                  <td><i>V</i></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><a class="color-php" href="https://www.apachefriends.org/it/index.html">XAMPP</a></td>
+                  <td><i>V</i></td>
+                  <td><i>V</i></td>
+                  <td><i>V</i></td>
+                </tr>
+                <tr>
+                  <td><a class="color-php" href="https://www.mamp.info/en/windows/">MAMP</a></td>
+                  <td><i>V</i></td>
+                  <td><i>V</i></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              Per la facilità di utilizzo useremo - <b>MAMP</b>
+            </p>
+          </section>
+
+          <!-- Le variabili -->
+          <section id="variables">
+            <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Le Variabili</h2>
+            <p>
+              PHP non è un <b>linguaggio fortemente tipizzato</b>, quindi non è neccesario diachiarare il tipo di dato in anticipo, il linguaggio lo riconoscera in automatico.
+            </p>
+            <p>
+              Le <b>variabili</b> sono uno degli <b>strumenti fondamentali</b> di ogni linguaggio di programmazione. Una variabile è una porzione di memoria in cui viene memorizzato un dato che può variare durante l’esecuzione del programma.
+            </p>
+            <p>
+              La sintassi per dichiarare una variabile in PHP è la seguente:
+            </p>
+            <div class="code">
+              <span class="color-laravel">&lt;?php </span>
+              <i>// code</i>
+              <span class="color-laravel">?&gt; </span>
+            </div>
+            <p>
+              Output delle variabili:
+            </p>
+            <div class="code">
+              <span class="color-laravel">&lt;?php </span>
+              <span class="color-laravel">$name</span> = <span class="color-jq">"Alessandro"</span> ;
+
+              <span style="color:blue;">echo</span> <span class="color-jq">"Il mio nome è"</span> <b class="color-laravel">.</b> <span class="color-laravel">$name</span> <br>
+              <i>OUTPUT: Il mio nome è Alessandro</i>
+              <span class="color-laravel">?&gt; </span>
+            </div>
+            <h3><span class="color-php"><i class="fas fa-hashtag"></i></span> Il GET</h3>
+            <p>
+              Per recuperare i paramentri inseriti nel url si utilizza il <b>GET</b>
+            </p>
+            <div class="code">
+              url: http://www.example.com/file.php<b>?language=php</b>
+              <span class="color-laravel">&lt;?php </span>
+                <span class="color-laravel">$_GET</span><span class="color-jq">['language']</span>; <i>// restituira: php</i>
+              <span class="color-laravel">?&gt;</span>
+            </div>
+          </section>
+
+          <!-- smooth scroll test -->
+          <section>
+            <div id="smooth-scroll">
+              <h2>smooth scroll</h2>
+            </div>
+          </section>
+
+
+          <!-- Le stringhe -->
+          <section id="string">
+            <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Le Stringhe</h2>
+            <p>
+              PHP ci permette di <b>interagire con le stringhe</b> attraverso tantissime <b>funzioni</b>. <br>
+            </p>
+            <ul class="normal-list php-list">
+              <li> <b class="color-php">echo $variabile</b> - stampa il contenuto della variabie</li>
+              <li> <b class="color-php">explode(delimitatore, stringa)</b> - creerà un array dividendo su un delimitatore una
+stringa </li>
+              <li> <b class="color-php">trim(stringa)</b> - toglierà gli spazi bianchi all’inizio e alla fine di una stringa </li>
+              <li> <b class="color-php">str_replace(porzioneDaModificare, conCosa, stringa)</b> - cambierà il valore di una
+porzione della stringa in un altro </li>
+              <li> <b class="color-php">strlen(stringa)</b> - ritorna la lunghezza di una stringa</li>
+              <li> <b class="color-php">strpos(stringa, cosaCercare)</b> - cerca all’interno di una stringa un’altra stringa e torna
+la posizione </li>
+              <li> <b class="color-php">ucfirst(stringa) - ucwords(stringa)</b> - rende maiuscola o il primo carattere o il primo
+carattere di ogni parola </li>
+            </ul>
+            <p>
+              L'elenco completo <a class="color-php" href="https://www.php.net/manual/en/ref.strings.php" alt="stringhe php">funzioni stringhe php</a>
+            </p>
+          </section>
+
           <section id="oop-intro">
             <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> OOP - Programmazione Orientata ad Oggetti</h2>
             <p>
@@ -228,7 +363,7 @@
                 <b class="color-laravel">$pluto</b> = <b class="color-php">new</b> <b class="color-js">User()</b>;
               </div>
               <p>
-                <b class="color-laravel">N.B:</b> <b>Ogni stanza è come una copia della classe di partenza.<br>
+                <b class="color-laravel">N.B:</b> <b>Ogni istanza è come una copia della classe di partenza.<br>
                 Hanno in comune le caratteristiche espresse nella classe, ma sono mondi separati.</b>
               </p>
             </div>

@@ -16,6 +16,19 @@ $('.burger-menu').click(function() {
   $('.mobile-menu').toggleClass('visible');
 });
 
+// =========== Scroll transition to anchor =================== //
+// $('.sidebar li  a').on('click',function(e) {
+//     var url = e.target.href;
+//     var hash = url.substring(url.indexOf("#")+1);
+//     $('html, body').animate({
+//         scrollTop: $('#'+ hash).offset().top
+//     }, 500);
+//     return false;
+// });
+$('.sidebar li a').click(function (event) {
+    event.preventDefault();
+    $('html, body').animate({ scrollTop: $($(this).attr("href")).offset().top }, 500);
+});
 
 // ======= Array with objects for handlebars ================= //
 var techStack = [
@@ -87,9 +100,9 @@ $('.page-navigation .sub-list').click(function() {
 });
 
 // =========== Print YEAR in the footer =========================== //
+
 var year = new Date().getFullYear();
 $('.current-year').append(year);
-
 
 
 
