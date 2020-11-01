@@ -16111,7 +16111,7 @@ $(document).ready(function () {
   //     return false;
   // });
 
-  $('.sidebar li a').click(function (event) {
+  $('.sidebar li a, a.go-top').click(function (event) {
     event.preventDefault();
     $('html, body').animate({
       scrollTop: $($(this).attr("href")).offset().top

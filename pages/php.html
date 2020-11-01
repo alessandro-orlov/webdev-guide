@@ -71,12 +71,15 @@
         <aside class="sidebar">
           <h2>Navigazione Pagina</h2>
           <ul class="page-navigation">
-            <li><a class="toscroll" href="#smooth-scroll">scroll</a> </li>
             <li><a href="#intro">Introduzione</a></li>
             <li><a href="#story">Storia</a></li>
             <li><a href="#work-space">Ambiente di lavoro</a></li>
             <li><a href="#variables">Le variabili</a></li>
             <li><a href="#string">Le stringhe</a></li>
+            <li><a href="#operators">Gli operatori</a></li>
+            <li><a href="#ifelse">If, else, in PHP</a></li>
+            <li><a href="#var_dump">Var_dump</a></li>
+            <li><a href="#array">Gli array</a></li>
             <li><a href="#functions">Le funzioni</a></li>
             <li class="sub-list">
               <a>
@@ -258,19 +261,12 @@
             </div>
           </section>
 
-          <!-- smooth scroll test -->
-          <section>
-            <div id="smooth-scroll">
-              <h2>smooth scroll</h2>
-            </div>
-          </section>
-
 
           <!-- Le stringhe -->
           <section id="string">
             <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Le Stringhe</h2>
             <p>
-              PHP ci permette di <b>interagire con le stringhe</b> attraverso tantissime <b>funzioni</b>. <br>
+              PHP mette a disposizione un <b>set</b> completo <b>di funzioni</b> che permettono di <b>manipolare</b> ed eseguire le operazioni sulle stringhe.
             </p>
             <ul class="normal-list php-list">
               <li> <b class="color-php">echo $variabile</b> - stampa il contenuto della variabie</li>
@@ -290,6 +286,91 @@ carattere di ogni parola </li>
             </p>
           </section>
 
+          <!-- Gli operatori -->
+          <section id="operators">
+            <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Gli operatori</h2>
+            <p>
+              Molti operatori sono identici a quelli già visti in <a class="color-js" href="javascript.html#operatori">JavaScript</a>, altri sono leggermente diversi.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <td>operatore</td>
+                  <td>descrizione</td>
+                  <td>esempio</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b class="color-php">&&</b> And (logico)</td>
+                  <td>And (logico) aggiunge una condizione necessaria</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><b class="color-php">||</b> OR (logico)</td>
+                  <td>aggiunge una condizione in sostituzione</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><b class="color-php">==</b> (uguaglianza)</td>
+                  <td> se x = 3, allora</td>
+                  <td>x <b>==</b> 4 è falso</td>
+                </tr>
+                <tr>
+                  <td><b class="color-php">!=</b> (diversità)</td>
+                  <td> se x = 3, allora</td>
+                  <td>x <b>!=</b> 4 è vero</td>
+                </tr>
+                <tr>
+                  <td><b class="color-php">&gt;</b> (maggiore di)</td>
+                  <td> se x = 3, allora</td>
+                  <td>x <b>&gt;</b> 4 è falso</td>
+                </tr>
+                <tr>
+                  <td><b class="color-php">&lt;</b> (minore di)</td>
+                  <td> se x = 3, allora</td>
+                  <td>x < 4 è vero</td>
+                </tr>
+                <tr>
+                  <td><b class="color-php">&gt;=</b> (maggiore o uguale)</td>
+                  <td> se x = 3, allora</td>
+                  <td>x &gt;= 4 è falso</td>
+                </tr>
+                <tr>
+                  <td><b class="color-php">&lt;=</b> (minore o uguale)</td>
+                  <td> se x = 3, allora</td>
+                  <td>x &lt;= 4 è vero</td>
+                </tr>
+                <tr>
+                  <td><b class="color-php">$i++ o $i--</b></td>
+                  <td> Incremento o Decremento</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><b class="color-php">+=, -=, *=, /= </b></td>
+                  <td> Prende il valore di un numero e aggiunge, o sottrae o moltiplica o divide per il valore</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
+          </section>
+
+          <!-- If, else in PHP -->
+          <section id="ifelse">
+            <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> If, else, istruzioni condizionali in PHP</h2>
+            <p>
+              L’istruzione if è forse la più rappresentativa tra le <b>strutture di controllo</b> del flusso: ci permette di <b>eseguire o non eseguire</b> certe porzioni di codice.
+            </p>
+            <p>
+              If funziona esattamente come in <a class="color-js" href="javascript.html#condizionali">Javascript</a>.
+            </p>
+            <p>
+              Attenzione a <b class="color-php">elseif</b> può essere scritto senza spazi!
+            </p>
+          </section>
+
+          <!-- Programzaione orientata agli oggetti -->
           <section id="oop-intro">
             <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> OOP - Programmazione Orientata ad Oggetti</h2>
             <p>
