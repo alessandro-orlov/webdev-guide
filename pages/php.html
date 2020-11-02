@@ -79,6 +79,7 @@
             <li><a href="#operators">Gli operatori</a></li>
             <li><a href="#ifelse">If, else, in PHP</a></li>
             <li><a href="#var_dump">Var_dump</a></li>
+            <li><a href="#error-logs">Leggere gli errori</a></li>
             <li><a href="#array">Gli array</a></li>
             <li><a href="#functions">Le funzioni</a></li>
             <li class="sub-list">
@@ -367,6 +368,52 @@ carattere di ogni parola </li>
             </p>
             <p>
               Attenzione a <b class="color-php">elseif</b> può essere scritto senza spazi!
+            </p>
+          </section>
+
+          <!-- Var_dump -->
+          <section id="var_dump">
+            <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Var_dump</h2>
+            <p>
+              La funzione var dump in PHP, <b class="color-php">var_dump()</b>, consente di visualizzare le informazioni contenute nelle variabili, specificando sia il tipo sia il valore.
+            </p>
+            <p>
+              Per rendere la lettura dell'output del <b>var_dump più pretty</b> possiamo attivare <b>xdebug</b> <br>
+              Per farlo bisogna <b>modificare le impostazioni di php</b> sul nostro ambiente di sviluppo. Quindi modificando il file <b>php.ini</b>.
+            </p>
+            <ul class="normal-list php-list">
+              <li>Apriamo la cartella di MAMP <i>C:/MAMP/conf/php.7.vostraVersione</i></li>
+              <li>Apriamo il file php.ini e cerchiamo <b class="color-php">xdebug</b> </li>
+              <li>Cancellate il <b class="color-php">;</b> davanti a <b class="color-php">extension</b> -> ;extension-php_xdebug.dll</li>
+              <li>Fermate i server e riavviate MAMP</li>
+            </ul>
+          </section>
+
+          <!-- Leggere gli errori -->
+          <section id="error-logs">
+            <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Leggere gli errori</h2>
+            <p>
+              Possiamo vedere gli errori generati da PHP o da Apache leggendo i log contenuti nella cartella dell'ambiente di sviluppo (in MAMP).
+            </p>
+            <p>
+              <b>Apriamo il terminale </b> e con il comando <b>cat</b> leggiamo il testo contenuto in un file da terminale. <br>
+              Win: <i>C:/MAMP/logs</i> <br>
+              Mac: <i>/Applications/MAMP/logs</i>
+              <br>
+              <br>
+              per leggere gli errori di <b>php</b> digitate<br>
+              <b class="color-jq">cat php_error.log</b>
+              <br>
+              <br>
+              per leggere gli errori di <b>apache</b> digitate<br>
+              <b class="color-jq">cat apache_error.log</b>
+              <br>
+              <br>
+              Se vogliamo <b>rimanere in ascolto</b> di ogni <b>cambiamendo</b> del file: <br>
+              <b>Win:</b> <b class="color-jq">gc -Path</b> nomeFile <b class="color-jq">-Wait</b> <br>
+              <b>Mac/linux:</b> <b class="color-jq">tail -f</b> nomefile
+
+
             </p>
           </section>
 
