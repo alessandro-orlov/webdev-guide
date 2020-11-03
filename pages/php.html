@@ -81,7 +81,20 @@
             <li><a href="#var_dump">Var_dump</a></li>
             <li><a href="#error-logs">Leggere gli errori</a></li>
             <li><a href="#array">Gli array</a></li>
-            <li><a href="#functions">Le funzioni</a></li>
+            <li class="sub-list">
+              <a>
+                I cicli PHP
+                <span class="plus visible"><i class="fas fa-plus"></i></span>
+                <span class="minus"><i class="fas fa-minus"></i></span>
+              </a>
+              <ul>
+                <li><a href="#cicli-begin">Inizio</a></li>
+                <li><a href="#cicli-for">for, while e do</a></li>
+                <li><a href="#cicli-foreach">foreach</a></li>
+                <li><a href="#cicli-break">break & continue</a></li>
+              </ul>
+            </li>
+            <li><a href="#custom-functions">Le funzioni custom</a></li>
             <li class="sub-list">
               <a>
                 OOP
@@ -99,6 +112,7 @@
                 <li><a href="#oop-visibility">Visibilità</a></li>
               </ul>
             </li>
+            <li><a href="#db-conn">Connessione al Database</a></li>
           </ul>
         </aside>
 
@@ -274,7 +288,7 @@
               <li> <b class="color-php">explode(delimitatore, stringa)</b> - creerà un array dividendo su un delimitatore una
 stringa </li>
               <li> <b class="color-php">trim(stringa)</b> - toglierà gli spazi bianchi all’inizio e alla fine di una stringa </li>
-              <li> <b class="color-php">str_replace(porzioneDaModificare, conCosa, stringa)</b> - cambierà il valore di una
+              <li> <b class="color-php">str_replace(daModificare, conCosa, stringa)</b> - cambierà il valore di una
 porzione della stringa in un altro </li>
               <li> <b class="color-php">strlen(stringa)</b> - ritorna la lunghezza di una stringa</li>
               <li> <b class="color-php">strpos(stringa, cosaCercare)</b> - cerca all’interno di una stringa un’altra stringa e torna
@@ -412,10 +426,321 @@ carattere di ogni parola </li>
               Se vogliamo <b>rimanere in ascolto</b> di ogni <b>cambiamendo</b> del file: <br>
               <b>Win:</b> <b class="color-jq">gc -Path</b> nomeFile <b class="color-jq">-Wait</b> <br>
               <b>Mac/linux:</b> <b class="color-jq">tail -f</b> nomefile
-
-
             </p>
           </section>
+
+          <!-- Gli Array -->
+          <section id="array">
+            <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Gli Array</h2>
+            <p>
+              Gli array possono contenere <b>più valori</b>, possono contenere anche <b>tipi di dati diversi</b>, dunque anche oggetti o altri array.
+            </p>
+            <p>
+              Si può creare un array utilizzando la <b>funzione array</b> oppure, dalla versione 5.4 di PHP si può creare un array con una sintassi più semplice utilizzando le <b>parentesi quadre</b>.
+            </p>
+            <h3>Array associativo</h3>
+            <p>
+              Un altro modo molto di utilizzare gli array è quello di sfruttare gli indici come stringhe anziché come valore numerico:
+            </p>
+            <div class="flex-table">
+              <div class="column">
+                <h3>Funzione Array</h3>
+                <div class="code">
+                  <span class="color-laravel">$persona</span> =   <span class="color-css">array</span>(
+                  &nbsp;&nbsp;<span class="color-jq">'name'=>'Alessandro',
+                  &nbsp;&nbsp;'lastname'=>'Orlov',
+                  &nbsp;&nbsp;'employment'=>'developer',</span>
+                  );
+                </div>
+              </div>
+              <div class="column">
+                <h3>Parentesi quadre</h3>
+                <div class="code">
+                  <span class="color-laravel">$persona</span> = [
+                    <span class="color-jq">'name'=>'Alessandro',
+                    'lastname'=>'Orlov',
+                    'employment'=>'developer'</span>
+                  ];
+                </div>
+              </div>
+            </div>
+            <p>
+              <b>I due esempi si equivalgono.</b> In ogni momento possiamo visualizzare il contenuto di un array con la funzione <code><b>print_r()</b></code>, utile in caso di debug:
+            </p>
+            <div class="code">
+              <span class="color-css">print_r(<span class="color-laravel">$persona)</span></span>;
+            </div>
+            <h3>Accedere agli elementi dell'array</h3>
+            <p>
+              Per accedere agli elementi dell’array in PHP possiamo indicare il nome dell’array e specificare la <b>chiave tra parentesi quadre</b>. In questo modo:
+            </p>
+            <div class="code">
+                <span class="color-css">echo</span> <span class="color-laravel">$persona</span>[<span class="color-jq">'name'</span>];
+
+                <i>// OUTPUT: </i>
+                Alessandro
+            </div>
+            <h3>Aggiungere dati in un array</h3>
+            <p>
+              E' possibile aggiungere un elemento ad un array con <b>chiave standard</b> o con <b>chieve definita dall'utente</b>
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <td style="width:50%"><b>Chiave standard</b></td>
+                  <td style="width:50%"><b>Chieve definita dall'utente</b></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="code">
+                    <span class="color-laravel">$persona</span> = [
+                    &nbsp;&nbsp;<span class="color-jq">'Alessandro',
+                    &nbsp;&nbsp;'Orlov',
+                    &nbsp;&nbsp;'developer',</span>
+                   ];
+                   <i>Aggiungiamo valore età</i>
+                   <span class="color-laravel">$persona</span>[] = 33;
+                   <i>Ora l'array avrà 4 elementi</i>
+                  </td>
+                  <td class="code">
+                    <span class="color-laravel">$persona</span> = [
+                      <span class="color-jq">'name'=>'Alessandro',
+                      'lastname'=>'Orlov',
+                      'employment'=>'developer'</span>
+                    ];
+                    <i>Aggiungiamo valore età</i>
+                    <span class="color-laravel">$persona</span>[<span class="color-jq">'age'</span>] = 33;
+                    <i>Abbiamo aggiunto la chiave <b style="color:#333;">age</b> con il valore <b style="color:#333;">33</b></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <h3>Eliminare un elemento di un array</h3>
+            <p>
+              Per eliminare un elemento di un array PHP si utilizza la funzione <code><b>unset()</b></code> in questo modo:
+            </p>
+            <div class="code">
+                <span class="color-css">unset</span>(<span class="color-laravel">$persona</span>[<span class="color-jq">'age'</span>]);
+            </div>
+            <p>
+              Così facendo verrà eliminato l'elemento con chiave <b>'age'</b> all'interno del nostro array $persona.
+            </p>
+
+            <h3>Array multidimensionali</h3>
+            <p>
+            E' possibile creare array contenente altri array, questo tipo di dato vine chiamato array multidimensionale.
+            </p>
+            <div class="code">
+              <span class="color-laravel">$people</span> = [ <i>//primo array che contiene tanti array</i>
+              &nbsp;&nbsp;<span class="color-jq">"Michele Papagni"</span> => [ <i>// secondi livelli, ognuno con la propria chiave</i>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="color-jq">"Role" => "Teacher",
+              &nbsp;&nbsp;&nbsp;&nbsp;"Age" => 29 </span>
+              &nbsp;&nbsp;],
+              &nbsp;&nbsp;<span class="color-jq">"Fabio Forghieri"</span> => [
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="color-jq">"Role" => "Teacher",
+              &nbsp;&nbsp;&nbsp;&nbsp;"Age" => 30</span>
+              &nbsp;&nbsp;],
+              ];
+            </div>
+            <h3>Le funzioni PHP per gestire gli array</h3>
+            <p>
+              Come per le stringhe, ci sono tantissimi metodi disponibili in PHP per la manipolazione e la lettura degli array.
+            </p>
+            <p>
+              <b>Alcuni esempi:</b>
+            </p>
+            <ul class="normal-list php-list">
+              <li> <b class="color-php">count(array)</b> - restituisce il numero totale degli elementi in array</li>
+              <li> <b class="color-php">shuffle(array)</b> - mescola gli elementi all’interno di un array</li>
+              <li> <b class="color-php">array_reverse(array)</b> -  inverte l’ordine degli elementi in un array</li>
+              <li> <b class="color-php">array_slice(array, 0, 3)</b> -  Abbiamo scelto di estrarre 3 elementi a partire dal primo</li>
+              <li> <b class="color-php">array_key_exists(key, array)</b> - restituisce true se la chiave esiste, altrimenti false</li>
+              <li> <b class="color-php">in_array(value, array)</b> - restituisce true se il valore è presente nell’array altrimenti false</li>
+              <li> <b class="color-php">array_keys(array)</b> - restituisce tutte le chiavi dell’array.</li>
+              <li> <b class="color-php">array_values(array)</b> - restituisce tutte i valori delle chiavi dell’array.</li>
+              <li> <b class="color-php">array_merge(array1, array2 ...)</b> - Unisce due o più array</li>
+              <li> <b class="color-php">array_search(value, array)</b> - Cerca il valore all’interno di un array e restituisce la chiave
+della prima occorrenza trovata.</li>
+            </ul>
+            <p>
+              Elenco completo <b><a class="color-php" href="https://www.php.net/manual/en/ref.array.php">qui</a></b>.
+            </p>
+            <h3>Ciclare il contenuto di un array</h3>
+            <p>
+              Gli array prevedono un tipo speciale di ciclo: il ciclo <b class="color-php"><code>foreach</code></b> <br>
+              Di piu su foreach <a class="color-php foreach-anchor" href="#cicli-foreach">qui</a>
+            </p>
+          </section>
+
+
+          <!-- PHP: cicli -->
+          <section id="cicli-begin">
+            <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> I cicli PHP</h2>
+            <p>
+              I cicli sono un altro degli elementi fondamentali di qualsiasi linguaggio di programmazione in quanto permettono di <b>eseguire determinate operazioni in maniera ripetitiva</b>. Si tratta di una necessità che si presenta molto frequentemente
+            </p>
+            <!-- for, while, do while -->
+            <div class="sub-section" id="cicli-for">
+              <h3><span class="color-php"><i class="fas fa-hashtag"></i></span> for, while & do while</h3>
+              <p>
+                Sono assolutamente identici a quelli che abbiamo visto con <b class="color-js">JavaScript</b>, oltre che nell’utilizzo anche nella forma. il funzionamento è descritto <b><a class="color-php" href="javascript.html#cicli">qui</a></b>
+              </p>
+            </div>
+            <!-- foreach -->
+            <div class="sub-section" id="cicli-foreach">
+              <h3><span class="color-php"><i class="fas fa-hashtag"></i></span> foreach</h3>
+              <p>
+                Il foreach è forse il ciclo più usato in PHP e si utilizza per ciclare su un array, sia con <b>chiavi standard</b> che con <b>chiavi custom</b>.
+              </p>
+              <p>
+                Stampiamo un array con <b>chiavi standard</b>:
+              </p>
+              <div class="code">
+                <span class="color-laravel">$peoples</span> = [
+                  <span class="color-jq">'Michele',</span>
+                  <span class="color-jq">'Fabio',</span>
+                  <span class="color-jq">'Roberto',</span>
+                ];
+
+                <b class="color-php">foreach</b> (<span class="color-laravel">$peoples as $person</span>) {
+                  <span class="color-css">echo</span> <span class="color-laravel">$person</span>;
+                }
+                <i>// OUTPUT SARA':</i>
+                Michele, Fabio, Roberto
+              </div>
+              <hr>
+              <p>
+                Possiamo utilizzare il ciclo foreach allo stesso modo, ciclare sugli elementi e stamparli a schermo, o riciclare con un foreach dentro un altro foreach per stampare, ad esempio, i nomi dei maestri a schermo.
+              </p>
+              <div class="code">
+                <span class="color-laravel">$roles</span> = [
+                <span class="color-jq">'teachers'</span> => [<span class="color-jq">'Fabio', 'Michele'</span>],
+                <span class="color-jq">'PM'</span> => [<span class="color-jq">'Roberto'</span>],
+                ];
+
+                <b class="color-php">foreach</b> (<span class="color-laravel">$roles as $role</span>) {
+                  <span class="color-css">var_dump(<span class="color-laravel">$role</span>)</span>;
+                }
+
+                <i>// Output sarà:</i>
+                array (size=2)
+                  0 => string 'Fabio' (length=5)
+                  1 => string 'Michele' (length=7)
+
+                array (size=1)
+                  0 => string 'Roberto' (length=7)
+              </div>
+              <hr>
+              <p>
+                Ma se volessimo controllare il nome della chiave per cambiare la nostra azione?
+              </p>
+              <p>
+                <b class="color-php">foreach</b> (<b class="color-css">$nomeArray</b> as <b class="color-laravel">$chiave</b> => <b class="color-jq">$elementoArray</b>)
+              </p>
+              <div class="code">
+                <span class="color-laravel">$classData</span> = [
+                  &nbsp;&nbsp;<span class="color-jq">'teachers'</span> => [<span class="color-jq">'Fabio', 'Michele'</span>],
+                  &nbsp;&nbsp;<span class="color-jq">'nStudents'</span> => 10,
+                  ];
+
+                  <b class="color-php">foreach</b> (<b class="color-laravel">$classData</b> as <b class="color-laravel">$k</b> => <b class="color-laravel">$classDatum</b>) {
+                  &nbsp;&nbsp;<b class="color-php">if</b> (<b class="color-laravel">$k</b> == <b class="color-jq">'teachers'</b>) {
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b class="color-php">foreach</b> (<b class="color-laravel">$classDatum</b> as <b class="color-laravel">$teacher</b>) {
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="color-css">echo</b> <b class="color-laravel">$teacher</b>;
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                  &nbsp;&nbsp;} <b class="color-php">else</b> {
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b class="color-php">echo</b> <b class="color-jq">'nomero di studenti è: '</b> . <b class="color-laravel">$classDatum</b>;
+                  &nbsp;&nbsp;}
+                }
+              </div>
+            </div>
+            <div class="sub-section" id="cicli-break">
+              <h3><span class="color-php"><i class="fas fa-hashtag"></i></span> break & continue</h3>
+              <h3>Break</h3>
+              <p>
+                Il <b>costrutto break</b> consente di interrompere un ciclo e di uscirne senza continuare le iterazioni rimanenti. È molto utile, ad esempio, quando si cerca un valore all’interno di un array: nel momento in cui l’elemento viene trovato non è necessario continuare con altri gli elementi
+              </p>
+              <p>
+                Ad esempio:
+              </p>
+              <div class="code">
+                <span class="color-laravel">$atleti</span> = [<span class="color-jq">'Simone', 'Josephine', 'Giuseppe', 'Gabriele'</span> ];
+                &nbsp;&nbsp;<span class="color-laravel">$posizione_di_arrivo</span> = 0;
+                &nbsp;&nbsp;<span class="color-php">foreach</span> (<span class="color-laravel">$atleti as $posizione => $nome</span>) {
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="color-php">if</span> (<span class="color-laravel">$nome</span> == <span class="color-jq">'Josephine'</span>) {
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="color-laravel">$posizione_di_arrivo</span> = <span class="color-laravel">$posizione</span> + 1;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="color-php">break</span>;
+                &nbsp;&nbsp;&nbsp;&nbsp;}
+                &nbsp;&nbsp;}
+                <span class="color-css">echo</span> <span class="color-jq">"Josephine è arrivata in posizione numero "</span> . <span class="color-laravel">$posizione_di_arrivo</span>;
+              </div>
+              <p>
+                Non appena troviamo l’utente che stiamo cercando non è più necessario continuare le iterazioni per i restanti atleti ma possiamo interrompere l’esecuzione del ciclo. Per raggiungere il nostro scopo è sufficiente utilizzare la struttura di controllo <b><code> break</code></b>.
+              </p>
+              <p>
+                Il costrutto <code><b>break</b></code> è utilizzato anche nello costrutto condizionale <code><b>switch</b></code>
+              </p>
+              <h3>Continue</h3>
+              <p>
+                La struttura di controllo <code><b>continue</b></code> è utilizzata per saltare il ciclo corrente e proseguire con le iterazioni successive previste.
+              </p>
+              <p>
+                Ad esempio:
+              </p>
+              <div class="code">
+                <span class="color-php">for</span> (<span class="color-laravel">$posizione</span>=1; <span class="color-laravel">$posizione</span> <= 10; <span class="color-laravel">$posizione++</span>) {
+                &nbsp;&nbsp;<span class="color-php">if</span> (<span class="color-laravel">$posizione</span> % 2 == 1) {
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="color-php">continue</span>;
+                &nbsp;&nbsp;}
+                <span class="color-css">echo</span> <span class="color-jq">"Il numero "</span> . <span class="color-laravel">$posizione</span> . <span class="color-jq">" è un numero pari\n"</span>;
+                }
+              </div>
+              <p>
+                In questo esempio nel caso in cui un valore del ciclo non è divisibile per 2, saltiamo l’iterazione e passiamo direttamente a l'iterazione successiva.
+              </p>
+            </div>
+          </section>
+
+          <!-- Le funzioni custom -->
+          <section id="custom-functions">
+            <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Funzioni custom</h2>
+            <p>
+              Una delle funzioni interessanti è la funzione <code> <b class="color-css">rand()</b> </code> <br>
+              serve per stampare un numero random, ed è utilizzata in questo modo:
+            </p>
+            <div class="code">
+              <i>// stampo un numero random da 1 a 100</i>
+              <span class="color-laravel">$randomNumber</span> = <span class="color-css">rand</span>(1, 100);
+              <span class="color-css">echo</span> <span class="color-laravel">$randomNumber</span>;
+            </div>
+            <p>
+              E se volessimo creare un array di numeri tutti diversi?
+            </p>
+            <div class="code">
+              <i>Argomenti: min, max e numItems sono numeri interi</i>
+
+              <span class="color-php">public function</span> <span class="color-css">getArrayOfIntegers</span>(<span class="color-laravel">$min, $max, $numItems</span>) {
+              &nbsp;&nbsp;<span class="color-laravel">$arrayOfNumbers</span> = [];
+
+              &nbsp;&nbsp;<span class="color-php">while</span>(<span class="color-css">count</span>(<span class="color-laravel">$arrayOfNumbers</span>) < <span class="color-laravel">$numItems</span>) {
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="color-laravel">$number</span> = <span class="color-css">rand</span>($min, $max);
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="color-php">if</span>(!<span class="color-css">in_array</span>(<span class="color-laravel">$number, $arrayOfNumbers</span>)) {
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="color-laravel">$arrayOfNumbers</span>[] = <span class="color-laravel">$number</span>;
+              &nbsp;&nbsp;&nbsp;&nbsp;}
+              &nbsp;&nbsp;}
+
+              &nbsp;&nbsp;<span class="color-php">return</span> <span class="color-laravel">$arrayOfNumbers</span>;
+              }
+
+              <i>Evochiamo la funzione:</i>
+              <span class="color-css">getArrayOfIntegers</span>(1, 100, 50);
+
+              <i>Cosi abbiamo ottenuto un array di 50 numeri da 1 a 100, tutti numeri diversi</i>
+
+            </div>
+          </section>
+
 
           <!-- Programzaione orientata agli oggetti -->
           <section id="oop-intro">
