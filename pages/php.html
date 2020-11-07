@@ -112,7 +112,19 @@
                 <li><a href="#oop-visibility">Visibilità</a></li>
               </ul>
             </li>
-            <li><a href="#db-conn">Connessione al Database</a></li>
+            <li class="sub-list">
+              <a>
+                Connessione al Database
+                <span class="plus visible"><i class="fas fa-plus"></i></span>
+                <span class="minus"><i class="fas fa-minus"></i></span>
+              </a>
+              <ul>
+                <li><a href="#db-conn">Inizio</a></li>
+                <li><a href="#db-conn-mysqli">MySqli</a></li>
+                <li><a href="#db-conn-pdo">PDO</a></li>
+              </ul>
+            </li>
+            <li><a href="#php-crud">PHP CRUD</a></li>
           </ul>
         </aside>
 
@@ -1034,77 +1046,110 @@ della prima occorrenza trovata.</li>
           <section id="db-conn">
             <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Connesione al database</h2>
             <p>
-              Per consentire la connessione tra applicazione e DBMS sarà necessario disporre di parametri richiesti, è una buona pratica mettere questi parametri in un file separato <b>env</b>.
+              Tra i database più utilizzati per l'interazione con PHP è sicuramente, il noto <b>RDBMS</b> <i>(Relational Database Managment System)</i> <b>MySQL</b>, una soluzione per lo storage e la manipolazione dei dati rilasciata sotto licenza Open Source oggi implementata all'interno dei laboratori della Oracle.
             </p>
-            <!-- Parametri -->
-            <h3>Parametri (file env.php)</h3>
+            <p>
+              Perché PHP possa interagire con le basi di dati di MySQL abbiamo la necessità di disporre di <b>apposite librerie</b>, queste ultime rappresenteranno l'interfaccia attraverso la quale le applicazioni potranno autenticarsi con l'engine, connettersi ad esso, selezionare i database con cui operare e utilizzare i dati archiviati; nello specifico, per l'interazione con MySQL il linguaggio dispone di tre diverse estensioni:
+            </p>
             <ul class="normal-list php-list">
-              <li><b class="color-php">$host</b> cioè l'indirizzo della postazione che ospita l'installazione di MySQL</li>
-              <li><b class="color-php">$username</b> il  nome dell'utente che possiede i permessi per effettuare operazioni che prevedano l'interazione con il DBMS e i dati da esso gestiti</li>
-              <li><b class="color-php">$password</b> la parola chiave per autenticarsi su MySQL.</li>
-              <li><b class="color-php">$dbname</b> nome del database</li>
+              <li>
+                <b class="color-php">MySQLi</b> - <b>(MySQL improveded)</b>: si tratta di un'estensione pensata specificatamente per MySQL e introdotta in PHP con la versione 5; essa rappresenta in pratica un'evoluzione rispetto alle MySQL functions (ormai deprecate).
+              </li>
+              <li>
+                <b class="color-php">PDO</b> - <b>(PHP Data Objects)</b>: si tratta di una libreria introdotta con la versione 5 di PHP che fornisce un livello di astrazione <b>(Abstraction Layer)</b> grazie al quale il codice basato su di essa potrà essere riutilizzato indipendentemente dal database relazionale di riferimento;
+              </li>
+              <li>
+                <b class="color-php">MySQL Functions</b> - con il rilascio di PHP 5.5 le MySQL functions sono state classificate come <b>deprecate</b> (ancora disponibili ma il cui utilizzo viene sconsigliato) e verranno definitivamente rimosse nel prossimo futuro.
+              </li>
             </ul>
-            <div class="code">
-              <i>// parametri (file env.php)</i>
-              <span class="color-laravel">$servername</span> = <span class="color-jq">"localhost"</span>;
-              <span class="color-laravel">$username</span> = <span class="color-jq">"root"</span>;
-              <span class="color-laravel">$password</span> = <span class="color-jq">"root"</span>;
-              <span class="color-laravel">$dbname</span> = <span class="color-jq">"nome-database"</span>;
+            <div class="sub-section" id="db-conn-mysqli">
+              <h3><span class="color-php"><i class="fas fa-hashtag"></i></span> MySQLi</h3>
+              <p>
+                Per consentire la connessione tra applicazione e DBMS sarà necessario disporre di parametri richiesti, è una buona pratica mettere questi parametri in un file separato <b>env</b>.
+              </p>
+              <!-- Parametri -->
+              <h3>Parametri (file env.php)</h3>
+              <ul class="normal-list php-list">
+                <li><b class="color-php">$host</b> cioè l'indirizzo della postazione che ospita l'installazione di MySQL</li>
+                <li><b class="color-php">$username</b> il  nome dell'utente che possiede i permessi per effettuare operazioni che prevedano l'interazione con il DBMS e i dati da esso gestiti</li>
+                <li><b class="color-php">$password</b> la parola chiave per autenticarsi su MySQL.</li>
+                <li><b class="color-php">$dbname</b> nome del database</li>
+              </ul>
+              <div class="code">
+                <i>// parametri (file env.php)</i>
+                <span class="color-laravel">$servername</span> = <span class="color-jq">"localhost"</span>;
+                <span class="color-laravel">$username</span> = <span class="color-jq">"root"</span>;
+                <span class="color-laravel">$password</span> = <span class="color-jq">"root"</span>;
+                <span class="color-laravel">$dbname</span> = <span class="color-jq">"nome-database"</span>;
+              </div>
+              <p>
+                Tali informazioni potranno essere utilizzate per la creazione di una stringa di connessione rappresentata dall'istanza dell'oggetto di <b>classe</b> <code><b>mysqli</b></code>;
+              </p>
+              <!-- Connesione -->
+              <h3>Connesione al database (file database.php)</h3>
+              <p>
+                La connessione avviene con la creazione di una nuova classe <code><b>mysqli</b></code>; <br>
+                è una buona pratica metterlo in un file separato <b>database</b>
+              </p>
+              <div class="code">
+                <i>// Includiamo il file di parametri:</i>
+                <span class="color-php">include</span> <span class="color-mysql">__DIR__</span> . <span class="color-jq">"/env.php"</span>;
+
+                <i>// Colleghiamo il database con la classe mysqli</i>
+                <span class="color-laravel">$conn</span> = <span class="color-php">new</span> <b class="color-mysql">mysqli</b>(<span class="color-laravel">$servername, $username, $password, $dbname</span>);
+
+                <i>// Check connection</i>
+                <span class="color-php">if</span> <span class="color-laravel">($conn <span class="color-php">&&</span> $conn->connect_error</span>) {
+                &nbsp;&nbsp;<span class="color-php">die</span>(<span class="color-jq">"Connection failed: "</span> . <span class="color-laravel">$conn->connect_error</span>);
+                }
+              </div>
+              <h3>Query e risultato (file server.php)</h3>
+              <p>
+                Il file server contiente la <b>query</b> e il <b>risultato</b> che è rappresentano dalla variabile che è un <b>array multidimensionale</b>.
+              </p>
+              <div class="code">
+                <i>// Includiamo il file database.php</i>
+                <span class="color-php">include</span> <span class="color-mysql">__DIR__</span> . <span class="color-jq">"/database.php"</span>;
+
+                <i>// query: seleziono tutto dalla tabella 'stanze' , ordino per 'room_number' in maniera ascendente</i>
+                <span class="color-laravel">$sql</span> = "<span class="color-php">SELECT * FROM <span class="color-jq">`stanze`</span> ORDER BY <span class="color-jq">`room_number`</span> ASC</span>";
+
+                <i>// results</i>
+                <span class="color-laravel">$results = $conn</span>-><span class="color-css">query</span>(<span class="color-laravel">$sql</span>);
+
+                <span class="color-php">if</span> (<span class="color-laravel">$results <span class="color-php">&&</span> $results->num_rows</span> > 0) {
+                &nbsp;&nbsp;<span class="color-laravel">$rooms</span> = [];
+                &nbsp;&nbsp;<i>// Put single row (that rappresents single room) in array ($rooms)</i>
+                &nbsp;&nbsp;<span class="color-php">while</span>(<span class="color-laravel">$row = $results</span>-><span class="color-css">fetch_assoc()</span>) {
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="color-laravel">$rooms</span>[] = <span class="color-laravel">$row</span>;
+                &nbsp;&nbsp;}
+              } <span class="color-php">elseif</span> (<span class="color-laravel">$results</span>) {
+                 &nbsp;&nbsp;<i>// 0 results</i>
+                 &nbsp;&nbsp;<span class="color-laravel">$rooms</span> = [];
+               } <span class="color-php">else</span> {
+                &nbsp;&nbsp;<span class="color-css">echo</span> <span class="color-jq">"query error"</span>;
+                }
+                <span class="color-laravel">$conn</span>-><span class="color-css">close()</span>;
+              </div>
+              <p>
+                In questo modo abbiamo ottenuto un'array <span class="color-laravel">$rooms</span> che possiamo stampare con un normalissimo <code><b>foreach</b></code>
+              </p>
             </div>
-            <p>
-              Tali informazioni potranno essere utilizzate per la creazione di una stringa di connessione rappresentata dall'istanza dell'oggetto di <b>classe</b> <code><b>mysqli</b></code>;
-            </p>
-            <!-- Connesione -->
-            <h3>Connesione al database (file database.php)</h3>
-            <p>
-              La connessione avviene con la creazione di una nuova classe <code><b>mysqli</b></code>; <br>
-              è una buona pratica metterlo in un file separato <b>database</b>
-            </p>
-            <div class="code">
-              <i>// Includiamo il file di parametri:</i>
-              <span class="color-php">include</span> <span class="color-mysql">__DIR__</span> . <span class="color-jq">"/env.php"</span>;
-
-              <i>// Colleghiamo il database con la classe mysqli</i>
-              <span class="color-laravel">$conn</span> = <span class="color-php">new</span> <b class="color-mysql">mysqli</b>(<span class="color-laravel">$servername, $username, $password, $dbname</span>);
-
-              <i>// Check connection</i>
-              <span class="color-php">if</span> <span class="color-laravel">($conn <span class="color-php">&&</span> $conn->connect_error</span>) {
-              &nbsp;&nbsp;<span class="color-php">die</span>(<span class="color-jq">"Connection failed: "</span> . <span class="color-laravel">$conn->connect_error</span>);
-              }
+            <div class="sub-section" id="db-conn-pdo">
+              <h3><span class="color-php"><i class="fas fa-hashtag"></i></span> PDO</h3>
+              <p>
+                Guida alla connesione al database con il PDO <a href="https://www.mrw.it/php/connessione-mysql-pdo_11868.html" target="_blank" class="color-php">qui</a>
+              </p>
             </div>
-            <h3>Query e risultato (file server.php)</h3>
-            <p>
-              Il file server contiente la <b>query</b> e il <b>risultato</b> che è rappresentano dalla variabile che è un <b>array multidimensionale</b>.
-            </p>
-            <div class="code">
-              <i>// Includiamo il file database.php</i>
-              <span class="color-php">include</span> <span class="color-mysql">__DIR__</span> . <span class="color-jq">"/database.php"</span>;
-
-              <i>// query: seleziono tutto dalla tabella 'stanze' , ordino per 'room_number' in maniera ascendente</i>
-              <span class="color-laravel">$sql</span> = "<span class="color-php">SELECT * FROM <span class="color-jq">`stanze`</span> ORDER BY <span class="color-jq">`room_number`</span> ASC</span>";
-
-              <i>// results</i>
-              <span class="color-laravel">$results = $conn</span>-><span class="color-css">query</span>(<span class="color-laravel">$sql</span>);
-
-              <span class="color-php">if</span> (<span class="color-laravel">$results <span class="color-php">&&</span> $results->num_rows</span> > 0) {
-              &nbsp;&nbsp;<span class="color-laravel">$rooms</span> = [];
-              &nbsp;&nbsp;<i>// Put single row (that rappresents single room) in array ($rooms)</i>
-              &nbsp;&nbsp;<span class="color-php">while</span>(<span class="color-laravel">$row = $results</span>-><span class="color-css">fetch_assoc()</span>) {
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="color-laravel">$rooms</span>[] = <span class="color-laravel">$row</span>;
-              &nbsp;&nbsp;}
-            } <span class="color-php">elseif</span> (<span class="color-laravel">$results</span>) {
-               &nbsp;&nbsp;<i>// 0 results</i>
-               &nbsp;&nbsp;<span class="color-laravel">$rooms</span> = [];
-             } <span class="color-php">else</span> {
-              &nbsp;&nbsp;<span class="color-css">echo</span> <span class="color-jq">"query error"</span>;
-              }
-              <span class="color-laravel">$conn</span>-><span class="color-css">close()</span>;
-            </div>
-            <p>
-              In questo modo abbiamo ottenuto un'array <span class="color-laravel">$rooms</span> che possiamo stampare con un normalissimo <code><b>foreach</b></code>
-            </p>
           </section>
 
+          <!-- PHP CRUD -->
+          <section id="php-crud">
+            <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> PHP CRUD</h2>
+            <p>
+              Esempio pratico delle funzionalita <b class="color-php">CRUD in PHP</b> e l'utilizzo di <b>mysqli</b> per la connessione al database al seguente <b><a href="https://github.com/alessandro-orlov/php-all-crud" class="color-php">link</a></b>
+            </p>
+          </section>
         </div>
         <!-- End page content -->
       </div>
