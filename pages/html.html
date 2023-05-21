@@ -71,11 +71,11 @@
         <aside class="sidebar">
           <h2>Navigazione Pagina</h2>
           <ul class="page-navigation">
-            <li><a href="#introduzione">Introduzione</a></li>
-            <li><a href="#storia">Storia</a></li>
-            <li><a href="#html5">HTML 5: Web e Mobile</a></li>
-            <li><a href="#struttura-html">Struttura del HTML</a></li>
-            <li class="sub-list">
+            <li data-anchor="introduzione"><a href="#introduzione">Introduzione</a></li>
+            <li data-anchor="storia"<a href="#storia">Storia</a></li>
+            <li data-anchor="html5"><a href="#html5">HTML 5: Web e Mobile</a></li>
+            <li data-anchor="struttura-html"><a href="#struttura-html">Struttura del HTML</a></li>
+            <li data-anchor="elementi-e-tag" class="sub-list">
               <a>
                 Elementi e tag HTML
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
@@ -88,7 +88,7 @@
                 <li><a href="#attributi-data">Gli Attributi data-</a></li>
               </ul>
             </li>
-            <li class="sub-list">
+            <li data-anchor="lista-tag" class="sub-list">
               <a>
                 Lista tag
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
@@ -106,7 +106,7 @@
                 <li><a href="#embedded-tags">Embedded Content Tags</a></li>
               </ul>
             </li>
-            <li><a href="#conclusioni">Conclusioni</a></li>
+            <li data-anchor="conclusioni"><a href="#conclusioni">Conclusioni</a></li>
           </ul>
         </aside>
 
@@ -115,7 +115,7 @@
           <h1 class="color-html">Guida HTML</h1>
 
           <!-- introduzione -->
-          <section id="introduzione">
+          <section id="introduzione" data-section="introduzione" class="active">
             <h2><span class="color-html"><i class="fas fa-hashtag"></i></span> Introduzione</h2>
             <p>
               <strong>HTML</strong> è il principale linguaggio di pubblicazione di pagine Web, oltre che uno strumento sempre più utilizzato per la realizzazione di contenuti e applicazioni mobile. <br>
@@ -128,7 +128,7 @@
           </section>
 
           <!-- Storia -->
-          <section id="storia">
+          <section id="storia" data-section="storia">
             <h2><span class="color-html"><i class="fas fa-hashtag"></i></span> Storia</h2>
             <p>
               Nel 1990, <strong>Tim Berners-Lee</strong> al CERN inventa il <b>www</b> (World Wide Web).<br>
@@ -143,7 +143,7 @@
           </section>
 
           <!-- HTML 5: Web e Mobile -->
-          <section id="html5">
+          <section id="html5" data-section="html5">
             <h2><span class="color-html"><i class="fas fa-hashtag"></i></span> HTML 5: Web e Mobile</h2>
             <p>
               La versione attuale è l'HTML 5 che è anche la versione che nasce appositamente per uscire dal solo ambito Web e diventare piattaforma per la creazione di applicazioni, anche desktop e mobile.
@@ -161,7 +161,7 @@
           </section>
 
           <!-- Struttura del HTML -->
-          <section id="struttura-html">
+          <section id="struttura-html" data-section="struttura-html" >
             <h2><span class="color-html"><i class="fas fa-hashtag"></i></span> Struttura del HTML</h2>
             <p>
               HTML è un linguaggio interpretato dal browser (<i>Chrome, Firefox, Safari ecc.</i>) e per essere visualizzato correttamente il file deve avere l'estensione <b>.html</b>.<br>
@@ -185,7 +185,7 @@
           </section>
 
           <!-- Elementi e tag in HTML -->
-          <section id="elementi-e-tag">
+          <section id="elementi-e-tag" data-section="elementi-e-tag">
             <div class="sub-section">
               <h2><span class="color-html"><i class="fas fa-hashtag"></i></span> Elementi e tag in HTML</h2>
               <p>
@@ -257,7 +257,7 @@
           </section>
 
           <!-- lista tags -->
-          <section id="lista-tag">
+          <section id="lista-tag" data-section="lista-tag">
             <!-- Inizio -->
             <div class="sub-section">
               <h2><span class="color-html"><i class="fas fa-hashtag"></i></span> Lista dei tag</h2>
@@ -778,7 +778,7 @@
           </section>
 
           <!-- Conclusioni -->
-          <section id="conclusioni">
+          <section id="conclusioni" data-section="conclusioni">
             <h2><span class="color-html"><i class="fas fa-hashtag"></i></span> Conclusioni</h2>
             <p>
               È una buona abitudine quella di validare il codice HTML, per vedere se ci sono gli errori. Per farlo si utilizza <a href="https://validator.w3.org/#validate_by_input" class="color-html" target="_blank" alt="W3C html validator">validatore del W3C</a> (che è il più noto)

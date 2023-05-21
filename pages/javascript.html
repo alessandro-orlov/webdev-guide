@@ -71,13 +71,13 @@
         <aside class="sidebar">
           <h2>Navigazione Pagina</h2>
           <ul class="page-navigation">
-            <li><a href="#intro">Introduzione</a></li>
-            <li><a href="#history">Storia</a></li>
-            <li><a href="#implement">Implementare JavaScript</a></li>
-            <li><a href="#variables">Le variabili</a></li>
-            <li><a href="#scope">Lo scope</a></li>
-            <li><a href="#data-type">Tipi di dato</a></li>
-            <li class="sub-list">
+            <li data-anchor="intro"><a href="#intro">Introduzione</a></li>
+            <li data-anchor="history"><a href="#history">Storia</a></li>
+            <li data-anchor="implement"><a href="#implement">Implementare JavaScript</a></li>
+            <li data-anchor="variables"><a href="#variables">Le variabili</a></li>
+            <li data-anchor="scope"><a href="#scope">Lo scope</a></li>
+            <li data-anchor="data-type"><a href="#data-type">Tipi di dato</a></li>
+            <li data-anchor="operatori" class="sub-list">
               <a>
                 Operatori
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
@@ -92,7 +92,7 @@
                 <li><a href="#logic">logici</a></li>
               </ul>
             </li>
-            <li class="sub-list">
+            <li data-anchor="condizionali" class="sub-list">
               <a>
                 Strutture condizionali
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
@@ -104,7 +104,7 @@
                 <li><a href="#switch">switch case</a></li>
               </ul>
             </li>
-            <li class="sub-list">
+            <li data-anchor="cicli" class="sub-list">
               <a>
                 Cicli
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
@@ -117,7 +117,7 @@
                 <li><a href="#do-while">do while</a></li>
               </ul>
             </li>
-            <li class="sub-list">
+            <li data-anchor="array" class="sub-list">
               <a>
                 Array
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
@@ -130,7 +130,7 @@
                 <li><a href="#array-cicli">Array e Cicli</a></li>
               </ul>
             </li>
-            <li class="sub-list">
+            <li data-anchor="dom" class="sub-list">
               <a>
                 DOM
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
@@ -147,9 +147,9 @@
                 <li><a href="#dom-gestire-classi">Gestire le classi</a></li>
               </ul>
             </li>
-            <li><a href="#funzioni">Funzioni</a></li>
-            <li><a href="#object">Oggetto</a></li>
-            <li class="sub-list">
+            <li data-anchor="funzioni"><a href="#funzioni">Funzioni</a></li>
+            <li data-anchor="object"><a href="#object">Oggetto</a></li>
+            <li data-anchor="server-communication" class="sub-list">
               <a>
                 API (HTTP, AJAX, JSON)
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
@@ -163,7 +163,7 @@
                 <li><a href="#api">API</a></li>
               </ul>
             </li>
-            <li><a href="#esercizi-js">Esercizi</a></li>
+            <li data-anchor="esercizi-js"><a href="#esercizi-js">Esercizi</a></li>
           </ul>
         </aside>
 
@@ -171,7 +171,7 @@
         <div class="content">
           <h1 class="color-js">Guida JavaScript</h1>
           <!-- introduzione -->
-          <section id="intro">
+          <section data-section="intro" id="intro" class="active">
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Introduzione</h2>
             <p>
               Secondo Wikipedia esistono oltre 700 linguaggi di programmazione.
@@ -227,7 +227,7 @@
           </section>
 
           <!-- Storia -->
-          <section id="history">
+          <section data-section="history" id="history">
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Storia</h2>
             <p>
               JavaScript fu sviluppato originariamente da <strong>Brendan Eich</strong> della Netscape Communications nel <b>1995</b>.<br>
@@ -255,7 +255,7 @@
           </section>
 
           <!-- Implementare il codice JS -->
-          <section id="implement">
+          <section data-section="implement" id="implement">
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Implementare il Codice JavaScript</h2>
             <p>
               Il codice Javascript viene <b>implementato</b> direttamente all'interno delle pagine HTML, frequentemente all'interno della sezione &lt;head>, con l'utilizzo dei tag &lt;script> ... &lt;/script>. <br>
@@ -286,7 +286,7 @@
           </section>
 
           <!-- Le variabili -->
-          <section id="variables">
+          <section data-section="variables" id="variables">
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Le variabili</h2>
             <p>
               In un qualsiasi linguaggio di programmazione un ruolo indispensabile e di primo piano è occupato dal concetto di <strong>variabile</strong>.<br>
@@ -321,7 +321,7 @@
           </section>
 
           <!-- Lo scope -->
-          <section id="scope">
+          <section data-section="scope" id="scope">
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Lo scope: variabili globali e locali</h2>
             <p>
               Lo <strong>scope</strong> o <strong>ambito di visibilità</strong> di una variabile è la parte di uno script all’interno del quale si può fare riferimento ad essa.<br><br>
@@ -331,7 +331,7 @@
           </section>
 
           <!-- Tipi di dato -->
-          <section id="data-type">
+          <section data-section="data-type" id="data-type">
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Tipi di dato: il valore delle variabili</h2>
             <h3>“JavaScript is Loosely Typed”</h3>
             <p>
@@ -362,7 +362,7 @@
           </section>
 
           <!-- Operatori -->
-          <section id="operatori">
+          <section data-section="operatori" id="operatori">
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Operatori</h2>
             <p>
               Se è vero che le variabili svolgono un ruolo da primo piano in un qualsiasi programma, è altrettanto vero che lo è altrettanto saper svolgere su di esse determinate operazioni come, ad esempio, <b>operazioni matematiche, confronti, concatenazioni, ecc.</b>
@@ -523,7 +523,7 @@
           </section>
 
           <!-- Strutture condizionali -->
-          <section id="condizionali">
+          <section data-section="condizionali" id="condizionali">
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Strutture condizionali</h2>
             <p>
               Strutture condizionali dette anche istruzioni condizionali eseguono un certo blocco di codice se si verifica una ben precisa condizione.<br>
@@ -697,7 +697,7 @@
             </div>
           </section>
 
-          <section id="cicli">
+          <section data-section="cicli" id="cicli">
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> I Cicli</h2>
             <p>
               Per una serie di motivi può nascere l'esigenza di dover <b>ripetere</b> una serie di istruzioni un determinato numero di volte, o finchè non <b>si verifichi una data condizione</b>. In tali circostanze è necessario ricorrere alle <b>iterazioni</b> o, più comunemente, ai <b>cicli</b>.<br>
@@ -786,7 +786,7 @@
           </section>
 
           <!-- Gli Array -->
-          <section id="array">
+          <section data-section="array" id="array">
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Gli array</h2>
             <p>
               Gli array consentono di <b>associare più valori ad un unico nome di variabile</b> (o identificatore). In genere i valori contenuti in un array hanno una qualche affinità (ad esempio l’elenco dei giorni della settimana). L’uso degli array evita di definire più variabili e semplifica lo svolgimento di operazioni cicliche su tutti i valori.<br>
@@ -893,7 +893,7 @@
             </div>
           </section>
 
-          <section id="dom">
+          <section data-section="dom" id="dom">
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Il DOM</h2>
             <p>
               Il <b>Document Object Model</b> (o, più brevemente, DOM) è uno standard ufficiale del W3C attraverso il quale la struttura di un documento (esem. pagina HTML) è rappresentata sotto forma di un <b>modello orientato agli oggetti</b>.
@@ -1097,7 +1097,7 @@
           </section>
 
           <!-- Le Funzioni -->
-          <section id="funzioni">
+          <section data-section="funzioni" id="funzioni">
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span>  Le Funzioni</h2>
             <p>
               Uno degli elementi chiave di un programma, in questo caso di un programma JavaScript, sono le <strong>funzioni</strong>.
@@ -1164,7 +1164,7 @@
             </p>
           </section>
 
-          <section id="object">
+          <section data-section="object" id="object">
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Gli Oggetti in JavaScript</h2>
             <p>
               Un <strong>Object</strong> <i>oggetto letterale:</i> è una <b>struttura di dati</b> che può contenere <b>più valori</b> ai quali si può accedere per mezzo di un <b>indice di nomi.</b>
@@ -1270,7 +1270,7 @@
           </section>
 
           <!-- Api general (HTTP, AJAX, JSON) -->
-          <section id="server-communication">
+          <section data-section="server-communication" id="server-communication">
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> API (HTTP, AJAX, JSON)</h2>
             <p>
               JavaScript ha la possibilità di fare le chiamate a server e gestire le risposta, cosi la pagina può dialogare con l'esterno.
@@ -1431,7 +1431,7 @@
           </section>
 
           <!-- Esercizi -->
-          <section id="esercizi-js">
+          <section data-section="esercizi-js" id="esercizi-js">
             <h2><span class="color-js"><i class="fas fa-hashtag"></i></span> Esercizi:</h2>
 
             <!-- Esercizio 1 -->

@@ -205,6 +205,12 @@ main {
           }
         }
       }
+      section {
+        display: none;
+      }
+      section.active {
+        display: block;
+      }
     }
   } // End guide pages
 } // End main

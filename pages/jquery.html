@@ -72,13 +72,13 @@
         <aside class="sidebar">
           <h2>Navigazione Pagina</h2>
           <ul class="page-navigation">
-            <li><a href="#intro">Introduzione</a></li>
-            <li><a href="#storia">Storia</a></li>
-            <li><a href="#implement-jq">Implementare jQuery</a></li>
-            <li><a href="#syntax">La sintassi</a></li>
-            <li><a href="#selector">Selettori</a></li>
-            <li><a href="#actions">Azioni</a></li>
-            <li class="sub-list">
+            <li data-anchor="intro"><a href="#intro">Introduzione</a></li>
+            <li data-anchor="storia"><a href="#storia">Storia</a></li>
+            <li data-anchor="implement-jq"><a href="#implement-jq">Implementare jQuery</a></li>
+            <li data-anchor="syntax"><a href="#syntax">La sintassi</a></li>
+            <li data-anchor="selector"><a href="#selector">Selettori</a></li>
+            <li data-anchor="actions"><a href="#actions">Azioni</a></li>
+            <li data-anchor="events" class="sub-list">
               <a>
                 Eventi
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
@@ -91,7 +91,7 @@
                 <li><a href="#form-events">Form events</a></li>
               </ul>
             </li>
-            <li class="sub-list">
+            <li data-anchor="effects" class="sub-list">
               <a>
                 Effetti
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
@@ -105,12 +105,12 @@
                 <li><a href="#slide">Slide</a></li>
               </ul>
             </li>
-            <li><a href="#callback">Funzioni di callback</a></li>
-            <li><a href="#this">this</a></li>
-            <li><a href="#dom-manip">Manipolazione del DOM</a></li>
-            <li><a href="#each">Metodo .each()</a></li>
-            <li><a href="#ajax">Ajax</a></li>
-            <li><a href="#crud">CRUD</a></li>
+            <li data-anchor="callback"><a href="#callback">Funzioni di callback</a></li>
+            <li data-anchor="this"><a href="#this">this</a></li>
+            <li data-anchor="dom-manip"><a href="#dom-manip">Manipolazione del DOM</a></li>
+            <li data-anchor="each"><a href="#each">Metodo .each()</a></li>
+            <li data-anchor="ajax"><a href="#ajax">Ajax</a></li>
+            <li data-anchor="crud"><a href="#crud">CRUD</a></li>
           </ul>
         </aside>
 
@@ -119,7 +119,7 @@
           <h1 class="color-jq"> Guida jQuery </h1>
           <h4>Write less, do more</h4>
           <!-- Introduzione -->
-          <section id="intro">
+          <section data-section="intro" id="intro" class="active">
             <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> Introduzione</h2>
             <p>
               <strong>jQuery</strong> è uno dei più popolari <b>framework JavaScript</b>, spesso considerato indispensabile da molti sviluppatori web.<br>
@@ -128,7 +128,7 @@
           </section>
 
           <!-- Storia -->
-          <section id="storia">
+          <section data-section="storia" id="storia">
             <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> Storia</h2>
             <p>
                jQuery, un framework sviluppato da <b>John Resig</b> a partire dal <b>2006</b> con il preciso intento di rendere il <b>codice più sintetico</b> e di limitare al minimo l’estensione degli oggetti globali per ottenere la <b>massima compatibilità</b> con altre librerie.
@@ -139,7 +139,7 @@
           </section>
 
           <!-- Implementare jQuery -->
-          <section id="implement-jq">
+          <section data-section="implement-jq" id="implement-jq">
             <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> Implementare jQuery</h2>
             <p>
               La prima cosa da fare è <b>scaricare l'ultima versione</b> del framework dal sito ufficiale. Una volta scaricata la libreria sarà necessario includerla all'interno della nostra pagina web tra i tag <b>&lt;head></b> e <b>&lt;/head></b>:
@@ -157,7 +157,7 @@
           </section>
 
           <!-- La sintassi -->
-          <section id="syntax">
+          <section data-section="syntax" id="syntax">
             <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> La Sintassi</h2>
             <p>
               Tutto ciò che possiamo fare con jQuery gira intorno all’oggetto/funzione <code><b>$</b></code>, il cui utilizzo più comune è quello di selettore CSS:<br>
@@ -182,7 +182,7 @@
           </section>
 
           <!-- I selettori -->
-          <section id="selector">
+          <section data-section="selector" id="selector">
             <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> I selettori</h2>
             <p>
               Una delle <b>feature</b> più importante di jQuery, come già detto, è il <b>motore di selezione</b> basato su <b>Sizzle</b> (un motore per i selettori CSS utilizzato anche da altri framework)
@@ -209,7 +209,7 @@
           </section>
 
           <!-- Le azioni -->
-          <section id="actions">
+          <section data-section="actions" id="actions">
             <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> Le azioni</h2>
             <p>
               Le azioni indicano cosa accadrà all’elemento selezionato con il selector.<br>
@@ -226,7 +226,7 @@
           </section>
 
           <!-- Gli Eventi -->
-          <section>
+          <section data-section="events">
             <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> Gli Eventi</h2>
             <p>
               jQuery offre un accesso ancora più semplice agli eventi che JavaScript offre.
@@ -323,7 +323,7 @@
           </section>
 
           <!-- Gli Effetti -->
-          <section id="effects">
+          <section data-section="effects" id="effects">
             <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> Gli Effetti</h2>
             <p>
               Gli effetti che possiamo applicare con jQuery
@@ -429,7 +429,7 @@
           </section>
 
           <!-- Funzioni di callback -->
-          <section id="callback">
+          <section data-section="callback" id="callback">
             <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> Funzioni di callback</h2>
             <p>
               Come abbiamo visto precedentemente, quando utilizziamo un <b>effetto</b>, abbiamo sempre la possibilità di associare una <b>funzione di callback</b>.
@@ -447,7 +447,7 @@
           </section>
 
           <!-- JQuery $(this) -->
-          <section id="this">
+          <section data-section="this" id="this">
             <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> L’utilizzo di this</h2>
             <p>
               Spesso potremmo dover intercettare il click o un qualsiasi altro evento associato ad una classe.
@@ -466,7 +466,7 @@
           </section>
 
           <!-- DOM -->
-          <section id="dom-manip">
+          <section data-section="dom-manip" id="dom-manip">
             <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> Manipolazione del DOM</h2>
             <p>
               Con dei metodi molto semplici che ci offre jQuery, possimao manipolare il DOM modificando l’html, il text o le value di un selettore o leggere gli attributi di un selettore. Muoversi all'interno del DOM
@@ -566,7 +566,7 @@
           </section>
 
           <!-- .each() -->
-          <section id="each">
+          <section data-section="each" id="each">
             <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> Metodo .each()</h2>
             <p>
               Il metodo <strong>.each()</strong> è utilizzato per iterare un oggetto jQuery contenente una selezione di elementi del DOM. Il metodo in oggetto pretende come parametro una funzione di callback alla quale vengono passati i vari item presenti all'interno dell'oggetto.
@@ -590,7 +590,7 @@
           </section>
 
           <!-- AJAX -->
-          <section id="ajax">
+          <section data-section="ajax" id="ajax">
             <h2><span class="color-jq"><i class="fas fa-hashtag"></i></span> Chiamata AJAX</h2>
             <p>
               jQuery migliora e facilita la creazione di una chiamata Ajax.<br>

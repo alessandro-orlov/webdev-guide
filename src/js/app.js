@@ -91,20 +91,29 @@ for (var i = 0; i < techStack.length; i++) {
 }
 
 // =========== .page-navigation sub list ====================== //
-$('.page-navigation .sub-list').click(function() {
+$(document).on('click', '.page-navigation .sub-list a', function() {
+  $(this).parent().find('.plus').toggleClass('visible');
+  $(this).parent().find('.minus').toggleClass('visible');
+  $(this).parent().find('ul').slideToggle();
+} )
 
-  $(this).find('.plus').toggleClass('visible');
-  $(this).find('.minus').toggleClass('visible');
-  $(this).find('ul').slideToggle('visible');
-
-});
 
 // =========== Print YEAR in the footer =========================== //
-
 var year = new Date().getFullYear();
 $('.current-year').append(year);
 
 
+
+$(document).on('click', '.page-navigation li', function() {
+
+  let sectionName = $(this).attr('data-anchor');
+  let dataSection = 'section[data-section="'+sectionName+'"]';
+
+  $(dataSection).addClass('active');
+  $(dataSection).siblings().removeClass('active');
+
+  
+})
 
 
 }) // END document ready

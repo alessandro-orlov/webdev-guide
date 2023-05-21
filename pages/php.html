@@ -71,17 +71,17 @@
         <aside class="sidebar">
           <h2>Navigazione Pagina</h2>
           <ul class="page-navigation">
-            <li><a href="#intro">Introduzione</a></li>
-            <li><a href="#story">Storia</a></li>
-            <li><a href="#work-space">Ambiente di lavoro</a></li>
-            <li><a href="#variables">Le variabili</a></li>
-            <li><a href="#string">Le stringhe</a></li>
-            <li><a href="#operators">Gli operatori</a></li>
-            <li><a href="#ifelse">If, else, in PHP</a></li>
-            <li><a href="#var_dump">Var_dump</a></li>
-            <li><a href="#error-logs">Leggere gli errori</a></li>
-            <li><a href="#array">Gli array</a></li>
-            <li class="sub-list">
+            <li data-anchor="intro"><a href="#intro">Introduzione</a></li>
+            <li data-anchor="story"><a href="#story">Storia</a></li>
+            <li data-anchor="work-space"><a href="#work-space">Ambiente di lavoro</a></li>
+            <li data-anchor="variables"><a href="#variables">Le variabili</a></li>
+            <li data-anchor="string"><a href="#string">Le stringhe</a></li>
+            <li data-anchor="operators"><a href="#operators">Gli operatori</a></li>
+            <li data-anchor="ifelse"><a href="#ifelse">If, else, in PHP</a></li>
+            <li data-anchor="var_dump"><a href="#var_dump">Var_dump</a></li>
+            <li data-anchor="error-logs"><a href="#error-logs">Leggere gli errori</a></li>
+            <li data-anchor="array"><a href="#array">Gli array</a></li>
+            <li data-anchor="cicli-begin" class="sub-list">
               <a>
                 I cicli PHP
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
@@ -94,8 +94,8 @@
                 <li><a href="#cicli-break">break & continue</a></li>
               </ul>
             </li>
-            <li><a href="#custom-functions">Le funzioni custom</a></li>
-            <li class="sub-list">
+            <li data-anchor="custom-functions"><a href="#custom-functions">Le funzioni custom</a></li>
+            <li data-anchor="oop-intro" class="sub-list">
               <a>
                 OOP
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
@@ -112,7 +112,7 @@
                 <li><a href="#oop-visibility">Visibilità</a></li>
               </ul>
             </li>
-            <li class="sub-list">
+            <li data-anchor="db-conn" class="sub-list">
               <a>
                 Connessione al Database
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
@@ -124,7 +124,7 @@
                 <li><a href="#db-conn-pdo">PDO</a></li>
               </ul>
             </li>
-            <li><a href="#php-crud">PHP CRUD</a></li>
+            <li data-anchor="php-crud"><a href="#php-crud">PHP CRUD</a></li>
           </ul>
         </aside>
 
@@ -133,7 +133,7 @@
           <h1 class="color-php"> Guida PHP</h1>
 
           <!-- Introduzione -->
-          <section id="intro">
+          <section data-section="intro" id="intro" class="active">
             <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Introduzione</h2>
             <p>
               PHP è un potentissimo linguaggio di scripting <b>general purpose</b> che consente di creare complesse applicazioni <b>lato server</b> specialmente indicato per lo sviluppo web perchè può essere facilmente integrato nell'HTML.
@@ -155,7 +155,7 @@
           </section>
 
           <!-- Storia -->
-          <section id="story">
+          <section data-section="story" id="story">
             <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Storia</h2>
             <p>
               PHP nasce nel <b>1994</b> come proggetto personale <strong>Rasmus Lerdorf</strong>. Inizialmente esso veniva presentato come una serie di Common Gateway Interface (CGI) binari scritti in C per tracciare il numero di visite all’interno della suo homepage personale. Da qui il <b>primo nome</b> del <b>PHP: Personal Home Page</b>. In seguito però verrà rinominato in <b>Hypertext Preprocessor</b> <br>
@@ -187,7 +187,7 @@
           </section>
 
           <!-- Ambiente di lavoro -->
-          <section id="work-space">
+          <section data-section="work-space" id="work-space">
             <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Ambiente di lavoro</h2>
             <p>
               Per sviluppare in PHP non sono necessari di molti strumenti, il set up della macchina è piuttosto veloce e si è operativi in breve tempo. Vediamo di quali soluzioni abbiamo bisogno:
@@ -249,7 +249,7 @@
           </section>
 
           <!-- Le variabili -->
-          <section id="variables">
+          <section data-section="variables" id="variables">
             <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Le Variabili</h2>
             <p>
               PHP non è un <b>linguaggio fortemente tipizzato</b>, quindi non è neccesario diachiarare il tipo di dato in anticipo, il linguaggio lo riconoscera in automatico.
@@ -288,9 +288,8 @@
             </div>
           </section>
 
-
           <!-- Le stringhe -->
-          <section id="string">
+          <section data-section="string" id="string">
             <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Le Stringhe</h2>
             <p>
               PHP mette a disposizione un <b>set</b> completo <b>di funzioni</b> che permettono di <b>manipolare</b> ed eseguire le operazioni sulle stringhe.
@@ -314,7 +313,7 @@ carattere di ogni parola </li>
           </section>
 
           <!-- Gli operatori -->
-          <section id="operators">
+          <section data-section="operators" id="operators">
             <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Gli operatori</h2>
             <p>
               Molti operatori sono identici a quelli già visti in <a class="color-js" href="javascript.html#operatori">JavaScript</a>, altri sono leggermente diversi.
@@ -384,7 +383,7 @@ carattere di ogni parola </li>
           </section>
 
           <!-- If, else in PHP -->
-          <section id="ifelse">
+          <section data-section="ifelse" id="ifelse">
             <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> If, else, istruzioni condizionali in PHP</h2>
             <p>
               L’istruzione if è forse la più rappresentativa tra le <b>strutture di controllo</b> del flusso: ci permette di <b>eseguire o non eseguire</b> certe porzioni di codice.
@@ -398,7 +397,7 @@ carattere di ogni parola </li>
           </section>
 
           <!-- Var_dump -->
-          <section id="var_dump">
+          <section data-section="var_dump" id="var_dump">
             <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Var_dump</h2>
             <p>
               La funzione var dump in PHP, <b class="color-php">var_dump()</b>, consente di visualizzare le informazioni contenute nelle variabili, specificando sia il tipo sia il valore.
@@ -416,7 +415,7 @@ carattere di ogni parola </li>
           </section>
 
           <!-- Leggere gli errori -->
-          <section id="error-logs">
+          <section data-section="error-logs" id="error-logs">
             <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Leggere gli errori</h2>
             <p>
               Possiamo vedere gli errori generati da PHP o da Apache leggendo i log contenuti nella cartella dell'ambiente di sviluppo (in MAMP).
@@ -442,7 +441,7 @@ carattere di ogni parola </li>
           </section>
 
           <!-- Gli Array -->
-          <section id="array">
+          <section data-section="array" id="array">
             <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Gli Array</h2>
             <p>
               Gli array possono contenere <b>più valori</b>, possono contenere anche <b>tipi di dati diversi</b>, dunque anche oggetti o altri array.
@@ -585,9 +584,8 @@ della prima occorrenza trovata.</li>
             </p>
           </section>
 
-
           <!-- PHP: cicli -->
-          <section id="cicli-begin">
+          <section data-section="cicli-begin" id="cicli-begin">
             <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> I cicli PHP</h2>
             <p>
               I cicli sono un altro degli elementi fondamentali di qualsiasi linguaggio di programmazione in quanto permettono di <b>eseguire determinate operazioni in maniera ripetitiva</b>. Si tratta di una necessità che si presenta molto frequentemente
@@ -715,7 +713,7 @@ della prima occorrenza trovata.</li>
           </section>
 
           <!-- Le funzioni custom -->
-          <section id="custom-functions">
+          <section data-section="custom-functions" id="custom-functions">
             <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Funzioni custom</h2>
             <p>
               Una delle funzioni interessanti è la funzione <code> <b class="color-css">rand()</b> </code> <br>
@@ -753,9 +751,8 @@ della prima occorrenza trovata.</li>
             </div>
           </section>
 
-
           <!-- Programzaione orientata agli oggetti -->
-          <section id="oop-intro">
+          <section data-section="oop-intro" id="oop-intro">
             <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> OOP - Programmazione Orientata ad Oggetti</h2>
             <p>
               <b>OOP - Object oriented programming</b>
@@ -1043,7 +1040,7 @@ della prima occorrenza trovata.</li>
             </div>
           </section>
 
-          <section id="db-conn">
+          <section data-section="db-conn" id="db-conn">
             <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> Connesione al database</h2>
             <p>
               Tra i database più utilizzati per l'interazione con PHP è sicuramente, il noto <b>RDBMS</b> <i>(Relational Database Managment System)</i> <b>MySQL</b>, una soluzione per lo storage e la manipolazione dei dati rilasciata sotto licenza Open Source oggi implementata all'interno dei laboratori della Oracle.
@@ -1144,7 +1141,7 @@ della prima occorrenza trovata.</li>
           </section>
 
           <!-- PHP CRUD -->
-          <section id="php-crud">
+          <section data-section="php-crud" id="php-crud">
             <h2><span class="color-php"><i class="fas fa-hashtag"></i></span> PHP CRUD</h2>
             <p>
               Esempio pratico delle funzionalita <b class="color-php">CRUD in PHP</b> e l'utilizzo di <b>mysqli</b> per la connessione al database al seguente <b><a href="https://github.com/alessandro-orlov/php-all-crud" class="color-php">link</a></b>

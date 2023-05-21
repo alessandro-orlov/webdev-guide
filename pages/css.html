@@ -26,7 +26,6 @@
           <!-- Begin desktop navigation -->
           <div class="desktop-navigation">
             <ul>
-              <li><a href="../index.html">home <span></span> </a></li>
               <li><a href="html.html">html <span></span> </a></li>
               <li><a href="css.html">css <span></span> </a></li>
               <li><a href="javascript.html">javaScript <span></span> </a></li>
@@ -71,9 +70,9 @@
         <aside class="sidebar">
           <h2>Navigazione Pagina</h2>
           <ul class="page-navigation">
-            <li><a href="#introduzione">Introduzione</a></li>
-            <li><a href="#css-syntax">CSS: regole, proprietà</a></li>
-            <li class="sub-list">
+            <li data-anchor="introduzione"><a href="#introduzione">Introduzione</a></li>
+            <li data-anchor="css-syntax"><a href="#css-syntax">CSS: regole, proprietà</a></li>
+            <li data-anchor="selectors" class="sub-list">
               <a>
                 CSS: i selettori
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
@@ -87,8 +86,8 @@
                 <li><a href="#id">di id</a></li>
               </ul>
             </li>
-            <li><a href="#specificita">Specificità</a></li>
-            <li class="sub-list">
+            <li data-anchor="specificita"><a href="#specificita">Specificità</a></li>
+            <li data-anchor="rel-selectros" class="sub-list">
               <a>
                 Selettori
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
@@ -101,7 +100,7 @@
                 <li><a href="#pseudo-elem">Pseudo-elementi</a></li>
               </ul>
             </li>
-            <li class="sub-list">
+            <li data-anchor="reset" class="sub-list">
               <a>
                 Settare il documento CSS
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
@@ -114,7 +113,7 @@
                 <li><a href="#custom-scrollbar">Scrollbar personalizato</a></li>
               </ul>
             </li>
-            <li class="sub-list">
+            <li data-anchor="transform" class="sub-list">
               <a>
                 CSS Effects
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
@@ -126,14 +125,14 @@
                 <li><a href="#animation">Animation</a></li>
               </ul>
             </li>
-            <li><a href="#conclusioni">Conclusioni</a></li>
+            <li data-anchor="conclusioni" ><a href="#conclusioni">Conclusioni</a></li>
           </ul>
         </aside>
 
         <!-- Begin page content -->
         <div class="content">
           <h1 class="color-css">Guida CSS</h1>
-          <section id="introduzione" class="anchor">
+          <section id="introduzione" class="anchor active">
             <h2><span class="color-css"><i class="fas fa-hashtag"></i></span> Introduzione</h2>
             <p>
               I <strong>CSS</strong> servono per gestire tutto il <strong>layout</strong> di un sito Web. Grazie ad essi è possibile intervenire sulla formattazione del testo, sul posizionamento degli elementi grafici e sulla disposizione che questi elementi avranno rispetto ai diversi dispositivi.
@@ -144,7 +143,7 @@
           </section>
 
           <!-- Regole CSS -->
-          <section id="css-syntax">
+          <section data-section="css-syntax" id="css-syntax">
             <h2><span class="color-css"><i class="fas fa-hashtag"></i></span> CSS: regole, proprietà</h2>
             <p>
               La tipica struttura di una regola CSS è composta da due blocchi principali:
@@ -170,7 +169,7 @@
           </section>
 
           <!-- CSS i selettori -->
-          <section id="selectors">
+          <section data-section="selectors" id="selectors">
             <div class="sub-section">
               <h2><span class="color-css"><i class="fas fa-hashtag"></i></span> I selettori CSS</h2>
               <p>
@@ -226,7 +225,7 @@
           </section>
 
           <!-- Specificità CSS -->
-          <section id="specificita">
+          <section data-section="specificita" id="specificita">
             <h2><span class="color-css"><i class="fas fa-hashtag"></i></span> Specificità CSS</h2>
             <p>
               Per specificità si intende la <strong>priorità</strong> che una regola ha sulle altre che si riferiscono allo stesso selettore. La proprietà con valore di specificità maggiore avrà la precedenza sulle altre; nel caso in cui due o più regole. Se tale valore è uguale, verrà assegnata l’ultima inserita nell’ordine a cascata.<br>
@@ -251,7 +250,7 @@
           </section>
 
           <!-- Selettori avanzati -->
-          <section id="rel-selectros">
+          <section data-section="rel-selectros" id="rel-selectros">
             <h2><span class="color-css"><i class="fas fa-hashtag"></i></span> Selettori combinatori o di relazione</h2>
               <p>
                 I <strong>selettori</strong> sono schemi (pattern) utilizzati nei fogli di stile per selezionare gli elementi a cui si vuole applicare uno stile.
@@ -338,7 +337,7 @@
           </section>
 
           <!-- Settare il documento CSS -->
-          <section id="reset">
+          <section data-section="reset" id="reset">
             <h2><span class="color-css"><i class="fas fa-hashtag"></i></span> Settare il documento CSS</h2>
             <div class="sub-section">
               <h3><span class="color-css"><i class="fas fa-hashtag"></i></span> Il RESET</h3>
@@ -448,7 +447,7 @@
             </div>
           </section>
 
-          <section id="transform">
+          <section data-section="transform" id="transform">
             <h2><span class="color-css"><i class="fas fa-hashtag"></i></span> CSS Effects</h2>
             <div class="sub-section">
               <h3><span class="color-css"><i class="fas fa-hashtag"></i></span> CSS Transform</h3>
@@ -588,7 +587,7 @@
             </div>
           </section>
 
-          <section id="conclusioni">
+          <section data-section="conclusioni" id="conclusioni">
             <h2><span class="color-css"><i class="fas fa-hashtag"></i></span> Conclusioni</h2>
             <p>
               Installazione SASS/SCSS - <a href="https://laravel-mix.com/docs/5.0/installation" class="color-css" alt="laravel-mix">qui</a>.<br><br>

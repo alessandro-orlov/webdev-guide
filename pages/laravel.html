@@ -71,9 +71,9 @@
         <aside class="sidebar">
           <h2>Navigazione Pagina</h2>
           <ul class="page-navigation">
-            <li><a href="#intro">Introduzione</a></li>
-            <li><a href="#story">Storia</a></li>
-            <li class="sub-list">
+            <li data-anchor="intro"><a href="#intro">Introduzione</a></li>
+            <li data-anchor="story"><a href="#story">Storia</a></li>
+            <li data-anchor="mvc" class="sub-list">
               <a>
                 MVC
                 <span class="plus visible"><i class="fas fa-plus"></i></span>
@@ -86,8 +86,8 @@
                 <li><a href="#controller">Controller</a></li>
               </ul>
             </li>
-            <li><a href="#install-laravel">Installazione</a></li>
-            <li><a href="#command-line">Riga di comando</a></li>
+            <li data-anchor="install-laravel"><a href="#install-laravel">Installazione</a></li>
+            <li data-anchor="command-line"><a href="#command-line">Riga di comando</a></li>
           </ul>
         </aside>
 
@@ -96,7 +96,7 @@
           <h1 class="color-laravel">Guida Laravel</h1>
 
           <!-- Introduzione -->
-          <section id="intro">
+          <section data-section="intro" id="intro" class="active">
             <h2><span class="color-laravel"><i class="fas fa-hashtag"></i></span> Introduzione</h2>
             <p>
               <b>Laravel</b> Il framework per <b>“Web Artisans”</b> orientato alla programmazione ad oggetti ed al <i>pattern architetturale</i> <b>MVC (Model-View-Controller)</b> che consente di sviluppare velocemente e facilmente applicazioni in linguaggio PHP massimizzando la produttività delle sessioni di coding.
@@ -105,8 +105,9 @@
               E' molto probabilmente il framework PHP attualmente più popolare. Conosciuto per la sua sintassi elegante e per la sua curva di apprendimento bassa, Lavarel è sicuramente il compagno di lavoro perfetto per molti sviluppatori moderni.
             </p>
           </section>
-
-          <section id="story">
+          
+          <!-- Storia -->
+          <section data-section="story" id="story">
             <h2><span class="color-laravel"><i class="fas fa-hashtag"></i></span> Un pò di storia</h2>
             <p>
               “Laravel è un framework open source di tipo <i>MVC scritto in PHP</i> per lo sviluppo di applicazioni web, creato nel <b>2011</b> da <strong>Taylor Otwell</strong> come derivazione di Symfony. Laravel è distribuito con licenza MIT e mantiene tutto il codice disponibile su GitHub”
@@ -114,7 +115,7 @@
           </section>
 
           <!-- MVC model view controller -->
-          <section id="mvc">
+          <section data-section="mvc" id="mvc">
             <h2><span class="color-laravel"><i class="fas fa-hashtag"></i></span> MVC - Model View Controller</h2>
             <p>
               Il Design architetturale, forse, più famoso ed utilizzato nella programmazione web è quello <b>MVC</b>: Model, View, Controller.<br>
@@ -172,13 +173,13 @@
           </section>
 
           <!-- installazione -->
-          <section id="install-laravel">
+          <section data-section="install-laravel" id="install-laravel">
             <h2><span class="color-laravel"><i class="fas fa-hashtag"></i></span> Installazione di Laravel</h2>
 
           </section>
 
           <!-- riga di comando -->
-          <section id="command-line">
+          <section data-section="command-line" id="command-line">
             <h2> Riga di comando</h2>
             <p>
               Tutti gli script inizieranno per <b>php artisan</b> e continueranno con il nome dello script.
